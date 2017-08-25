@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.dgcactysv.modelo.Registro" table="vehiculos">
+<id column="REGISTRO" name="registro">
+</id>
+<property column="FECHA_ING" name="fechaIng" type="calendar"/>
+<property column="HORA_ING" name="horaIng" type="string"/>
+<property column="DESCRIPCION" name="descripcion" type="string"/>
+<property column="DOMINIO" name="dominio" type="string"/>
+<property column="MARCA" name="marca" type="string"/>
+<property column="MODELO" name="modelo" type="string"/>
+<property column="MOTIVO" name="motivo" type="string"/>
+<property column="LEVANTADO_EN" name="levantadoEn" type="string"/>
+<property column="ACTA_DE_COMPROBACION" name="actaDeComprobacion" type="string"/>
+<property column="ACTA_CONTRAVENCIONAL" name="actaContravencional" type="string"/>
+<property column="BOLETA_DE_CITACION" name="boletaDeCitacion" type="string"/>
+<property column="AGENTE_LABRANTE" name="agenteLabrante" type="string"/>
+<property column="INFRACTOR" name="infractor" type="string"/>
+<property column="AGENTE_DE_PLAYA" name="agenteDePlaya" type="string"/>
+<property column="GRUA_CHOFER" name="gruaChofer" type="string"/>
+<property column="INVENTARIO" name="inventario" type="string"/>
+<property column="N_CHASIS_N_MOTOR" name="nChasisNmotor" type="string"/>
+<property column="FECHA_EGR" name="fechaEgr" type="calendar"/>
+<property column="PERSONA_Q_RETIRO" name="personaQretiro" type="string"/>
+<property column="ENTREGA_AGENTE" name="entregaAgente" type="string"/>
+<property column="NOTAS" name="notas" type="string"/>
+<property column="CONTROL_DE_LEGALES" name="controlDeLegales" type="string"/>
+<property column="TRASLADO_A_COMPACTACION" name="trasladoAcompactacion" type="string"/>
+</class>
+</hibernate-mapping>
+
+

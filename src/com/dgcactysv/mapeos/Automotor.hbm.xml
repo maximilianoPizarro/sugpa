@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.dgcactysv.modelo.Automotor" table="automotor">
+<id column="idAutomotor" name="idAutomotor">
+<generator class="identity"/>
+</id>
+<property column="dominio" name="dominio" type="string"/>
+<property column="modelo" name="modelo" type="string"/>
+<property column="marca" name="marca" type="string"/>
+<property name="cedula" type="binary"><column name="cedula" not-null="true" /></property>
+
+</class>
+</hibernate-mapping>
