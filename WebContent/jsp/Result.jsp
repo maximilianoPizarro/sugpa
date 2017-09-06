@@ -10,26 +10,42 @@
 </head>
 <body>
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="inicio">SUGPA</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li><a href="inicioo">Inicio</a></li>
-    </ul>  
-    
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> <%=request.getAttribute("usuario")%></a></li>
-      <li><a href="inicio"><span class="glyphicon glyphicon-log-in"></span> Salir</a></li>
-    </ul>
-  </div>
-</nav>	
+
+<!-- NAVEGACIÓN PRINCIPAL -->
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div class="row">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#" title="Sistema Ušnico de Gestión de Playas de Acarreo">SUGPA</a>
+          </div>
+          <div class="collapse navbar-collapse" id="main-nav">
+            <ul class="nav navbar-nav navbar-right">
+		      <li><a href="inicioo">Inicio</a></li>
+		      <li><a href="#"><span class="glyphicon glyphicon-user"></span> <%=request.getAttribute("usuario")%></a></li>
+      		  <li><a href="inicio"><span class="glyphicon glyphicon-log-in"></span> Salir</a></li>
+      		</ul> 
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- FIN DE NAVEGACIÓN PRINCIPAL --> 
 
 
 	<center>
 		<h3><%=request.getAttribute("Message")%></h3>
 	</center>
+
+<br>
+<br>
+<br>
+<br>
+<br>	
+<%@include file="footer.jsp" %>	
 </body>
-<%@include file="footer.jsp" %>
+
 </html>

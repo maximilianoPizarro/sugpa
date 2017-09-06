@@ -71,14 +71,14 @@ function format ( d ) {
     		+'Infractor/contraventor: '+d.infractor+'<br>'
     		+'Agente de Playa: '+d.agenteDePlaya+'<br>'
     		+'Chofer de grua: '+d.gruaChofer+'<br>'
-    		+'<p class=form-control input-lg>'
+    		+'<br>'
 		    +'<form action=editarRegistro>'
-			+'<input class=form-control input-lg type=submit name=editar value=Editar />'
+			+'<input class="btn btn-primary btn-lg" type="submit" name="editar" value="Editar" />'
 			+'<input name="demo" style="display:none;" value="'+d.dominio+'" type="text">'
 			+'</form>'
 			+'</p>'
 		    +'<form action=egreso>'
-			+'<input class=form-control input-lg type=submit name=egresar value=Egresar />'
+			+'<input class="btn btn-primary btn-lg" type="submit" name="egresar" value="Egresar" />'
 			+'<input name="demo" style="display:none;" value="'+d.dominio+'" type="text">'
 			+'</form>';
 }
