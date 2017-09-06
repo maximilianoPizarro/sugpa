@@ -1,21 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-
-</head>
-<body>
-
-<div class="footer">
-        <div class="containers">
-            <h1>
-                <a href="#">
-                    2017 - Gobierno de la Ciudad de Buenos Aires
-                </a>  
-            </h1>
+      <div class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-sm-6">
+              <a class="navbar-brand bac-footer" href="http://www.buenosaires.gob.ar" target="_blank">Buenos Aires Ciudad</a>
+            </div>
+            <div class="col-md-6 col-sm-6">
+              <div class="sub-brand">
+                <p>Dirección General del Cuerpo de Tránsito y Seguridad Vial<br />
+                <span class="text-muted">Subsecretaría de Movilidad Sustentable</span></p>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
-
-</body>
-</html>
+      </div>

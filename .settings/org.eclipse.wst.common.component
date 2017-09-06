@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="sugpa">
+    <wb-module deploy-name="www.playasdeacarreo.gob">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="java-output-path" value="/sugpa/build/classes"/>
-        <property name="context-root" value="sugpa"/>
+        <property name="java-output-path" value="/www.playasdeacarreo.gob/build/classes"/>
+        <property name="context-root" value="www.playasdeacarreo.gob"/>
     </wb-module>
 </project-modules>

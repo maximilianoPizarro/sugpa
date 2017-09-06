@@ -3,19 +3,18 @@ package com.dgcactysv.Test;
 import java.io.File;
 import java.io.FileOutputStream;
 
-
-import com.dgcactysv.modelo.Registro;
-import com.dgcactysv.negocio.RegistroABM;
+import com.dgcactysv.modelo.Automotor;
+import com.dgcactysv.negocio.AutomotorABM;
 import com.dgcactysv.negocio.Facade;
 
 public class TestDirectorioTemp {
 
 	public static void main(String[] args) {
 		Facade facade=new Facade();
-		RegistroABM adm= facade.getRegistroABM();		
+		AutomotorABM adm= facade.getAutomotorABM();		
 		
 		try {
-			Registro a = adm.traerRegistro("SUM819");
+			Automotor a = adm.traerAutomotor("SUM819");
 
 
 		// TODO Auto-generated method stub
@@ -40,7 +39,7 @@ public class TestDirectorioTemp {
 
         try{
             FileOutputStream fos = new FileOutputStream(tempNewFolder+"asda.pdf");
-            fos.write(1);
+            fos.write(a.getCedula());
             fos.close();
         }catch(Exception e){
             e.printStackTrace();

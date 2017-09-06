@@ -473,7 +473,7 @@ public class Funciones {
 		List<Vehiculo> vehiculos = new ArrayList<Vehiculo>();
 		try {
 
-			File dirBase = new File("/sugpa/src/com/dgcactysv/datos/vehiculos.xml");
+			File dirBase = new File("D:/playa/sugpa/www.playasdeacarreo.gob/src/com/dgcactysv/datos/vehiculos.xml");
 			String ruta = dirBase.getAbsolutePath();
 			BufferedReader br = new BufferedReader(new FileReader(ruta));
 			String entrada;

@@ -61,9 +61,13 @@ public class ControladorLogin extends HttpServlet {
 					if(usuario.compareTo("direccion")==0){
 						request.setAttribute("usuario","Pietrafesa Sergio");
 						request.getRequestDispatcher("/jsp/bienvenidoGerencia.jsp").forward(request, response);	
-					}
-				else{request.getRequestDispatcher("/jsp/errorlogin.jsp").forward(request, response);}		
-			}
+						}else{
+							if(usuario.compareTo("admin")==0){
+								request.setAttribute("usuario","admin admin");
+								request.getRequestDispatcher("/jsp/bienvenidoAdmin.jsp").forward(request, response);	
+								}else{			
+						request.getRequestDispatcher("/jsp/errorlogin.jsp").forward(request, response);}		
+			}}
 				}
 			}
 	} catch (Exception e) {

@@ -1,4 +1,4 @@
-<%@page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@page language="java" contentType="text/html; charset=utf-8" pageEncoding="ISO-8859-1"%>
 <%@include file="header.jsp" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -52,7 +52,7 @@ function visibility(select) {
 		   } else{
 		    document.getElementById('marcaO').style.display = "none";
 		   }
-	   if(select.value=="AUTO"){
+	   if(select.value=="PARTICULAR"){
 		    document.getElementById('marca').style.display = "block";
 		   } else{
 		    document.getElementById('marca').style.display = "none";
@@ -63,24 +63,67 @@ function visibility(select) {
 		    document.getElementById('marcaM').style.display = "none";
 		   }
 		} 	
-</script> 
+</script>
 
+<script>	
+	//Script para los desplegables con dependencia
+		function habilitar(form) {
+			form.sinSeleccion.style.display = "none";
+			if (form.marca[0].selected == true) form.sinSeleccion.style.display = "inline";
+			else{
+				form.sinSeleccion.style.display = "none";
+			}
+			if (form.marca[1].selected == true) form.mAcura.style.display = "inline";
+			else{
+				form.mAcura.style.display = "none";
+				form.mAcura.selectedIndex = 0;
+			}
+			if (form.marca[2].selected == true) form.mAlfaRomeo.style.display = "inline";
+			else{
+				form.mAlfaRomeo.style.display = "none";
+				form.mAlfaRomeo.selectedIndex = 0;
+			}
+			if (form.marca[3].selected == true) form.mAro.style.display = "inline";
+			else{
+				form.mAro.style.display = "none";
+				form.mAro.selectedIndex = 0;
+			}
+			if (form.marca[4].selected == true) form.mAudi.style.display = "inline";
+			else{
+				form.mAudi.style.display = "none";
+				form.mAudi.selectedIndex = 0;
+			}
+			if (form.marca[5].selected == true) form.mBMW.style.display = "inline";
+			else{
+				form.mBMW.style.display = "none";
+				form.mBMW.selectedIndex = 0;
+			}
+		}
+</script>
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">SUGPA</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li><a href="inicioo">Inicio</a></li>
-    </ul>    
-
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> <%=request.getAttribute("usuario")%></a></li>
-      <li><a href="inicio"><span class="glyphicon glyphicon-log-in"></span> Salir</a></li>
-    </ul>
-  </div>
-</nav>
+ <!-- NAVEGACIÓN PRINCIPAL -->
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div class="row">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#" title="Sistema Ušnico de Gestión de Playas de Acarreo">SUGPA</a>
+          </div>
+          <div class="collapse navbar-collapse" id="main-nav">
+            <ul class="nav navbar-nav navbar-right">
+			  <li><a href="inicioo">Inicio</a></li>
+		      <li><a href="#"><span class="glyphicon glyphicon-user"></span> <%=request.getAttribute("usuario")%></a></li>
+      		  <li><a href="inicio"><span class="glyphicon glyphicon-log-in"></span> Salir</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- FIN DE NAVEGACIÓN PRINCIPAL --> 
 
 
 <form method="post" action="ingresarVehiculo">
@@ -102,7 +145,7 @@ function visibility(select) {
 									      				
 						  				<label for="motivo">Tipo:</label>
 						  				<p class="boton-margen-inferior">
-									    <select class="input-ingresar" id="tipo" name="tipo" onchange="visibility(this)">
+									    <select class="form-control input-lg" id="tipo" name="tipo" onchange="visibility(this)">
 									      <option value="0" selected="">Selecciona</option>
 									      <option value="AUTO">VEHICULO</option>
 									      <option value="MOTO">MOTOVEHICULO</option>
@@ -110,21 +153,21 @@ function visibility(select) {
 									    
 										<label for="dominio">Dominio: </label>
 										<p class="boton-margen-inferior">
-										<input class="input-ingresar"  required name="dominio" type="text" style="text-transform:uppercase"/></p>
+										<input class="form-control input-lg"  required name="dominio" type="text" style="text-transform:uppercase"/></p>
 										
 										<label  for="marca">Marca:</label>
 										<p class="boton-margen-inferior">
-										<input class="input-ingresar"   name="marcaO" type="text" id="marcaO" /></p>
-										<input class="input-ingresar"   name="marca" type="text" id="marca" style="display:none;"/></p>
-										<input class="input-ingresar"   name="marcaM"  type="text" id="marcaM" style="display:none;"/></p>
+										<input class="form-control input-lg"   name="marcaO" type="text" id="marcaO" /></p>
+										<input class="form-control input-lg"   name="marca" type="text" id="marca" style="display:none;"/></p>
+										<input class="form-control input-lg"   name="marcaM"  type="text" id="marcaM" style="display:none;"/></p>
 										
 										<label for="modelo">Modelo:</label>
 										<p class="boton-margen-inferior">
-										<input class="input-ingresar"  required name="modelo" type="text" style="text-transform:uppercase"/></p>
+										<input class="form-control input-lg"  required name="modelo" type="text" style="text-transform:uppercase"/></p>
 									    
 									    <label for="motivo">Motivo:</label>
 									    <p class="boton-margen-inferior">
-									    <select class="input-ingresar" id="motivo" name="motivo">
+									    <select class="form-control input-lg" id="motivo" name="motivo">
 									      <option value="-1" selected="">Selecciona</option>
 									      <option value="DOC">DOCUMENTACION</option>
 									      <option value="EST.PROHIBIDO">EST.PROHIBIDO</option>
@@ -136,10 +179,10 @@ function visibility(select) {
 									    </select></p>
 										<label for="chofer">N°Chasis:</label>
 										<p class="boton-margen-inferior">
-										<input class="input-ingresar"  required name="chasis" type="text"/></p>
+										<input class="form-control input-lg"  required name="chasis" type="text"/></p>
 										<label for="chofer">N°Motor:</label>
 										<p class="boton-margen-inferior">
-										<input class="input-ingresar"  required name="motor" type="text"/></p>							    
+										<input class="form-control input-lg"  required name="motor" type="text"/></p>							    
 							</div>		
 						    </div>
 						    </div>
@@ -150,27 +193,27 @@ function visibility(select) {
       								       	
 									    <label for="acta">Acta contravencional:</label>
 									    <p class="boton-margen-inferior">
-										<input class="input-ingresar"  required name="acta" type="text"/></p>
+										<input class="form-control input-lg"  required name="acta" type="text"/></p>
 										
 									    <label for="actac">Acta de comprobacion:</label>
 									    <p class="boton-margen-inferior">
-										<input class="input-ingresar"  required name="actac" type="text"/></p>
+										<input class="form-control input-lg"  required name="actac" type="text"/></p>
 											
 									    <label for="boleta">Boleta de citación:</label>
 									    <p class="boton-margen-inferior">
-										<input class="input-ingresar"  required name="boleta" type="text"/></p>
+										<input class="form-control input-lg"  required name="boleta" type="text"/></p>
 										
 										<label for="agente">Agente Labrante: </label>
 										<p class="boton-margen-inferior">
-										<input class="input-ingresar"  required name="agente" type="text"/></p>
+										<input class="form-control input-lg"  required name="agente" type="text"/></p>
 										
 										<label for="infractor">Infractor/Contraventor:</label>
 										<p class="boton-margen-inferior">
-										<input class="input-ingresar"  required name="infractor" type="text"/></p>
+										<input class="form-control input-lg"  required name="infractor" type="text"/></p>
 										
 										<label for="chofer">Chofer de grua:</label>
 										<p class="boton-margen-inferior">
-										<input class="input-ingresar"  required name="chofer" type="text"/></p>
+										<input class="form-control input-lg"  required name="chofer" type="text"/></p>
 										
 							</div>			
 						   </div>
@@ -183,7 +226,7 @@ function visibility(select) {
       								 
       								 <label for="chofer">Levantado en:</label>
 										<p class="boton-margen-inferior">
-										<input class="input-ingresar"  required name="levantadoEn" type="text"/></p>
+										<input class="form-control input-lg"  required name="levantadoEn" type="text"/></p>
       								  
 						      
 						      		<label for="dniDoc">Copia Inventario: </label> 
@@ -196,7 +239,7 @@ function visibility(select) {
 									
 
 						     		<p class="boton-margen-inferior">
-									<input class="boton input-ingresar"  name="ingresarRegistro" value="Registrar" type="submit" /></p>
+									<input class="btn btn-primary btn-lg"  name="ingresarRegistro" value="Registrar" type="submit" /></p>
 		
 						     </div>
 						     </div>

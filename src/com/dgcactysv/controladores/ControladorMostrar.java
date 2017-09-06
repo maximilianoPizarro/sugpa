@@ -5,6 +5,8 @@ import com.dgcactysv.datos.*;
 
 import com.dgcactysv.modelo.Vehiculo;
 import com.dgcactysv.negocio.Facade;
+import com.dgcactysv.negocio.AutomotorABM;
+import com.dgcactysv.modelo.Automotor;
 import com.dgcactysv.modelo.Registro;
 
 import java.io.FileOutputStream;

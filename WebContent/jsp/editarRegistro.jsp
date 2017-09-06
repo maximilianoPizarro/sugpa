@@ -2,7 +2,7 @@
 <%@page import="com.dgcactysv.modelo.Registro" %>
 <%@page import="java.util.List"%>
 <%@include file="header.jsp" %>
-<%@page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@page language="java" contentType="text/html; charset=utf-8" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -13,20 +13,29 @@
 </head>
 <body>
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">SUGPA</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li><a href="inicioo">Inicio</a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> <%=request.getAttribute("usuario")%></a></li>
-      <li><a href="inicio"><span class="glyphicon glyphicon-log-in"></span> Salir</a></li>
-    </ul>
-  </div>
-</nav>	
+<!-- NAVEGACIÓN PRINCIPAL -->
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div class="row">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#" title="Sistema Ušnico de Gestión de Playas de Acarreo">SUGPA</a>
+          </div>
+          <div class="collapse navbar-collapse" id="main-nav">
+            <ul class="nav navbar-nav navbar-right">
+			  <li><a href="inicioo">Inicio</a></li>
+		      <li><a href="#"><span class="glyphicon glyphicon-user"></span> <%=request.getAttribute("usuario")%></a></li>
+      		  <li><a href="inicio"><span class="glyphicon glyphicon-log-in"></span> Salir</a></li>
+      		</ul> 
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- FIN DE NAVEGACIÓN PRINCIPAL --> 
 
 <form method="post" action="editado">
 <div class="container">
@@ -56,11 +65,11 @@
 						<td><%=vehiculo.getRegistro()%></td>
 						<td><%=Funciones.traerFechaCorta4(vehiculo.getFechaEgr())%></td>
 						<td><%=vehiculo.getHoraIng()%></td>
-						<td><input type="text" name="dominio" value="<%=vehiculo.getDominio()%>"/></td>
-						<td><input type="text" name="marca" value="<%=vehiculo.getMarca()%>"/></td>
-						<td><input type="text" name="modelo" value="<%=vehiculo.getModelo()%>"/></td>
-						<td><input type="text" name="motivo" value="<%=vehiculo.getMotivo()%>"/></td>
-						<td><input type="text" name="descripcion" value="<%=vehiculo.getDescripcion()%>"/></td>
+						<td><input class="form-control input-s" type="text" name="dominio" value="<%=vehiculo.getDominio()%>"/></td>
+						<td><input class="form-control input-s" type="text" name="marca" value="<%=vehiculo.getMarca()%>"/></td>
+						<td><input class="form-control input-s" type="text" name="modelo" value="<%=vehiculo.getModelo()%>"/></td>
+						<td><input class="form-control input-s" type="text" name="motivo" value="<%=vehiculo.getMotivo()%>"/></td>
+						<td><input class="form-control input-s" type="text" name="descripcion" value="<%=vehiculo.getDescripcion()%>"/></td>
 					</tr>
 	
     </tbody>
@@ -78,11 +87,11 @@
     </thead>
     <tbody> 
 					<tr>
-						<td><input type="text" name="actac" value="<%=vehiculo.getActaDeComprobacion()%>"/></td>
-						<td><input type="text" name="actaz" value="<%=vehiculo.getBoletaDeCitacion()%>"/></td>
-						<td><input type="text" name="acta" value="<%=vehiculo.getActaContravencional()%>"/></td>
-						<td><input type="text" name="agente" value="<%=vehiculo.getAgenteLabrante()%>"/></td>
-						<td><input type="text" name="infractor" value="<%=vehiculo.getInfractor()%>"/></td>
+						<td><input class="form-control input-s" type="text" name="actac" value="<%=vehiculo.getActaDeComprobacion()%>"/></td>
+						<td><input class="form-control input-s" type="text" name="actaz" value="<%=vehiculo.getBoletaDeCitacion()%>"/></td>
+						<td><input class="form-control input-s" type="text" name="acta" value="<%=vehiculo.getActaContravencional()%>"/></td>
+						<td><input class="form-control input-s" type="text" name="agente" value="<%=vehiculo.getAgenteLabrante()%>"/></td>
+						<td><input class="form-control input-s" type="text" name="infractor" value="<%=vehiculo.getInfractor()%>"/></td>
 
 					</tr>
 	
@@ -98,9 +107,9 @@
     </thead>
     <tbody> 
 					<tr>
-						<td><input type="text" name="agentep" value="<%=vehiculo.getAgenteDePlaya()%>"/></td>
-						<td><input type="text" name="chofer" value="<%=vehiculo.getGruaChofer()%>"/></td>
-						<td><input type="text" size="50" name="levantadoEn" value="<%=vehiculo.getLevantadoEn()%>"/></td>
+						<td><input class="form-control input-s" type="text" name="agentep" value="<%=vehiculo.getAgenteDePlaya()%>"/></td>
+						<td><input class="form-control input-s" type="text" name="chofer" value="<%=vehiculo.getGruaChofer()%>"/></td>
+						<td><input class="form-control input-s" type="text" size="50" name="levantadoEn" value="<%=vehiculo.getLevantadoEn()%>"/></td>
 
 					</tr>
 	
@@ -111,10 +120,10 @@
         
   			<label for="inputdefault">Observaciones:</label>
 			<p class="boton-margen-inferior">
-  			<textarea name="observaciones" rows="4" cols="180"></textarea></p>
+  			<textarea class="form-control input-s" name="observaciones" rows="4" cols="100"></textarea></p>
   			
   			<p class="boton-margen-inferior">
-			<input onclick="myFunction()" class="boton input-ingresar" type="submit" name="Guardar" value="Guardar Cambios"/></p>
+			<input onclick="myFunction()" class="btn btn-primary btn-lg" type="submit" name="Guardar" value="Guardar Cambios"/></p>
   </div>
 </div>
 </div>

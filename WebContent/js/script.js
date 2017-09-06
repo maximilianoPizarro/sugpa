@@ -71,14 +71,14 @@ function format ( d ) {
     		+'Infractor/contraventor: '+d.infractor+'<br>'
     		+'Agente de Playa: '+d.agenteDePlaya+'<br>'
     		+'Chofer de grua: '+d.gruaChofer+'<br>'
-    		+'<p class=boton-margen-inferior>'
+    		+'<p class=form-control input-lg>'
 		    +'<form action=editarRegistro>'
-			+'<input class=boton input-ingresar type=submit name=editar value=Editar />'
+			+'<input class=form-control input-lg type=submit name=editar value=Editar />'
 			+'<input name="demo" style="display:none;" value="'+d.dominio+'" type="text">'
 			+'</form>'
 			+'</p>'
 		    +'<form action=egreso>'
-			+'<input class=boton input-ingresar type=submit name=egresar value=Egresar />'
+			+'<input class=form-control input-lg type=submit name=egresar value=Egresar />'
 			+'<input name="demo" style="display:none;" value="'+d.dominio+'" type="text">'
 			+'</form>';
 }
@@ -192,3 +192,11 @@ $(document).ready(function(){
         $("#div1").show();
     });
 });
+
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-17784640-34', 'auto');
+	  ga('send', 'pageview');

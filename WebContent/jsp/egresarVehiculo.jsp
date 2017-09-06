@@ -1,4 +1,4 @@
-<%@page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="ISO-8859-1"%>
 <%@page import="com.dgcactysv.modelo.Registro" %>
 <%@include file="header.jsp"%>	
@@ -16,22 +16,29 @@
 <body>
 	
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">SUGPA</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li><a href="inicioo">Inicio</a></li>
-    </ul>
-
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> <%=request.getAttribute("usuario")%></a></li>
-      <li><a href="inicio"><span class="glyphicon glyphicon-log-in"></span> Salir</a></li>
-    </ul>
-  </div>
-</nav>	
-
+<!-- NAVEGACIÓN PRINCIPAL -->
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div class="row">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#" title="Sistema Ušnico de Gestión de Playas de Acarreo">SUGPA</a>
+          </div>
+          <div class="collapse navbar-collapse" id="main-nav">
+            <ul class="nav navbar-nav navbar-right">
+			  <li><a href="inicioo">Inicio</a></li>
+		      <li><a href="#"><span class="glyphicon glyphicon-user"></span> <%=request.getAttribute("usuario")%></a></li>
+      		  <li><a href="inicio"><span class="glyphicon glyphicon-log-in"></span> Salir</a></li>
+      		</ul> 
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- FIN DE NAVEGACIÓN PRINCIPAL --> 
  
 
 <form method="post" action="egresado">
@@ -70,7 +77,7 @@
 								    </div>
 								    </div>
 								    
-								  
+								  <br>	
 								  
 								   
 								          <div class="panel panel-primary">
@@ -80,7 +87,7 @@
 												
 												<label for="tipo">Tipo:</label>
 												<p class="boton-margen-inferior">
-												<select class="input-ingresar" id="tipo"  name="tipo">
+												<select class="form-control input-lg" id="tipo"  name="tipo">
 													<option value="-1" selected="">Selecciona</option>
 													<option value="titular">TITULAR</option>
 													<option value="ca">CONDUCTOR AUTORIZADO</option>
@@ -89,15 +96,15 @@
 												
 												<label for="apellido">Apellido:</label> 
 												<p class="boton-margen-inferior">
-												<input class="input-ingresar" required name="apellido" type="text" /></p>
+												<input class="form-control input-lg" required name="apellido" type="text" /></p>
 												
 												<label for="nombre">Nombre:</label>
 												<p class="boton-margen-inferior">
-												<input class="input-ingresar" required name="nombre" type="text" /></p>
+												<input class="form-control input-lg" required name="nombre" type="text" /></p>
 												
 												<label for="dni">DNI:</label> 
 												<p class="boton-margen-inferior">
-												<input class="input-ingresar" required name="dni" type="text" /></p>
+												<input class="form-control input-lg" required name="dni" type="text" /></p>
 									
 								    </div>
 								    </div>
@@ -137,10 +144,10 @@
 		      								 <div class="panel-body">
 								            <label for="inputdefault">Observaciones:</label>
 											<p class="boton-margen-inferior">
-								            <textarea name="observaciones" rows="4" cols="30"></textarea></p>
+								            <textarea name="observaciones" rows="4" cols="20"></textarea></p>
 								 
 											<p class="boton-margen-inferior">
-											<input onclick="mensajeConfirma()" class="boton input-ingresar" type="submit" name="cargar"	value="Cargar Egreso" /></p>
+											<input onclick="mensajeConfirma()" class="btn btn-primary btn-lg" type="submit" name="cargar"	value="Cargar Egreso" /></p>
 								      </div>
 								      </div>
 								      </div>

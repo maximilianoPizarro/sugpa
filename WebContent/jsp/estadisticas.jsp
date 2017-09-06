@@ -1,4 +1,4 @@
-<%@page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="ISO-8859-1"%>
 <%@include file="header.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -58,20 +58,29 @@ $(document).ready(function(){
 <body>
 
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">SUGPA</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li><a href="inicioo">Inicio</a></li>
-    </ul> 
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> <%=request.getAttribute("usuario")%></a></li>
-      <li><a href="inicio"><span class="glyphicon glyphicon-log-in"></span> Salir</a></li>
-    </ul>
-  </div>
-</nav>
+<!-- NAVEGACIÓN PRINCIPAL -->
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div class="row">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#" title="Sistema Ušnico de Gestión de Playas de Acarreo">SUGPA</a>
+          </div>
+          <div class="collapse navbar-collapse" id="main-nav">
+            <ul class="nav navbar-nav navbar-right">
+			  <li><a href="inicioo">Inicio</a></li>
+		      <li><a href="#"><span class="glyphicon glyphicon-user"></span> <%=request.getAttribute("usuario")%></a></li>
+      		  <li><a href="inicio"><span class="glyphicon glyphicon-log-in"></span> Salir</a></li>
+      		</ul> 
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- FIN DE NAVEGACIÓN PRINCIPAL --> 
 
 <div class="container">
   <h2>Estadisticas:</h2> <br>
@@ -94,13 +103,13 @@ $(document).ready(function(){
 									<tr>
 										<td>
 										<p class="boton-margen-inferior">			    
-										<select class="input-ingresar" id="tipo" name="tipo">
+										<select class="form-control input-lg" id="tipo" name="tipo">
 										  <option value="-1" selected="">Selecciona</option>
 									      <option value="moto">VEHICULO</option>
 									      <option value="auto">MOTOVEHICULO</option>
 									    </select></p></td>
 										<td><p class="boton-margen-inferior">
-											<select class="input-ingresar" id="motivo" name="motivo">
+											<select class="form-control input-lg" id="motivo" name="motivo">
 													<option value="-1" selected="">Selecciona</option>
 													<option value="todos">TODOS</option>
 													<option value="doc">DOCUMENTACION</option>
@@ -112,8 +121,8 @@ $(document).ready(function(){
 											</select></p>
 										</td>
 				
-									 <td><p class="boton-margen-inferior"><input class="input-ingresar"	id="datepicker_desde" /></p></td>
-									<td><p class="boton-margen-inferior"><input class="input-ingresar" id="datepicker_hasta" /></p></td>
+									 <td><p class="boton-margen-inferior"><input class="form-control input-lg"	id="datepicker_desde" /></p></td>
+									<td><p class="boton-margen-inferior"><input class="form-control input-lg" id="datepicker_hasta" /></p></td>
 										
 									</tr>
 				    </tbody>
@@ -123,17 +132,20 @@ $(document).ready(function(){
 				<img  src="img/Autos.jpg" class="img-rounded" alt="Cinque Terre" width="957" height="569"></div>
 				<p> </p>
 				<div class="col-md-8">
-					
-				<button id="show">Mostrar Grafico</button>
-				<button id="hide">Ocultar Grafico</button>
+				<br>	
+				<button id="show" class="btn btn-primary btn-lg">Mostrar Grafico</button>
+				<br>
+				<br>
+				<button id="hide" class="btn btn-primary btn-lg">Ocultar Grafico</button>
 				</div>	
 				  
 				</div> 
 				</div>
-						
+				<br>
+				<br>		
 				<div class="col-md-16 text-center">
 				<p class="boton-margen-inferior">
-				    <a onclick="printPage()" class="btn">
+				    <a onclick="printPage()" class="btn btn-primary btn-lg">
 				      <span class="glyphicon glyphicon-print"></span> Imprimir Grafico 
 				    </a>
 				</p>
