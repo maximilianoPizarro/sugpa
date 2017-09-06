@@ -147,7 +147,7 @@ function visibility(select) {
 						  				<p class="boton-margen-inferior">
 									    <select class="form-control input-lg" id="tipo" name="tipo" onchange="visibility(this)">
 									      <option value="0" selected="">Selecciona</option>
-									      <option value="AUTO">VEHICULO</option>
+									      <option value="PARTICULAR">PARTICULAR</option>
 									      <option value="MOTO">MOTOVEHICULO</option>
 									    </select></p>
 									    
@@ -235,7 +235,7 @@ function visibility(select) {
 									
 						            <label for="inputdefault">Observaciones:</label>
 									<p class="boton-margen-inferior">
-									<textarea name="observaciones" rows="5" cols="30"></textarea></p>
+									<textarea class="form-control input-lg"  name="observaciones" rows="5" cols="30"></textarea></p>
 									
 
 						     		<p class="boton-margen-inferior">
