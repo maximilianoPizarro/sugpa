@@ -5,11 +5,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Playas de Acarreo DGCACTYSV:</title>
-
-<!-- nav bar -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
 </head>
@@ -91,6 +86,7 @@
 													<option value="-1" selected="">Selecciona</option>
 													<option value="titular">TITULAR</option>
 													<option value="ca">CONDUCTOR AUTORIZADO</option>
+													<option value="apoderado">APODERADO</option>													
 													<option value="policia">FUERZA DE SEGURIDAD</option>
 												</select></p>
 												
@@ -114,25 +110,36 @@
 								          <div class="panel panel-primary">
 		     								 <div class="panel-heading">Documentacion presentada</div>
 		      								 <div class="panel-body">
-												<label for="dniDoc">Copia DNI: </label> 
-												<p class="boton-margen-inferior">
-												<input type="file"  name="dniDoc" /></p>
-												 
-												<label for="licencia">Copia Licencia: </label> 
-												<p class="boton-margen-inferior">
-												<input type="file"  name="licencia" /></p>
-												
-												<label for="cedula">Copia Cedula: </label> 
-												<p class="boton-margen-inferior">				
-												<input type="file"  name="cedula" /></p>
-												 
-												<label for="seguro">Copia Seguro: </label> 
-												<p class="boton-margen-inferior">
-												<input type="file"  name="seguro" /></p>
-												 
-												<label for="comunicado">Copia DGAI: </label> 
-												<p class="boton-margen-inferior">
-												<input type="file"  name="comunicado" /></p>
+									            <div class="form-group">
+									              <label for="dniDoc">Copia DNI: </label>
+									              <input id="dniDoc" type="file" name="dniDoc">
+									              <p class="help-block">Hasta 2Mb en formato <strong>pdf</strong></p>
+									            </div> 
+
+									            <div class="form-group">
+									              <label for="licencia">Copia Licencia: </label>
+									              <input id="licencia" type="file" name="licencia">
+									              <p class="help-block">Hasta 2Mb en formato <strong>pdf</strong></p>
+									            </div> 
+
+									            <div class="form-group">
+									              <label for="cedula">Copia Cedula: </label>
+									              <input id="cedula" type="file" name="cedula">
+									              <p class="help-block">Hasta 2Mb en formato <strong>pdf</strong></p>
+									            </div> 
+		
+									            <div class="form-group">
+									              <label for="seguro">Copia Seguro: </label>
+									              <input id="seguro" type="file" name="seguro">
+									              <p class="help-block">Hasta 2Mb en formato <strong>pdf</strong></p>
+									            </div> 
+		
+									            <div class="form-group">
+									              <label for="comunicado">Copia DGAI: </label>
+									              <input id="comunicado" type="file" name="comunicado">
+									              <p class="help-block">Hasta 2Mb en formato <strong>pdf</strong></p>
+									            </div> 
+
 														
 								    </div>
 								    </div>
@@ -144,7 +151,7 @@
 		      								 <div class="panel-body">
 								            <label for="inputdefault">Observaciones:</label>
 											<p class="boton-margen-inferior">
-								            <textarea name="observaciones" rows="4" cols="20"></textarea></p>
+								            <textarea class="form-control input-lg" name="observaciones" rows="4" cols="20"></textarea></p>
 								 
 											<p class="boton-margen-inferior">
 											<input onclick="mensajeConfirma()" class="btn btn-primary btn-lg" type="submit" name="cargar"	value="Cargar Egreso" /></p>
