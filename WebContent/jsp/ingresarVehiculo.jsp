@@ -146,9 +146,14 @@ function visibility(select) {
 						  				<label for="motivo">Tipo:</label>
 						  				<p class="boton-margen-inferior">
 									    <select class="form-control input-lg" id="tipo" name="tipo" onchange="visibility(this)">
-									      <option value="0" selected="">Selecciona</option>
-									      <option value="PARTICULAR">PARTICULAR</option>
-									      <option value="MOTO">MOTOVEHICULO</option>
+									      <option value="0" selected="">Seleccionar</option>
+									      <option value="AUTO">PARTICULAR</option>
+									      <option value="MOTO">MOTO</option>
+									      <option value="TAXI">TAXI</option>
+									      <option value="COMBI">COMBI</option>
+									      <option value="PICK-UP">PICK-UP</option>
+									      <option value="CAMION">MOTO</option>
+									      <option value="OTRO">OTRO</option>
 									    </select></p>
 									    
 										<label for="dominio">Dominio: </label>
@@ -157,13 +162,91 @@ function visibility(select) {
 										
 										<label  for="marca">Marca:</label>
 										<p class="boton-margen-inferior">
-										<input class="form-control input-lg"   name="marcaO" type="text" id="marcaO" /></p>
-										<input class="form-control input-lg"   name="marca" type="text" id="marca" style="display:none;"/></p>
-										<input class="form-control input-lg"   name="marcaM"  type="text" id="marcaM" style="display:none;"/></p>
+										<select class="form-control input-lg" id="marca" name="marca" onchange="habilitar(this.form)">
+									      <option value="0" selected="">Seleccionar</option>
+												<option value="999">Acura</option>
+												<option value="2">Alfa Romeo</option>
+												<option value="3">Aro</option>
+												<option value="4">Audi</option>
+												<option value="5">BMW</option>
+												<option value="6">Cadillac</option>
+												<option value="7">Chery</option>
+												<option value="8">Chevrolet</option>
+												<option value="9">Chrysler</option>
+												<option value="10">Citroen</option>
+												<option value="11">DS</option>
+												<option value="12">Daewoo</option>
+												<option value="13">Daihatsu</option>
+												<option value="14">Dodge</option>
+												<option value="15">Ferrari</option>
+												<option value="16">Fiat</option>
+												<option value="17">Ford</option>
+												<option value="18">Ford Importados</option>
+												<option value="19">Foton</option>
+												<option value="20">Honda</option>
+												<option value="21">Hyundai</option>
+												<option value="22">Ika</option>
+												<option value="23">Isuzu</option>
+												<option value="24">Iveco</option>
+												<option value="25">Jaguar</option>
+												<option value="26">Jeep</option>
+												<option value="27">Kia</option>
+												<option value="28">Lada</option>
+												<option value="29">Land Rover</option>
+												<option value="30">Lifan</option>
+												<option value="31">MG</option>
+												<option value="32">Maserati</option>
+												<option value="33">Mazda</option>
+												<option value="34">Mercedes Benz</option>
+												<option value="35">Mini</option>
+												<option value="36">Mitsubishi</option>
+												<option value="37">Nissan</option>
+												<option value="38">Opel</option>
+												<option value="39">Peugeot</option>
+												<option value="40">Porsche</option>
+												<option value="41">RAM</option>
+												<option value="42">Rastrojero</option>
+												<option value="43">Renault</option>
+												<option value="44">Rover</option>
+												<option value="45">Rugby</option>
+												<option value="46">Saab</option>
+												<option value="47">Seat</option>
+												<option value="48">Smart</option>
+												<option value="49">Ssangyong</option>
+												<option value="50">Subaru</option>
+												<option value="51">Suzuki</option>
+												<option value="52">Toyota</option>
+												<option value="53">Volkswagen</option>
+												<option value="54">Volvo</option>
+												<option value="55">Willys</option>
+												<option value="56">Otra Marca</option>
+											</select></p>
 										
 										<label for="modelo">Modelo:</label>
 										<p class="boton-margen-inferior">
-										<input class="form-control input-lg"  required name="modelo" type="text" style="text-transform:uppercase"/></p>
+										<select class="form-control input-lg" id="sinSeleccion" name="sinSeleccion"> 
+										<option value="0" selected="">Seleccionar</option>
+										</select></p>
+										<select class="form-control input-lg" id="mAcura" name="mAcura" style="display: none"> 
+										<option value="0" selected="">Seleccionar</option>
+									   		    <option value="9">CL</option>
+										</select></p>
+										<select class="form-control input-lg" id="mAlfaRomeo" name="mAlfaRomeo" style="display: none"> 
+										<option value="0" selected="">Seleccionar</option>
+										<option value="70">145</option><option value="71">146</option><option value="73">155</option><option value="74">156</option><option value="83">Brera</option><option value="84">Giulietta</option><option value="87">Mito</option><option value="89">Spider</option>
+										</select></p>
+										<select class="form-control input-lg" id="mAro" name="mAro" style="display: none"> 
+										<option value="0" selected="">Seleccionar</option>
+										<option value="161">243</option>
+										</select></p>
+										<select class="form-control input-lg" id="mAudi" name="mAudi" style="display: none"> 
+										<option value="0" selected="">Seleccionar</option>
+										<option value="234">A1</option><option value="235">A3</option><option value="7964">A3 Sedán</option><option value="7425">A3 Sportback</option><option value="236">A4</option><option value="238">A5</option><option value="7192">A5 Coupé</option><option value="239">A6</option><option value="7965">A7 Sportback</option><option value="6811">A8 L</option><option value="244">Allroad</option><option value="8010">Q2</option><option value="7193">Q3</option><option value="249">Q5</option><option value="250">Q7</option><option value="251">R8</option><option value="255">S3</option><option value="256">S4</option><option value="257">S5</option><option value="262">TT</option><option value="7428">TT Coupé</option><option value="248">Otro Modelo</option>
+										</select></p>
+										<select class="form-control input-lg" id="mBMW" name="mBMW" style="display: none"> 
+										<option value="0" selected="">Seleccionar</option>
+										<option value="484">3</option><option value="557">Serie 1</option><option value="558">Serie 3</option><option value="7968">Serie 3 Sedán</option><option value="7431">Serie 4 Coupé</option><option value="7969">Serie 4 Grand Coupé</option><option value="559">Serie 5</option><option value="7970">Serie 5 Sedán</option><option value="560">Serie 6</option><option value="7971">Serie 6  Grand Coupé</option><option value="561">Serie 7</option><option value="562">Serie 8</option><option value="563">Serie M</option><option value="564">X1</option><option value="565">X3</option><option value="566">X5</option><option value="567">X6</option><option value="570">Z3</option><option value="571">Z4</option><option value="546">Otro Modelo</option>
+										</select></p>
 									    
 									    <label for="motivo">Motivo:</label>
 									    <p class="boton-margen-inferior">
