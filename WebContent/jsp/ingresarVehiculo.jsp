@@ -45,60 +45,68 @@
 
 
 
-<script>
-function visibility(select) {
-	   if(select.value==0){
-		    document.getElementById('marcaO').style.display = "block";
-		   } else{
-		    document.getElementById('marcaO').style.display = "none";
-		   }
-	   if(select.value=="PARTICULAR"){
-		    document.getElementById('marca').style.display = "block";
-		   } else{
-		    document.getElementById('marca').style.display = "none";
-		   }
-	   if(select.value=="MOTO"){
-		    document.getElementById('marcaM').style.display = "block";
-		   } else{
-		    document.getElementById('marcaM').style.display = "none";
-		   }
-		} 	
-</script>
+<script>  
+     function desactivarInput(){  
+    	 document.getElementById("dominio").value = "";
+          if(document.getElementById("chequeable").checked == true){  
+              document.getElementById("dominio").disabled = true;
+          }else{
+            document.getElementById("dominio").disabled = false;
+          }  
+     }  
+</script> 
 
 <script>	
 	//Script para los desplegables con dependencia
 		function habilitar(form) {
-			form.sinSeleccion.style.display = "none";
-			if (form.marca[0].selected == true) form.sinSeleccion.style.display = "inline";
-			else{
-				form.sinSeleccion.style.display = "none";
+			//ARRAYS
+			var mAcura = [{ text: 'CL', value: 'CL'}];
+			var mAlfaRomeo = [{ text: '145', value: '145'}, { text: '146', value: '146'}, { text: '147', value: '147'}, { text: '156', value: '156'}, { text: '159', value: '159'}, { text: 'Brera', value: 'Brera'}, { text: 'Giulietta', value: 'Giulietta'}, { text: 'Mito', value: 'Mito'}, { text: 'Spider', value: 'Spider'}];
+			var mAro = [{ text: '243', value: '243'}];
+			var mAudi = [{ text: '3', value: '3'}, { text: 'Serie 1', value: 'Serie 1'}, { text: 'Serie 3', value: 'Serie 3'}, { text: 'Serie 3 Sedán', value: 'Serie 3 Sedan'}, { text: 'Serie 4 Coupé', value: 'Serie 4 Coupe'}, { text: 'Serie 4 Grand Coupé', value: 'Serie 4 Grand coupe'}, { text: 'Serie 5', value: 'Serie 5'}, { text: 'Serie 5 Sedán', value: 'Serie 5 Sedan'}, { text: 'Serie 6', value: 'Serie 6'}, { text: 'Serie 6 Grand Coupé', value: 'Serie 6 Grand Coupe'}, { text: 'Serie 7', value: 'Serie 7'}, {text: 'Serie 8', value: 'Serie 8'}, {text: 'Serie M', value: 'Serie M'}, {text: 'X1', value: 'X1'}, {text: 'X3', value: 'X3'}, {text: 'X5', value: 'X5'}, {text: 'X6', value: 'X6'}, {text: 'Z3', value: 'Z3'}, {text: 'Z4', value: 'Z4'}, {text: 'Otro Modelo', value: 'Otro'}];			
+			var mCadillac = [{ text: 'Deville', value: 'Deville'}, { text: 'Otro Modelo', value: 'Otro'}];
+			//INICIO DE FUNCION
+			var valorParticular = document.getElementById('marcaParticular').value;
+			
+			if(form.tipo[1].selected){
+				form.marcaSinSeleccion.style.display = "none";
+				form.marcaParticular.style.display = "inline";
+				$("#modeloP option:not(:first)").remove();
+				if(form.marcaParticular[1].selected){
+					$.each(mAcura, function(i, el) 
+							{    $('#modeloP').append( new Option(el.text,el.value) );});
+				}
+				if(form.marcaParticular[2].selected){
+					$.each(mAlfaRomeo, function(i, el) 
+							{    $('#modeloP').append( new Option(el.text,el.value) );});
+				}
+				if(form.marcaParticular[3].selected){
+					$.each(mAro, function(i, el) 
+							{    $('#modeloP').append( new Option(el.text,el.value) );});
+				}
+				if(form.marcaParticular[4].selected){
+					$.each(mAudi, function(i, el) 
+							{    $('#modeloP').append( new Option(el.text,el.value) );});
+				}
+				if(form.marcaParticular[5].selected){
+					$.each(mCadillac, function(i, el) 
+							{    $('#modeloP').append( new Option(el.text,el.value) );});
+				}
+				
 			}
-			if (form.marca[1].selected == true) form.mAcura.style.display = "inline";
-			else{
-				form.mAcura.style.display = "none";
-				form.mAcura.selectedIndex = 0;
-			}
-			if (form.marca[2].selected == true) form.mAlfaRomeo.style.display = "inline";
-			else{
-				form.mAlfaRomeo.style.display = "none";
-				form.mAlfaRomeo.selectedIndex = 0;
-			}
-			if (form.marca[3].selected == true) form.mAro.style.display = "inline";
-			else{
-				form.mAro.style.display = "none";
-				form.mAro.selectedIndex = 0;
-			}
-			if (form.marca[4].selected == true) form.mAudi.style.display = "inline";
-			else{
-				form.mAudi.style.display = "none";
-				form.mAudi.selectedIndex = 0;
-			}
-			if (form.marca[5].selected == true) form.mBMW.style.display = "inline";
-			else{
-				form.mBMW.style.display = "none";
-				form.mBMW.selectedIndex = 0;
-			}
-		}
+			
+			
+			
+			//$('#tipo').empty();
+			//$("#selectBox option[value='option1']").remove();
+			//this.$('select#tipo').append('<option value="prueba">proban2</option>');
+			//$("#tipo option[value='TAXI']").hide();
+			//$("#tipo option[value='TAXI']").show();
+			//$('select').children('option:not(:first)').remove(); eliminar todas menos la primera
+			
+			$.each(mAlfaRomeo, function(i, el) 
+				{    $('#tipo').append( new Option(el.text,el.value) );});
+	}
 </script>
 
  <!-- NAVEGACIÓN PRINCIPAL -->
@@ -145,26 +153,41 @@ function visibility(select) {
 									      				
 						  				<label for="motivo">Tipo:</label>
 						  				<p class="boton-margen-inferior">
-									    <select class="form-control input-lg" id="tipo" name="tipo" onchange="visibility(this)">
+									    <select class="form-control input-lg" id="tipo" name="tipo" onchange="habilitar(this.form)">
 									      <option value="0" selected="">Seleccionar</option>
 									      <option value="AUTO">PARTICULAR</option>
 									      <option value="MOTO">MOTO</option>
 									      <option value="TAXI">TAXI</option>
 									      <option value="COMBI">COMBI</option>
 									      <option value="PICK-UP">PICK-UP</option>
-									      <option value="CAMION">MOTO</option>
+									      <option value="CAMION">CAMION</option>
 									      <option value="OTRO">OTRO</option>
 									    </select></p>
 									    
-										<label for="dominio">Dominio: </label>
+									    
+									    
+										<label for="dominio">Dominio (SI/NO): </label>
+										<input type="checkbox" id="chequeable" onclick="desactivarInput()"/>
 										<p class="boton-margen-inferior">
-										<input class="form-control input-lg"  required name="dominio" type="text" style="text-transform:uppercase"/></p>
+										<input class="form-control input-lg"  required name="dominio" id="dominio" type="text" style="text-transform:uppercase"/></p>
+										
+										<script>
+										$('#chequeable').change(function() {
+   										 $('dominio').attr('disabled',!this.checked)
+										});
+										</script>
+										
 										
 										<label  for="marca">Marca:</label>
 										<p class="boton-margen-inferior">
-										<select class="form-control input-lg" id="marca" name="marca" onchange="habilitar(this.form)">
+										
+										<select class="form-control input-lg" id="marcaSinSeleccion" name="marcaSinSeleccion" onchange="habilitar(this.form)">
 									      <option value="0" selected="">Seleccionar</option>
-												<option value="999">Acura</option>
+									     </select></p>
+									     
+										<select class="form-control input-lg" id="marcaParticular" name="marcaParticular" style="display: none" onchange="habilitar(this.form)">
+									      <option value="0" selected="">Seleccionar</option>
+												<option value="1">Acura</option>
 												<option value="2">Alfa Romeo</option>
 												<option value="3">Aro</option>
 												<option value="4">Audi</option>
@@ -220,13 +243,104 @@ function visibility(select) {
 												<option value="54">Volvo</option>
 												<option value="55">Willys</option>
 												<option value="56">Otra Marca</option>
+												
+												<option value="10">BMW</option>
+												<option value="429">Bajaj</option>
+												<option value="177">Beta</option>
+												<option value="320">Betamotor</option>
+												<option value="274">Bloower</option>
+												<option value="253">Brava</option>
+												<option value="199">Can Am</option>
+												<option value="206">Cerro</option>
+												<option value="277">Corven</option>
+												<option value="90">Daelim</option>
+												<option value="382">Dayama</option>
+												<option value="91">Ducati</option>
+												<option value="308">Gamma</option>
+												<option value="94">Gilera</option>
+												<option value="95">Guzzi</option>
+												<option value="96">Harley Davidson</option>
+												<option value="36">Honda</option>
+												<option value="97">Husqvarna</option>
+												<option value="98">Jawa</option>
+												<option value="99">Jianshe</option>
+												<option value="196">KTM</option>
+												<option value="101">Kawasaki</option>
+												<option value="348">Keeway</option>
+												<option value="321">Keller</option>
+												<option value="102">Kymco</option>
+												<option value="59">Mini</option>
+												<option value="104">Mondial</option>
+												<option value="105">Motomel</option>
+												<option value="267">Panther</option>
+												<option value="65">Piaggio</option>
+												<option value="106">Piaggio Vespa</option>
+												<option value="272">Polaris</option>
+												<option value="108">Royal Enfield</option>
+												<option value="219">SYM</option>
+												<option value="109">Siambretta</option>
+												<option value="79">Suzuki</option>
+												<option value="110">Triumph</option>
+												<option value="111">Vespa</option>
+												<option value="291">X-Screams</option>
+												<option value="112">Yamaha</option>
+												<option value="113">Zanella</option>
+												<option value="127">Otra Marca</option>
 											</select></p>
-										
+											
+										<select class="form-control input-lg" id="marcaMoto" name="marcaMoto" style="display: none" onchange="habilitar(this.form)">
+									       <option value="0" selected="">Seleccionar</option>
+												<option value="10">BMW</option>
+												<option value="429">Bajaj</option>
+												<option value="177">Beta</option>
+												<option value="320">Betamotor</option>
+												<option value="274">Bloower</option>
+												<option value="253">Brava</option>
+												<option value="199">Can Am</option>
+												<option value="206">Cerro</option>
+												<option value="277">Corven</option>
+												<option value="90">Daelim</option>
+												<option value="382">Dayama</option>
+												<option value="91">Ducati</option>
+												<option value="308">Gamma</option>
+												<option value="94">Gilera</option>
+												<option value="95">Guzzi</option>
+												<option value="96">Harley Davidson</option>
+												<option value="36">Honda</option>
+												<option value="97">Husqvarna</option>
+												<option value="98">Jawa</option>
+												<option value="99">Jianshe</option>
+												<option value="196">KTM</option>
+												<option value="101">Kawasaki</option>
+												<option value="348">Keeway</option>
+												<option value="321">Keller</option>
+												<option value="102">Kymco</option>
+												<option value="59">Mini</option>
+												<option value="104">Mondial</option>
+												<option value="105">Motomel</option>
+												<option value="267">Panther</option>
+												<option value="65">Piaggio</option>
+												<option value="106">Piaggio Vespa</option>
+												<option value="272">Polaris</option>
+												<option value="108">Royal Enfield</option>
+												<option value="219">SYM</option>
+												<option value="109">Siambretta</option>
+												<option value="79">Suzuki</option>
+												<option value="110">Triumph</option>
+												<option value="111">Vespa</option>
+												<option value="291">X-Screams</option>
+												<option value="112">Yamaha</option>
+												<option value="113">Zanella</option>
+												<option value="127">Otra Marca</option>
+										</select></p>
+
+
 										<label for="modelo">Modelo:</label>
 										<p class="boton-margen-inferior">
-										<select class="form-control input-lg" id="sinSeleccion" name="sinSeleccion"> 
+										<select class="form-control input-lg" id="modeloP" name="modeloP"> 
 										<option value="0" selected="">Seleccionar</option>
 										</select></p>
+										
 										<select class="form-control input-lg" id="mAcura" name="mAcura" style="display: none"> 
 										<option value="0" selected="">Seleccionar</option>
 									   		    <option value="9">CL</option>
@@ -247,6 +361,23 @@ function visibility(select) {
 										<option value="0" selected="">Seleccionar</option>
 										<option value="484">3</option><option value="557">Serie 1</option><option value="558">Serie 3</option><option value="7968">Serie 3 Sedán</option><option value="7431">Serie 4 Coupé</option><option value="7969">Serie 4 Grand Coupé</option><option value="559">Serie 5</option><option value="7970">Serie 5 Sedán</option><option value="560">Serie 6</option><option value="7971">Serie 6  Grand Coupé</option><option value="561">Serie 7</option><option value="562">Serie 8</option><option value="563">Serie M</option><option value="564">X1</option><option value="565">X3</option><option value="566">X5</option><option value="567">X6</option><option value="570">Z3</option><option value="571">Z4</option><option value="546">Otro Modelo</option>
 										</select></p>
+										<select class="form-control input-lg" id="mCadillac" name="mCadillac" style="display: none"> 
+										<option value="0" selected="">Seleccionar</option>
+										<option value="652">Deville</option><option value="660">Otro Modelo</option></select>
+										</select></p>
+										
+									    
+									    
+									    
+									    
+									    
+									    
+									    <select class="form-control input-lg" id="motoBMW" name="motoBMW" style="display: none"> 
+										<option value="0" selected="">Seleccionar</option>
+										<option value="518">F 650 GS</option><option value="526">F800 R</option><option value="529">G 650 GS</option><option value="535">K 1200 LT</option><option value="537">K 1200 S</option><option value="549">R 1150 GS Adventure</option><option value="551">R 1200 GS</option><option value="556">S 1000 RR</option><option value="547">Otro Modelo</option>
+										</select></p>
+									    
+									    
 									    
 									    <label for="motivo">Motivo:</label>
 									    <p class="boton-margen-inferior">
@@ -288,15 +419,15 @@ function visibility(select) {
 										
 										<label for="agente">Agente Labrante: </label>
 										<p class="boton-margen-inferior">
-										<input class="form-control input-lg"  required name="agente" type="text"/></p>
+										<input class="form-control input-lg"  required name="agente" type="text" placeholder="Nro. de CUIT"/></p>
 										
 										<label for="infractor">Infractor/Contraventor:</label>
 										<p class="boton-margen-inferior">
-										<input class="form-control input-lg"  required name="infractor" type="text"/></p>
+										<input class="form-control input-lg"  required name="infractor" type="text" placeholder="Apellido y nombre"/></p>
 										
 										<label for="chofer">Chofer de grua:</label>
 										<p class="boton-margen-inferior">
-										<input class="form-control input-lg"  required name="chofer" type="text"/></p>
+										<input class="form-control input-lg"  required name="chofer" type="text" placeholder="Nro. de CUIT"/></p>
 										
 							</div>			
 						   </div>
