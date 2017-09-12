@@ -438,10 +438,14 @@
      								 <div class="panel-heading">Confirmar ingreso</div>
       								 <div class="panel-body">  
       								 
+      								 <fieldset>
       								 <label for="chofer">Levantado en:</label>
 										<p class="boton-margen-inferior">
-										<input class="form-control input-lg"  required name="levantadoEn" type="text"/></p>
-      								  
+										<input class="form-control input-lg"  required name="calle" type="text" placeholder="Calle" aria-labelledby='chofer'/></p>
+ 										<input class="form-control input-lg"  required name="numero" type="text" placeholder="Número" aria-labelledby='chofer'/></p>
+										<input class="form-control input-lg"  required name="entreCalles" type="text" placeholder="Entre calles" aria-labelledby='chofer'/></p>
+						      		</fieldset>
+						      
 						      
 						      		<label for="dniDoc">Copia Inventario: </label> 
 									<p class="boton-margen-inferior">

@@ -50,7 +50,9 @@ public class ControladorIngresarVehiculo extends HttpServlet {
 		
 		String modelo=request.getParameter("modelo");
 		String motivo=request.getParameter("motivo");
-		String levantadoEn=request.getParameter("levantadoEn");
+		String calle=request.getParameter("calle");
+		String numero=request.getParameter("numero");
+		String entreCalles=request.getParameter("entreCalles");
 		String actaC= request.getParameter("actac");
 		String acta= request.getParameter("acta");
 		String boleta= request.getParameter("boleta");
@@ -61,7 +63,7 @@ public class ControladorIngresarVehiculo extends HttpServlet {
 		
 		
 		
-			adm.agregar(new GregorianCalendar(), Funciones.traerHora2(new GregorianCalendar()), tipo.toUpperCase(), dominio.toUpperCase(), marca.toUpperCase(), modelo.toUpperCase(), motivo.toUpperCase(), levantadoEn.toUpperCase(), actaC.toUpperCase(), acta,boleta.toUpperCase(), agente.toUpperCase(), infractor.toUpperCase(), "PIZARRO", chofer.toUpperCase(), "SI", nChasisNmotor.toUpperCase());
+			adm.agregar(new GregorianCalendar(), Funciones.traerHora2(new GregorianCalendar()), tipo.toUpperCase(), dominio.toUpperCase(), marca.toUpperCase(), modelo.toUpperCase(), motivo.toUpperCase(), calle.toUpperCase(), numero.toUpperCase(), entreCalles.toUpperCase(), actaC.toUpperCase(), acta,boleta.toUpperCase(), agente.toUpperCase(), infractor.toUpperCase(), "PIZARRO", chofer.toUpperCase(), "SI", nChasisNmotor.toUpperCase());
 			request.setAttribute("contabilizacion", adm.Contablilizacion());
 			request.setAttribute("contabilizacionAutos", adm.ContablilizacionAutos());
 			request.setAttribute("contabilizacionMotos", adm.ContablilizacionMotos());

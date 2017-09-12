@@ -1,4 +1,4 @@
--- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
+﻿-- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
 --
 -- Host: localhost    Database: bdrio
 -- ------------------------------------------------------
@@ -31,7 +31,9 @@ CREATE TABLE `vehiculos` (
   `MARCA` varchar(10) DEFAULT NULL,
   `MODELO` varchar(11) DEFAULT NULL,
   `MOTIVO` varchar(15) DEFAULT NULL,
-  `LEVANTADO_EN` varchar(67) DEFAULT NULL,
+  `CALLE` varchar(67) DEFAULT NULL,
+  `NUMERO` varchar(67) DEFAULT NULL,
+  `ENTRECALLES` varchar(67) DEFAULT NULL,
   `ACTA_DE_COMPROBACION` varchar(17) DEFAULT NULL,
   `ACTA_CONTRAVENCIONAL` varchar(8) DEFAULT NULL,
   `BOLETA_DE_CITACION` varchar(10) DEFAULT NULL,

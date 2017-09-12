@@ -52,8 +52,9 @@ public class ControladorEditado extends HttpServlet {
 		r.setInfractor(request.getParameter("infractor"));
 		r.setAgenteDePlaya(request.getParameter("agentep"));
 		r.setGruaChofer(request.getParameter("chofer"));
-		r.setLevantadoEn(request.getParameter("levantadoEn"));
-		
+		r.setCalle(request.getParameter("calle"));
+		r.setNumero(request.getParameter("numero"));
+		r.setEntreCalles(request.getParameter("entreCalles"));
 		
 		try {
 			adm.modificar(r);

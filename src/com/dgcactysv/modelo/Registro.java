@@ -13,7 +13,9 @@ public class Registro {
 	private String marca;
 	private String modelo;
 	private String motivo;
-	private String levantadoEn;
+	private String calle;
+	private String numero;
+	private String entreCalles;
 	private String actaDeComprobacion;
 	private String actaContravencional;
 	private String boletaDeCitacion;
@@ -34,7 +36,7 @@ public class Registro {
 	public Registro(){};
 	
 	public Registro(String registro, GregorianCalendar fechaIng, String horaIng, String descripcion, String dominio,
-			String marca, String modelo, String motivo, String levantadoEn, String actaDeComprobacion,
+			String marca, String modelo, String motivo, String calle, String numero, String entreCalles, String actaDeComprobacion,
 			String actaContravencional, String boletaDeCitacion, String agenteLabrante, String infractor,
 			String agenteDePlaya, String gruaChofer, String inventario, String nChasisNmotor,
 			GregorianCalendar fechaEgr, String horaEgr, String personaQretiro, String entregaAgente, String notas,
@@ -47,7 +49,9 @@ public class Registro {
 		this.marca = marca;
 		this.modelo = modelo;
 		this.motivo = motivo;
-		this.levantadoEn = levantadoEn;
+		this.calle = calle;
+		this.numero = numero;
+		this.entreCalles = entreCalles;
 		this.actaDeComprobacion = actaDeComprobacion;
 		this.actaContravencional = actaContravencional;
 		this.boletaDeCitacion = boletaDeCitacion;
@@ -114,12 +118,25 @@ public class Registro {
 	public void setMotivo(String motivo) {
 		this.motivo = motivo;
 	}
-	public String getLevantadoEn() {
-		return levantadoEn;
+	public String getCalle() {
+		return calle;
 	}
-	public void setLevantadoEn(String levantadoEn) {
-		this.levantadoEn = levantadoEn;
+	public void setCalle(String calle) {
+		this.calle = calle;
 	}
+	public String getNumero() {
+		return numero;
+	}
+	public void setNumero(String numero) {
+		this.numero = numero;
+	}
+	public String getEntreCalles() {
+		return entreCalles;
+	}
+	public void setEntreCalles(String entreCalles) {
+		this.entreCalles = entreCalles;
+	}
+
 	public String getActaDeComprobacion() {
 		return actaDeComprobacion;
 	}
@@ -221,7 +238,7 @@ public class Registro {
 	public String toString() {
 		return "Registro [registro=" + registro + ", fechaIng=" +Funciones.traerFechaCorta4(fechaIng) + ", horaIng=" + horaIng + ", descripcion="
 				+ descripcion + ", dominio=" + dominio + ", marca=" + marca + ", modelo=" + modelo + ", motivo="
-				+ motivo + ", levantadoEn=" + levantadoEn + ", actaDeComprobacion=" + actaDeComprobacion
+				+ motivo + ", calle=" + calle + ", actaDeComprobacion=" + actaDeComprobacion
 				+ ", actaContravencional=" + actaContravencional + ", boletaDeCitacion=" + boletaDeCitacion
 				+ ", agenteLabrante=" + agenteLabrante + ", infractor=" + infractor + ", agenteDePlaya=" + agenteDePlaya
 				+ ", gruaChofer=" + gruaChofer + ", inventario=" + inventario + ", nChasisNmotor=" + nChasisNmotor
