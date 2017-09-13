@@ -64,23 +64,29 @@ function format ( d ) {
 		mes = "0" + mes
 		
 		
-    return  'Registro: '+d.registro+'<br>'
-    		+'Levantando en: '+d.levantadoEn+'<br>'
-    		+'Fecha de ingreso: '+dia+'/'+mes+'/'+anio+' Hora:'+d.horaIng+'<br>'
-    		+'Agente labrante: '+d.agenteLabrante+'<br>'
-    		+'Infractor/contraventor: '+d.infractor+'<br>'
-    		+'Agente de Playa: '+d.agenteDePlaya+'<br>'
-    		+'Chofer de grua: '+d.gruaChofer+'<br>'
-    		+'<br>'
+    return  '<table class="table table-striped table-bordered table-hover table-responsive" ><thead>'
+    		+'<tr><th>FECHA DE INGRESO</th><th>LEVANTADO EN</th><th>AGENTE LABRANTE</th><th>INFRACTOR/CONTRAVENTOR</th><th>AGENTE DE PLAYA</th><th>CHOFER DE GRUA</th></tr></thead>'
+    		+'<tbody><tr>' //<th>Registro</th><td>'+d.registro+'</td>'
+    		+'<td>'+dia+'/'+mes+'/'+anio+' Hora:'+d.horaIng+'</td>'
+    		+'<td>'+d.levantadoEn+'</td>'
+    		+'<td>'+d.agenteLabrante+'</td>'
+    		+'<td>'+d.infractor+'</td>'
+    		+'<td>'+d.agenteDePlaya+'</td>'
+    		+'<td>'+d.gruaChofer+'</td>'
+    		+'</tr></tbody></table>'
+    		+'<table><thead><tr><th>'
 		    +'<form action=editarRegistro>'
 			+'<input class="btn btn-primary btn-lg" type="submit" name="editar" value="Editar" />'
 			+'<input name="demo" style="display:none;" value="'+d.dominio+'" type="text">'
 			+'</form>'
-			+'</p>'
+			+'</th><th>&nbsp;&nbsp;&nbsp;&nbsp;</th><th>'
 		    +'<form action=egreso>'
 			+'<input class="btn btn-primary btn-lg" type="submit" name="egresar" value="Egresar" />'
 			+'<input name="demo" style="display:none;" value="'+d.dominio+'" type="text">'
-			+'</form>';
+			+'</form>'
+			+'</th><th>&nbsp;&nbsp;&nbsp;&nbsp;</th><th>'
+			+'<a class="btn btn-primary btn-lg" href="img/Inventario.pdf" target="_blank">Inventario</a>'
+			+'</th></thead></table>';
 }
 
 $(document).ready(function(){
