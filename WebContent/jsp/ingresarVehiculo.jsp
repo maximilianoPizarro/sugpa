@@ -60,9 +60,9 @@
 	//Script para los desplegables con dependencia
 		function habilitar(form) {
 			//ARRAYS
-			var mAcura = [{ text: 'CL', value: 'CL'}];
-			var mAlfaRomeo = [{ text: '145', value: '145'}, { text: '146', value: '146'}, { text: '147', value: '147'}, { text: '156', value: '156'}, { text: '159', value: '159'}, { text: 'Brera', value: 'Brera'}, { text: 'Giulietta', value: 'Giulietta'}, { text: 'Mito', value: 'Mito'}, { text: 'Spider', value: 'Spider'}];
-			var mAro = [{ text: '243', value: '243'}];
+			var mAcura = [{ text: 'CL', value: 'CL'}, { text: 'Otro Modelo', value: 'Otro'}];
+			var mAlfaRomeo = [{ text: '145', value: '145'}, { text: '146', value: '146'}, { text: '147', value: '147'}, { text: '156', value: '156'}, { text: '159', value: '159'}, { text: 'Brera', value: 'Brera'}, { text: 'Giulietta', value: 'Giulietta'}, { text: 'Mito', value: 'Mito'}, { text: 'Spider', value: 'Spider'}, { text: 'Otro Modelo', value: 'Otro'}];
+			var mAro = [{ text: '243', value: '243'}, { text: 'Otro Modelo', value: 'Otro'}];
 			var mAudi = [{ text: '3', value: '3'}, { text: 'Serie 1', value: 'Serie 1'}, { text: 'Serie 3', value: 'Serie 3'}, { text: 'Serie 3 Sedán', value: 'Serie 3 Sedan'}, { text: 'Serie 4 Coupé', value: 'Serie 4 Coupe'}, { text: 'Serie 4 Grand Coupé', value: 'Serie 4 Grand coupe'}, { text: 'Serie 5', value: 'Serie 5'}, { text: 'Serie 5 Sedán', value: 'Serie 5 Sedan'}, { text: 'Serie 6', value: 'Serie 6'}, { text: 'Serie 6 Grand Coupé', value: 'Serie 6 Grand Coupe'}, { text: 'Serie 7', value: 'Serie 7'}, {text: 'Serie 8', value: 'Serie 8'}, {text: 'Serie M', value: 'Serie M'}, {text: 'X1', value: 'X1'}, {text: 'X3', value: 'X3'}, {text: 'X5', value: 'X5'}, {text: 'X6', value: 'X6'}, {text: 'Z3', value: 'Z3'}, {text: 'Z4', value: 'Z4'}, {text: 'Otro Modelo', value: 'Otro'}];			
 			var mBMW = [{ text: '3', value: '3'}, { text: 'Serie 1', value: 'Serie 1'}, { text: 'Serie 3', value: 'Serie 3'},  { text: 'Serie 3 Sedán', value: 'Serie 3 Sedan'}, { text: 'Serie 4 Coupé', value: 'Serie 4 Coupe'}, { text: 'Serie 5', value: 'Serie 5'}, { text: 'Serie 5 Sedán', value: 'Serie 5 Sedan'}, { text: 'Serie 6', value: 'Serie 6'}, { text: 'Serie 6  Grand Coupé', value: 'Serie 6  Grand Coupe'}, { text: 'Serie 7', value: 'Serie 7'}, { text: 'Serie 8', value: 'Serie 8'}, { text: 'Serie M', value: 'Serie M'}, { text: 'X1', value: 'X1'}, { text: 'X3', value: 'X3'}, { text: 'X5', value: 'X5'}, { text: 'X6', value: 'X6'}, { text: 'Z3', value: 'Z3'}, { text: 'Z4', value: 'Z4'}, { text: 'Otro Modelo', value: 'Otro'}];
 			var mCadillac = [{ text: 'Deville', value: 'Deville'}, { text: 'Otro Modelo', value: 'Otro'}];
@@ -80,7 +80,7 @@
 			var mFordImportados = [{ text: 'Otro Modelo', value: 'Otro'}];
 			var mFoton = [{ text: 'Tunland', value: 'Tunland'}, { text: 'Otro Modelo', value: 'Otro'}];
 			var mHonda = [{ text: 'Accord', value: 'Accord'}, { text: 'CR-V', value: 'CR-V'}, { text: 'CRX', value: 'CRX'}, { text: 'City', value: 'City'}, { text: 'Civic', value: 'Civic'}, { text: 'Fit', value: 'Fit'}, { text: 'HR-V', value: 'HR-V'}, { text: 'Stream', value: 'Stream'}, { text: 'Otro Modelo', value: 'Otro'}];
-			var mHyundai = [{ text: 'Accent', value: 'Accent'}, { text: 'Atos', value: 'Atos'}, { text: 'Creta', value: 'Creta'}, { text: 'Elantra', value: 'Elantra'}, { text: 'Excel', value: 'Excel'}, { text: 'Galloper', value: 'Galloper'}, { text: 'Genesis', value: 'Genesis'}, { text: 'Genesis Coupé', value: 'Genesis Coupe'}, { text: 'Gran Santa Fe', value: 'Gran Santa Fe'}, { text: 'H-1', value: 'H-1'}, { text: 'H-100', value: 'H-100'}, { text: 'HD78', value: 'HD78'}, { text: 'I 10', value: 'I 10'}, { text: 'I-30', value: 'I-30'}, { text: 'Santa Fé', value: 'Santa Fe'}, { text: 'Santamo', value: 'Santamo'}, { text: 'Tucson', value: 'Tucson'}, { text: 'Veracruz', value: 'Veracruz'}, { text: 'Otro Modelo', value: 'Otro'}];
+			var mHyundai = [{ text: 'Accent', value: 'Accent'}, { text: 'Atos', value: 'Atos'}, { text: 'Creta', value: 'Creta'}, { text: 'Elantra', value: 'Elantra'}, { text: 'Excel', value: 'Excel'}, { text: 'Galloper', value: 'Galloper'}, { text: 'Genesis', value: 'Genesis'}, { text: 'Genesis Coupé', value: 'Genesis Coupe'}, { text: 'Gran Santa Fe', value: 'Gran Santa Fe'}, { text: 'H-1', value: 'H-1'}, { text: 'H-100', value: 'H-100'}, { text: 'HD78', value: 'HD78'}, { text: 'I 10', value: 'I 10'}, { text: 'I-30', value: 'I-30'}, { text: 'Santa Fé', value: 'Santa Fe'}, { text: 'Santamo', value: 'Santamo'}, { text: 'Tucson', value: 'Tucson'}, { text: 'Veracruz', value: 'Veracruz'},{ text: 'Otro Modelo', value: 'Otro'}];
 			var mIka = [{ text: 'Estanciera', value: 'Estanciera'}, { text: 'Jeep 4x2', value: 'Jeep 4x2'}, { text: 'Otro Modelo', value: 'Otro'}];		
 			var mIsuzu = [{ text: 'Pick up', value: 'Pick up'}, { text: 'Trooper', value: 'Trooper'}, { text: 'Otro Modelo', value: 'Otro'}];
 			var mIveco = [{ text: 'Otro Modelo', value: 'Otro'}];
@@ -118,7 +118,6 @@
 			
 			//var mCadillac = [{ text: '', value: ''}, { text: 'Otro Modelo', value: 'Otro'}];
 			
-
 			
 			//INICIO DE FUNCION
 			var valorParticular = document.getElementById('marcaParticular').value;
@@ -350,8 +349,252 @@
 				
 			}
 			
+// ******************************************************************************************************************************************
+// MOTOS		
+// ******************************************************************************************************************************************
 			
 			
+			
+			var mAprilia = [{ text: 'Otro Modelo', value: 'Otro'}];
+			var mBMW = [{ text: 'F 650 GS', value: 'F 650 GS'}, { text: 'F800 R', value: 'F800 R'}, { text: 'G 650 GS', value: 'G 650 GS'}, { text: 'K 1200 LT', value: 'K 1200 LT'}, { text: 'K 1200 S', value: 'K 1200 S'}, { text: 'R 1150 GS Adventure', value: 'R 1150 GS Adventure'}, { text: 'R 1200 GS', value: 'R 1200 GS'}, { text: 'S 1000 RR', value: 'S 1000 RR'}, { text: 'Otro Modelo', value: 'Otro'}];
+			var mBajaj = [{ text: 'Otro Modelo', value: 'Otro'}];
+			var mBeta = [{ text: 'BK', value: 'BK'}, { text: 'BK 150 OHC', value: 'BK 150 OHC'}, { text: 'BS 110-1', value: 'BS 110-1'}, { text: 'Chrono 250', value: 'Chrono 250'}, { text: 'RR 450 Enduro', value: 'RR 450 Enduro'}, { text: 'Scooby', value: 'Scooby'}, { text: 'Otro Modelo', value: 'Otro'}];
+			var mBetamotor = [{ text: 'Motard 2.0', value: 'Motard 2.0'}, { text: 'Otro Modelo', value: 'Otro'}];
+			var mBloower = [{ text: 'GENESIS 250', value: 'GENESIS 250'}, { text: 'Otro Modelo', value: 'Otro'}];
+			var mBrava = [{ text: 'Altino 150cc', value: 'Altino 150cc'}, { text: 'Nevada', value: 'Nevada'}, { text: 'Otro Modelo', value: 'Otro'}];
+			var mCanAm = [{ text: 'DS', value: 'DS'}, { text: 'Outlader', value: 'Outlader'}, { text: 'Renegade', value: 'Renegade'}, { text: 'Spyder', value: 'Spyder'}, { text: 'Otro Modelo', value: 'Otro'}];
+			var mCerro = [{ text: 'Otro Modelo', value: 'Otro'}];
+			var mCorven = [{ text: 'Hunter 150', value: 'Hunter 150'}, { text: 'Triax', value: 'Triax'}, { text: 'Otro Modelo', value: 'Otro'}];
+			var mDaelim = [{ text: 'Roadwin 250R F1', value: 'Roadwin 250R F1'}, { text: 'Otro Modelo', value: 'Otro'}];
+			var mDayama = [{ text: 'YFD 400', value: 'YFD 400'}, { text: 'Otro Modelo', value: 'Otro'}];
+			var mDucati = [{ text: 'Otro Modelo', value: 'Otro'}];
+			var mGamma = [{ text: 'Otro Modelo', value: 'Otro'}];
+			var mGilera = [{ text: 'QM 125', value: 'QM 125'}, { text: 'SMASH 110 CC', value: 'SMASH 110 CC'}, { text: 'VC 150cc', value: 'VC 150cc'}, { text: 'VC150 Strada', value: 'VC150 Strada'}, { text: 'Vc 70', value: 'Vc 70'}, { text: 'YL 150', value: 'YL 150'}, { text: 'YL 150 Chopera', value: 'YL 150 Chopera'}, { text: 'YL 200 Chopera', value: 'YL 200 Chopera'}, { text: 'Otro Modelo', value: 'Otro'}];
+			var mGuzzi = [{ text: 'Otro Modelo', value: 'Otro'}];
+			var mHarleyDavidson = [{ text: 'Dyna Fat Bob FXDF', value: 'Dyna Fat Bob FXDF'}, { text: 'Dyna Wide Glide', value: 'Dyna Wide Glide'}, { text: 'Sportster 883', value: 'Sportster 883'}, { text: 'Otro Modelo', value: 'Otro'}];
+			var mHonda = [{ text: '125 CG', value: '125 CG'}, { text: '650 Dominator', value: '650 Dominator'}, { text: '750 Africa Twin', value: '750 Africa Twin'}, { text: 'Biz C 125', value: 'Biz C 125'}, { text: 'CB 250', value: 'CB 250'}, { text: 'CBR 1000', value: 'CBR 1000'}, { text: 'CBR 1000 RR', value: 'CBR 1000 RR'}, { text: 'CBR 600', value: 'CBR 600'}, { text: 'CBR 600 FS Sports', value: 'CBR 600 FS Sports'}, { text: 'CBR 900', value: 'CBR 900'}, { text: 'CBX 250', value: 'CBX 250'}, { text: 'CBX 250 Twister', value: 'CBX 250 Twister'}, { text: 'CG 150', value: 'CG 150'}, { text: 'CG 150 ESD', value: 'CG 150 ESD'}, { text: 'CG ESD Titan 150', value: 'CG ESD Titan 150'}, { text: 'CR 125 R6', value: 'CR 125 R6'}, { text: 'CR 85 R6', value: 'CR 85 R6'}, { text: 'CRF 250', value: 'CRF 250'}, { text: 'Elite 125cc', value: 'Elite 125cc'}, { text: 'Falcon 400cc Spirit Adventure', value: 'Falcon 400cc Spirit Adventure'}, { text: 'GL 1800 GoldWing', value: 'GL 1800 GoldWing'}, { text: 'NT 700v Deauville', value: 'NT 700v Deauville'}, { text: 'NX 400 Falcon', value: 'NX 400 Falcon'}, { text: 'NX4', value: 'NX4'}, { text: 'TRX 250', value: 'TRX 250'}, { text: 'TRX 300', value: 'TRX 300'}, { text: 'TRX 350', value: 'TRX 350'}, { text: 'Transalp 600', value: 'Transalp 600'}, { text: 'VT 600 Shadow', value: 'VT 600 Shadow'}, { text: 'VT 750 Shadow', value: 'VT 750 Shadow'}, { text: 'XR 125 L', value: 'XR 125 L'}, { text: 'XR 250', value: 'XR 250'}, { text: 'XR 250 Tornado', value: 'XR 250 Tornado'}, { text: 'XR 400 R4', value: 'XR 400 R4'}, { text: 'Otro Modelo', value: 'Otro'}];
+			var mHusqvarna = [{ text: 'Otro Modelo', value: 'Otro'}];
+			var mJaguar = [{ text: 'ATV Deportivo', value: 'ATV Deportivo'}, { text: 'Otro Modelo', value: 'Otro'}];
+			var mJawa = [{ text: 'Otro Modelo', value: 'Otro'}];
+			var mJianshe = [{ text: 'JS-125 6B', value: 'JS-125 6B'}, { text: 'Otro Modelo', value: 'Otro'}];
+			var mKTM = [{ text: '450 EXC', value: '450 EXC'}, { text: '990 Adventure R', value: '990 Adventure R'}, { text: 'Otro Modelo', value: 'Otro'}];
+			var mKawasaki = [{ text: 'Bruteforce', value: 'Bruteforce'}, { text: 'ER-6N', value: 'ER-6N'}, { text: 'KFX 90', value: 'KFX 90'}, { text: 'KLR 650', value: 'KLR 650'}, { text: 'Ninja R', value: 'Ninja R'}, { text: 'Ninja ZX-10R', value: 'Ninja ZX-10R'}, { text: 'VN 1500 Classic', value: 'VN 1500 Classic'}, { text: 'Versys', value: 'Versys'}, { text: 'Vulcan VN 500', value: 'Vulcan VN 500'}, { text: 'Vulcan VN900 Classic', value: 'Vulcan VN900 Classic'}, { text: 'Otro Modelo', value: 'Otro'}];
+			var mKeeway = [{ text: 'RK V', value: 'RK V'}, { text: 'Otro Modelo', value: 'Otro'}];
+			var mKeller = [{ text: 'Jet-Max 250', value: 'Jet-Max 250'}, { text: 'K-65', value: 'K-65'}, { text: 'Quasar 260', value: 'Quasar 260'}, { text: 'Otro Modelo', value: 'Otro'}];
+			var mKymco = [{ text: 'Agility', value: 'Agility'}, { text: 'Like', value: 'Like'}, { text: 'MXU', value: 'MXU'}, { text: 'People', value: 'People'}, { text: 'People 250', value: 'People 250'}, { text: 'Venox 250', value: 'Venox 250'}, { text: 'Otro Modelo', value: 'Otro'}];
+			var mMondial = [{ text: 'DAX 70', value: 'DAX 70'}, { text: 'FD 200 S', value: 'FD 200 S'}, { text: 'HD 250', value: 'HD 250'}, { text: 'MD 150', value: 'MD 150'}, { text: 'MS 100 E', value: 'MS 100 E'}, { text: 'TD 150 L', value: 'TD 150 L'}, { text: 'Otro Modelo', value: 'Otro'}];	
+			var mMotomel = [{ text: 'CG 150', value: 'CG 150'}, { text: 'CG 150 S III (serie 3)', value: 'CG 150 S III (serie 3)'}, { text: 'CG 150 S II (serie 2)', value: 'CG 150 S II (serie 2)'}, { text: 'Hyosung GT 250', value: 'Hyosung GT 250'}, { text: 'Kraken', value: 'Kraken'}, { text: 'Lynk 110', value: 'Lynk 110'}, { text: 'Max 110', value: 'Max 110'}, { text: 'Meguelli', value: 'Meguelli'}, { text: 'SKUA', value: 'SKUA'}, { text: 'Strato', value: 'Strato'}, { text: 'Otro Modelo', value: 'Otro'}];
+			var mPanther = [{ text: '110R', value: '110R'}, { text: 'WR250', value: 'WR250'}, { text: 'Otro Modelo', value: 'Otro'}];	
+			var mPiaggio = [{ text: 'Vespa 200', value: 'Vespa 200'}, { text: 'Otro Modelo', value: 'Otro'}];	
+			var mPiaggioVespa = [{ text: 'Otro Modelo', value: 'Otro'}];	
+			var mPolaris = [{ text: 'Otro Modelo', value: 'Otro'}];
+			var mRoyalEnfield = [{ text: 'Bullet Classic', value: 'Bullet Classic'}, { text: 'Otro Modelo', value: 'Otro'}];	
+			var mSYM = [{ text: 'Quadlander', value: 'Quadlander'}, { text: 'Otro Modelo', value: 'Otro'}];
+			var mSiambretta = [{ text: 'FT 125', value: 'FT 125'}, { text: 'Otro Modelo', value: 'Otro'}];
+			var mSuzuki = [{ text: 'AN 125', value: 'AN 125'}, { text: 'AX 100', value: 'AX 100'}, { text: 'Burgman 650', value: 'Burgman 650'}, { text: 'DR 125', value: 'DR 125'}, { text: 'EN 125', value: 'EN 125'}, { text: 'GN 125', value: 'GN 125'}, { text: 'GSX-F 600', value: 'GSX-F 600'}, { text: 'V Strom 650 (DL 650)', value: 'V Strom 650 (DL 650)'}, { text: 'Otro Modelo', value: 'Otro'}];	
+			var mTriumph = [{ text: 'Thruxton Speed Master', value: 'Thruxton Speed Master'}, { text: 'Otro Modelo', value: 'Otro'}];	
+			var mVespa = [{ text: 'LX', value: 'LX'}, { text: 'Otro Modelo', value: 'Otro'}];	
+			var mXScreams = [{ text: 'Kaptor 150cc', value: 'Kaptor 150cc'}, { text: 'Otro Modelo', value: 'Otro'}];	
+			var mXingyue = [{ text: 'Otro Modelo', value: 'Otro'}];
+			var mYamaha = [{ text: 'AXIS 90 CC', value: 'AXIS 90 CC'}, { text: 'Banshee', value: 'Banshee'}, { text: 'Crypton', value: 'Crypton'}, { text: 'Drag Star 650', value: 'Drag Star 650'}, { text: 'FZ16', value: 'FZ16'}, { text: 'FZS 1000 Fazer', value: 'FZS 1000 Fazer'}, { text: 'Grizzly', value: 'Grizzly'}, { text: 'Raptor', value: 'Raptor'}, { text: 'Raptor 350 R', value: 'Raptor 350 R'}, { text: 'Raptor 700 R', value: 'Raptor 700 R'}, { text: 'XP 500 T-Max', value: 'XP 500 T-Max'}, { text: 'XT 225 E', value: 'XT 225 E'}, { text: 'XTZ', value: 'XTZ'}, { text: 'Xtz 250', value: 'Xtz 250'}, { text: 'YBR 125', value: 'YBR 125'}, { text: 'YBR 125 ED', value: 'YBR 125 ED'}, { text: 'YBR 125 K', value: 'YBR 125 K'}, { text: 'YBR 250', value: 'YBR 250'}, { text: 'YFM 700 Raptor', value: 'YFM 700 Raptor'}, { text: 'YFS 200', value: 'YFS 200'}, { text: 'YFZ 350R Raptor', value: 'YFZ 350R Raptor'}, { text: 'YFZ 450', value: 'YFZ 450'}, { text: 'YFZ R 450', value: 'YFZ R 450'}, { text: 'YZ 250', value: 'YZ 250'}, { text: 'YZF-R1', value: 'YZF-R1'}, { text: 'YZF-R6', value: 'YZF-R6'}, { text: 'Otro Modelo', value: 'Otro'}];
+			var mZanella = [{ text: 'FX 110', value: 'FX 110'}, { text: 'GForce 500 Series', value: 'GForce 500 Series'}, { text: 'Mod 150', value: 'Mod 150'}, { text: 'Patagonian Eagle 150', value: 'Patagonian Eagle 150'}, { text: 'Patagonian Eagle 250', value: 'Patagonian Eagle 250'}, { text: 'RX 150', value: 'RX 150'}, { text: 'RX 200', value: 'RX 200'}, { text: 'RX 200 R E', value: 'RX 200 R E'}, { text: 'RZ 25 Naked', value: 'RZ 25 Naked'}, { text: 'Raptor', value: 'Raptor'}, { text: 'Styler 125', value: 'Styler 125'}, { text: 'Styler 150 R16', value: 'Styler 150 R16'}, { text: 'Styler 50 Classic', value: 'Styler 50 Classic'}, { text: 'Styler Cruiser', value: 'Styler Cruiser'}, { text: 'Styler Exclusive Edizione Limitata', value: 'Styler Exclusive Edizione Limitata'}, { text: 'Styler Exclusive Z3', value: 'Styler Exclusive Z3'}, { text: 'Tricargo', value: 'Tricargo'}, { text: 'Tricargo Max', value: 'Tricargo Max'}, { text: 'ZB 110', value: 'ZB 110'}, { text: 'ZR 150', value: 'ZR 150'}, { text: 'ZR 250 LT', value: 'ZR 250 LT'}, { text: 'Otro Modelo', value: 'Otro'}];
+			var mOtraMarca = [{ text: 'Otro Modelo', value: 'Otro'}];	
+			
+			
+			
+				
+			//var mCadillac = [{ text: '', value: ''}, { text: 'Otro Modelo', value: 'Otro'}];	
+				
+				
+				
+				
+				
+			if(form.tipo[2].selected){
+				form.marcaSinSeleccion.style.display = "none";
+				form.marcaMoto.style.display = "inline";
+				$("#modeloP option:not(:first)").remove();
+				if(form.marcaMoto[1].selected){
+					$.each(mAprilia, function(i, el) 
+							{    $('#modeloP').append( new Option(el.text,el.value) );});
+				}
+				if(form.marcaMoto[2].selected){
+					$.each(mBMW, function(i, el) 
+							{    $('#modeloP').append( new Option(el.text,el.value) );});
+				}
+				if(form.marcaMoto[3].selected){
+					$.each(mBajaj, function(i, el) 
+							{    $('#modeloP').append( new Option(el.text,el.value) );});
+				}
+				if(form.marcaMoto[4].selected){
+					$.each(mBeta, function(i, el) 
+							{    $('#modeloP').append( new Option(el.text,el.value) );});
+				}
+				if(form.marcaMoto[5].selected){
+					$.each(mBetamotor, function(i, el) 
+							{    $('#modeloP').append( new Option(el.text,el.value) );});
+				}
+				if(form.marcaMoto[6].selected){
+					$.each(mBloower, function(i, el) 
+							{    $('#modeloP').append( new Option(el.text,el.value) );});
+				}
+				if(form.marcaMoto[7].selected){
+					$.each(mBrava, function(i, el) 
+							{    $('#modeloP').append( new Option(el.text,el.value) );});
+				}
+				if(form.marcaMoto[8].selected){
+					$.each(mCanAm, function(i, el) 
+							{    $('#modeloP').append( new Option(el.text,el.value) );});
+				}
+				if(form.marcaMoto[9].selected){
+					$.each(mCerro, function(i, el) 
+							{    $('#modeloP').append( new Option(el.text,el.value) );});
+				}
+				if(form.marcaMoto[10].selected){
+					$.each(mCorven, function(i, el) 
+							{    $('#modeloP').append( new Option(el.text,el.value) );});
+				}
+				if(form.marcaMoto[11].selected){
+					$.each(mDaelim, function(i, el) 
+							{    $('#modeloP').append( new Option(el.text,el.value) );});
+				}
+				if(form.marcaMoto[12].selected){
+					$.each(mDayama, function(i, el) 
+							{    $('#modeloP').append( new Option(el.text,el.value) );});
+				}
+				if(form.marcaMoto[13].selected){
+					$.each(mDucati, function(i, el) 
+							{    $('#modeloP').append( new Option(el.text,el.value) );});
+				}
+				if(form.marcaMoto[14].selected){
+					$.each(mGamma, function(i, el) 
+							{    $('#modeloP').append( new Option(el.text,el.value) );});
+				}
+				if(form.marcaMoto[15].selected){
+					$.each(mGilera, function(i, el) 
+							{    $('#modeloP').append( new Option(el.text,el.value) );});
+				}
+				if(form.marcaMoto[16].selected){
+					$.each(mGuzzi, function(i, el) 
+							{    $('#modeloP').append( new Option(el.text,el.value) );});
+				}
+				if(form.marcaMoto[17].selected){
+					$.each(mHarleyDavidson, function(i, el) 
+							{    $('#modeloP').append( new Option(el.text,el.value) );});
+				}
+				if(form.marcaMoto[18].selected){
+					$.each(mHonda, function(i, el) 
+							{    $('#modeloP').append( new Option(el.text,el.value) );});
+				}
+				if(form.marcaMoto[19].selected){
+					$.each(mHusqvarna, function(i, el) 
+							{    $('#modeloP').append( new Option(el.text,el.value) );});
+				}
+				if(form.marcaMoto[20].selected){
+					$.each(mJaguar, function(i, el) 
+							{    $('#modeloP').append( new Option(el.text,el.value) );});
+				}
+				if(form.marcaMoto[21].selected){
+					$.each(mJawa, function(i, el) 
+							{    $('#modeloP').append( new Option(el.text,el.value) );});
+				}
+				if(form.marcaMoto[22].selected){
+					$.each(mJianshe, function(i, el) 
+							{    $('#modeloP').append( new Option(el.text,el.value) );});
+				}
+				if(form.marcaMoto[23].selected){
+					$.each(mKTM, function(i, el) 
+							{    $('#modeloP').append( new Option(el.text,el.value) );});
+				}
+				if(form.marcaMoto[24].selected){
+					$.each(mKawasaki, function(i, el) 
+							{    $('#modeloP').append( new Option(el.text,el.value) );});
+				}
+				if(form.marcaMoto[25].selected){
+					$.each(mKeeway, function(i, el) 
+							{    $('#modeloP').append( new Option(el.text,el.value) );});
+				}
+				if(form.marcaMoto[26].selected){
+					$.each(mKeller, function(i, el) 
+							{    $('#modeloP').append( new Option(el.text,el.value) );});
+				}
+				if(form.marcaMoto[27].selected){
+					$.each(mKymco, function(i, el) 
+							{    $('#modeloP').append( new Option(el.text,el.value) );});
+				}
+				if(form.marcaMoto[28].selected){
+					$.each(mMondial, function(i, el) 
+							{    $('#modeloP').append( new Option(el.text,el.value) );});
+				}
+				if(form.marcaMoto[29].selected){
+					$.each(mMotomel, function(i, el) 
+							{    $('#modeloP').append( new Option(el.text,el.value) );});
+				}
+				if(form.marcaMoto[30].selected){
+					$.each(mPanther, function(i, el) 
+							{    $('#modeloP').append( new Option(el.text,el.value) );});
+				}
+				if(form.marcaMoto[31].selected){
+					$.each(mPiaggio, function(i, el) 
+							{    $('#modeloP').append( new Option(el.text,el.value) );});
+				}
+				if(form.marcaMoto[32].selected){
+					$.each(mPiaggioVespa, function(i, el) 
+							{    $('#modeloP').append( new Option(el.text,el.value) );});
+				}
+				if(form.marcaMoto[33].selected){
+					$.each(mPolaris, function(i, el) 
+							{    $('#modeloP').append( new Option(el.text,el.value) );});
+				}
+				if(form.marcaMoto[34].selected){
+					$.each(mRoyalEnfield, function(i, el) 
+							{    $('#modeloP').append( new Option(el.text,el.value) );});
+				}
+				if(form.marcaMoto[35].selected){
+					$.each(mSYM, function(i, el) 
+							{    $('#modeloP').append( new Option(el.text,el.value) );});
+				}
+				if(form.marcaMoto[36].selected){
+					$.each(mSiambretta, function(i, el) 
+							{    $('#modeloP').append( new Option(el.text,el.value) );});
+				}
+				if(form.marcaMoto[37].selected){
+					$.each(mSuzuki, function(i, el) 
+							{    $('#modeloP').append( new Option(el.text,el.value) );});
+				}
+				if(form.marcaMoto[38].selected){
+					$.each(mTriumph, function(i, el) 
+							{    $('#modeloP').append( new Option(el.text,el.value) );});
+				}
+				if(form.marcaMoto[39].selected){
+					$.each(mVespa, function(i, el) 
+							{    $('#modeloP').append( new Option(el.text,el.value) );});
+				}
+				if(form.marcaMoto[40].selected){
+					$.each(mXScreams, function(i, el) 
+							{    $('#modeloP').append( new Option(el.text,el.value) );});
+				}
+				if(form.marcaMoto[41].selected){
+					$.each(mXingyue, function(i, el) 
+							{    $('#modeloP').append( new Option(el.text,el.value) );});
+				}
+				if(form.marcaMoto[42].selected){
+					$.each(mYamaha, function(i, el) 
+							{    $('#modeloP').append( new Option(el.text,el.value) );});
+				}
+				if(form.marcaMoto[43].selected){
+					$.each(mZanella, function(i, el) 
+							{    $('#modeloP').append( new Option(el.text,el.value) );});
+				}
+				if(form.marcaMoto[44].selected){
+					$.each(mOtraMarca, function(i, el) 
+							{    $('#modeloP').append( new Option(el.text,el.value) );});
+				}
+			}	
+				
+				
+// ******************************************************************************************************************************************
+// ******************************************************************************************************************************************
+		
 			//$('#tipo').empty();
 			//$("#selectBox option[value='option1']").remove();
 			//this.$('select#tipo').append('<option value="prueba">proban2</option>');
@@ -498,6 +741,10 @@
 												<option value="54">Volvo</option>
 												<option value="55">Otra Marca</option>
 												
+												
+												
+												<option value="87">Aprilia</option>
+												<option value="10">BMW</option>
 												<option value="10">BMW</option>
 												<option value="429">Bajaj</option>
 												<option value="177">Beta</option>
@@ -542,8 +789,13 @@
 												<option value="127">Otra Marca</option>
 											</select></p>
 											
+											
+											
+											
+											
 										<select class="form-control input-lg" id="marcaMoto" name="marcaMoto" style="display: none" onchange="habilitar(this.form)">
 									       <option value="0" selected="">Seleccionar</option>
+												<option value="87">Aprilia</option>
 												<option value="10">BMW</option>
 												<option value="429">Bajaj</option>
 												<option value="177">Beta</option>
@@ -617,19 +869,15 @@
 										</select></p>
 										<select class="form-control input-lg" id="mCadillac" name="mCadillac" style="display: none"> 
 										<option value="0" selected="">Seleccionar</option>
-										<option value="652">Deville</option><option value="660">Otro Modelo</option></select>
+										<option value="652">Deville</option><option value="660">Otro Modelo</option>
 										</select></p>
-										
-									    
-									    
-									    
-									    
-									    
+
 									    
 									    <select class="form-control input-lg" id="motoBMW" name="motoBMW" style="display: none"> 
 										<option value="0" selected="">Seleccionar</option>
 										<option value="518">F 650 GS</option><option value="526">F800 R</option><option value="529">G 650 GS</option><option value="535">K 1200 LT</option><option value="537">K 1200 S</option><option value="549">R 1150 GS Adventure</option><option value="551">R 1200 GS</option><option value="556">S 1000 RR</option><option value="547">Otro Modelo</option>
 										</select></p>
+									    
 									    
 									    
 									    
@@ -654,6 +902,7 @@
 							</div>		
 						    </div>
 						    </div>
+						    
 						    <div class="col-lg-4">
 						          <div class="panel panel-primary">
      								 <div class="panel-heading">Datos de la infraccion</div>
@@ -673,7 +922,7 @@
 										
 										<label for="agente">Agente Labrante: </label>
 										<p class="boton-margen-inferior">
-										<input class="form-control input-lg"  required name="agente" type="text" placeholder="Nro. de CUIT"/></p>
+										<input class="form-control input-lg"  required name="agente" type="text" placeholder="Nro. DNI"/></p>
 										
 										<label for="infractor">Infractor/Contraventor:</label>
 										<p class="boton-margen-inferior">
@@ -681,7 +930,7 @@
 										
 										<label for="chofer">Chofer de grua:</label>
 										<p class="boton-margen-inferior">
-										<input class="form-control input-lg"  required name="chofer" type="text" placeholder="Nro. de CUIT"/></p>
+										<input class="form-control input-lg"  required name="chofer" type="text" placeholder="Nro. de DNI"/></p>
 										
 							</div>			
 						   </div>
