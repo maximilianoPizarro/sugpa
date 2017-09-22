@@ -64,17 +64,17 @@ function format ( d ) {
 		mes = "0" + mes
 		
 		
-    return  '<table class="table table-striped table-bordered table-hover table-responsive" ><thead>'
-    		+'<tr><th>FECHA DE INGRESO</th><th>LEVANTADO EN</th><th>AGENTE LABRANTE</th><th>INFRACTOR/CONTRAVENTOR</th><th>AGENTE DE PLAYA</th><th>CHOFER DE GRUA</th></tr></thead>'
-    		+'<tbody><tr>' //<th>Registro</th><td>'+d.registro+'</td>'
+    return  '<table RULES="none" style="padding-left:50px;"><thead>'
+    		+'<tr><th></th><th>Fecha de ingreso:</th><th>Agente Labrante:</th><th>Infractor/Contraventor:</th><th>Agente de playa:</th><th>Chofer de Grua:</th><th>Levantado en:</th></tr></thead>'
+    		+'<tbody><tr><td></td>' //<th>Registro</th><td>'+d.registro+'</td>'
     		+'<td>'+dia+'/'+mes+'/'+anio+' Hora:'+d.horaIng+'</td>'
-    		+'<td>'+d.levantadoEn+'</td>'
     		+'<td>'+d.agenteLabrante+'</td>'
     		+'<td>'+d.infractor+'</td>'
     		+'<td>'+d.agenteDePlaya+'</td>'
     		+'<td>'+d.gruaChofer+'</td>'
+    		+'<td>'+d.levantadoEn+'</td>'
     		+'</tr></tbody></table>'
-    		+'<table><thead><tr><th>'
+    		+'<table RULES="none" ><thead><tr><th>'
 		    +'<form action=editarRegistro>'
 			+'<input class="btn btn-primary btn-lg" type="submit" name="editar" value="Editar" />'
 			+'<input name="demo" style="display:none;" value="'+d.dominio+'" type="text">'
@@ -167,7 +167,18 @@ $(document).ready(function(){
 
 /*Calendario*/
 
-
+/*exportar tabla a excel*/
+var tableToExcel = (function() {
+	  var uri = 'data:application/vnd.ms-excel;base64,'
+	    , template = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>{worksheet}</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head><body><table>{table}</table></body></html>'
+	    , base64 = function(s) { return window.btoa(unescape(encodeURIComponent(s))) }
+	    , format = function(s, c) { return s.replace(/{(\w+)}/g, function(m, p) { return c[p]; }) }
+	  return function(table, name) {
+	    if (!table.nodeType) table = document.getElementById(table)
+	    var ctx = {worksheet: name || 'Worksheet', table: table.innerHTML}
+	    window.location.href = uri + base64(format(template, ctx))
+	  }
+	})()
 
 /*mensajes confirma*/
 function mensajeConfirma() {

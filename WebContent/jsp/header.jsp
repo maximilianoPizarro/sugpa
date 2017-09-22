@@ -26,11 +26,9 @@
 <!-- jQuery library -->
 <script src="js/jquery.min.js"></script>
 <script src="js/jquery.dataTables.min.js"></script>
-<script src="css/jquery.dataTables.min.css"></script>
 
 <!-- jQuery autocomplete -->
 
-<link href="css/jquery-ui.css" rel="stylesheet" type="text/css">
 
 
 <script src="js/bootstrap.min.js"></script>

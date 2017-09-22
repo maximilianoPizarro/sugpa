@@ -14,6 +14,7 @@
 <title>Playas de Acarreo DGCACTYSV:</title>
 </head>
 
+
 <body>
  
 
@@ -49,8 +50,7 @@
     <div class="panel panel-primary">
       <div class="panel-heading">Lista de vehiculos en playa</div>
       <div class="panel-body">
-			
-			  <table class="table table-striped table-bordered table-hover table-responsive" id="mydata">    
+			  <table class="table table-striped" id="mydata">    
 			    <thead>
 			      <tr>
 			      	 <th></th>
@@ -70,10 +70,14 @@
   
 		 <div class="col-md-8 text-center">
 		<p class="boton-margen-inferior">
-		    <a onclick="printPage()" class="btn btn-primary btn-lg">
+		    <a onclick="printPage()" class="btn btn-primary btn-l">
 		      <span class="glyphicon glyphicon-print"></span> Imprimir Listado 
+		    </a>&nbsp;&nbsp;&nbsp;&nbsp;
+		    <a onclick="tableToExcel('mydata', 'Listado de vehiculos')" class="btn btn-primary btn-l">
+		      <span class="glyphicon glyphicon-export"></span> Exportar a Excel 
 		    </a>
 		</p>
+		
 		</div>
 		</div>
 	</div>
