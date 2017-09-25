@@ -63,6 +63,11 @@
 					 <th>ACTA C</th>
 					 <th>ACTA Z</th>
 					 <th>ACTA CONTRAVENCIONAL</th>
+					 <th>AGENTE DE PLAYA</th>
+					 <th>AGENTE LABRANTE</th>
+					 <th>INFRACTOR/CONTRAVENTOR</th>
+					 <th>CHOFER DE GRUA</th>
+					 <th>LEVANTADO EN</th>
 			      </tr>
 			    </thead>
 			

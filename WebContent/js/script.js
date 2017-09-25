@@ -64,16 +64,8 @@ function format ( d ) {
 		mes = "0" + mes
 		
 		
-    return  '<table RULES="none" style="padding-left:50px;"><thead>'
-    		+'<tr><th></th><th>Fecha de ingreso:</th><th>Agente Labrante:</th><th>Infractor/Contraventor:</th><th>Agente de playa:</th><th>Chofer de Grua:</th><th>Levantado en:</th></tr></thead>'
-    		+'<tbody><tr><td></td>' //<th>Registro</th><td>'+d.registro+'</td>'
-    		+'<td>'+dia+'/'+mes+'/'+anio+' Hora:'+d.horaIng+'</td>'
-    		+'<td>'+d.agenteLabrante+'</td>'
-    		+'<td>'+d.infractor+'</td>'
-    		+'<td>'+d.agenteDePlaya+'</td>'
-    		+'<td>'+d.gruaChofer+'</td>'
-    		+'<td>'+d.levantadoEn+'</td>'
-    		+'</tr></tbody></table>'
+    return  'Fecha de ingreso: '+dia+'/'+mes+'/'+anio+' Hora:'+d.horaIng+'<br>'
+    		+'<br>'
     		+'<table RULES="none" ><thead><tr><th>'
 		    +'<form action=editarRegistro>'
 			+'<input class="btn btn-primary btn-lg" type="submit" name="editar" value="Editar" />'
@@ -89,16 +81,31 @@ function format ( d ) {
 			+'</th></thead></table>';
 }
 
+function formatoFecha(f){
+	var dia = f.dayOfMonth;
+	var mes = f.month;
+	var anio = f.year;
+	
+	if (dia<=9) 
+		dia = "0" + dia 
+	if (mes<=9) 
+		mes = "0" + mes
+	return	dia+'/'+mes+'/'+anio;
+	
+}
+
 $(document).ready(function(){
 
 //tabla dinamica con mostrar detalle	  
 	 var table = $('#mydata').DataTable({
 	        "processing": true,
+	        "scrollY": 300,
+	        "scrollX": true,
 		    "sAjaxSource":"jsp/data.jsp",
 	        "columns": [{
 			                "class":          "details-control",
 			                "orderable":      false,
-			                "data":           null,
+			                "data":           null,			           
 			                "defaultContent": ""
 			            },
 	                    { "data": "registro" },
@@ -109,7 +116,12 @@ $(document).ready(function(){
 	                    { "data": "descripcion" },
 	                    { "data": "actaDeComprobacion" },
 	                    { "data": "boletaDeCitacion" },	                    
-	                    { "data": "actaContravencional" }
+	                    { "data": "actaContravencional" },	                  
+	                    { "data": "agenteDePlaya" },
+	                    { "data": "agenteLabrante" },
+	                    { "data": "infractor" },
+	                    { "data": "gruaChofer" },
+	                    { "data": "levantadoEn" }
 	                    ],
 	      "order": [[1, 'dsc']]
 		  }
@@ -147,7 +159,8 @@ $(document).ready(function(){
 	        $.each( detailRows, function ( i, id ) {
 	            $('#'+id+' td.details-control').trigger( 'click' );
 	        } );
-	    } );	    
+	    } );
+	    
 	 
 } );
 
