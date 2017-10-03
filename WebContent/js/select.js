@@ -62,32 +62,46 @@
 		
 		//INICIO DE FUNCION
 		var valorParticular = document.getElementById('marcaParticular').value;
-		
-		//Inicializando TODO por defecto
+		//Inicializando T0DO por defecto
 		document.getElementById('linea').style.display="none";
-		document.getElementById('empresa').style.display="none";
+		document.getElementById('interno').style.display="none"; 
+		document.getElementById('iInterno').value = "SIN INTERNO"; //Seteando valor del interno por defecto
+		document.getElementById('iInterno').style.display="none";
 		document.getElementById('marca').style.display="inline";
 		document.getElementById('modelo').style.display="inline";
-		form.lineaColectivo.style.display = "none";
-		form.empresaColectivo.style.display = "none";
+		form.lineaEmpresa.style.display = "none";
 		form.marcaParticular.style.display = "none";
 		form.marcaMoto.style.display = "none";
+		form.modeloSinSeleccion.style.display = "none";
 		$("#modeloP option:not(:first)").remove();
 		$("#modeloM option:not(:first)").remove();
-		$("#empresaColectivo option:not(:first)").remove();
+		document.getElementById('iTipo').style.display="none";
+		document.getElementById('iTipo').value = "";
+		document.getElementById('iMarca').style.display="none";
+		document.getElementById('iMarca').value = "";
+		document.getElementById('iModelo').style.display="none";
+		document.getElementById('iModelo').value = "";
 		////////////////////////////////////////////
+		if(form.tipo[0].selected){
+			//Mostrando las marcas sin seleccion
+			form.marcaSinSeleccion.style.display = "inline";
+			form.modeloSinSeleccion.style.display="inline";
+			//Limpiando los valores de las demas selecciones
+			$('#marcaParticular option:eq(0)').prop('selected', true);
+			$('#marcaMoto option:eq(0)').prop('selected', true);
+			$('#lineaEmpresa option:eq(0)').prop('selected', true);
+		}
 		
 		if(form.tipo[1].selected){
-			//Ocultando y mostrando los LABEL correspondientes a particular
+			//Ocultando y mostrando los LABEL y SELECT correspondientes a particular
 			form.marcaSinSeleccion.style.display = "none";
 			form.marcaMoto.style.display = "none";
 			form.modeloM.style.display = "none";
 			form.marcaParticular.style.display = "inline";
 			form.modeloP.style.display = "inline";
-			//Limpiando los SELECT correspondientes a todos los modelos
 			//Cambiando el valor de las marcas de otras categorías a 0 ("Seleccionar")
 			$('#marcaMoto option:eq(0)').prop('selected', true);
-			$('#lineaColectivo option:eq(0)').prop('selected', true);
+			$('#lineaEmpresa option:eq(0)').prop('selected', true);
 			/////////////////////////////////////////////////////////////////////////
 			if(form.marcaParticular[1].selected){
 				$.each(mAcura, function(i, el) 
@@ -564,706 +578,183 @@
 // COLECTIVOS		
 // ******************************************************************************************************************************************
 			
-			var lineaColectivo1 = [{ text: 'Transportes San Cayetano S.A.C.', value: 'Transportes San Cayetano S.A.C.'}];
-			var lineaColectivo2 = [{ text: 'Transportes Veintidos de Septiembre S.A.C.', value: 'Transportes Veintidos de Septiembre S.A.C.'}];
-			var lineaColectivo4 = [{ text: 'Transportes Sol de Mayo C.I.S.A.', value: 'Transportes Sol de Mayo C.I.S.A.'}];
-			var lineaColectivo5 = [{ text: 'Transportes Rio Grande S.A.C.I.F.', value: 'Transportes Rio Grande S.A.C.I.F.'}];
-			var lineaColectivo6 = [{ text: 'NUDO S.A.', value: 'NUDO S.A.'}];
-			var lineaColectivo7 = [{ text: 'Transportes Automotores 12 de Octubre S.A.C.', value: 'Transportes Automotores 12 de Octubre S.A.C.'}];
-			var lineaColectivo8 = [{ text: 'Transportes Rio Grande S.A.C.I.F.', value: 'Transportes Rio Grande S.A.C.I.F.'}];
-			var lineaColectivo9 = [{ text: 'General Tomas Guido S.A.', value: 'General Tomas Guido S.A.'}];
-			var lineaColectivo10 = [{ text: 'Linea 10 S.A.', value: 'Linea 10 S.A.'}];
-			var lineaColectivo12 = [{ text: 'Transportes Automotores Callao S.A.', value: 'Transportes Automotores Callao S.A.'}];
-			var lineaColectivo15 = [{ text: 'Transportes Sur-Nor C.I.S.A.', value: 'Transportes Sur-Nor C.I.S.A.'}];
-			var lineaColectivo17 = [{ text: 'Linea 17 S.A.', value: 'Linea 17 S.A.'}];
-			var lineaColectivo19 = [{ text: 'Microomnibus Saavedra S.A. - Grupo ERSA', value: 'Microomnibus Saavedra S.A. - Grupo ERSA'}];
-			var lineaColectivo20 = [{ text: 'Transporte Larrazabal C.I.S.A.', value: 'Transporte Larrazabal C.I.S.A.'}];
-			var lineaColectivo21 = [{ text: 'Empresa Teniente General Roca S.A.', value: 'Empresa Teniente General Roca S.A.'}];
-			var lineaColectivo22 = [{ text: 'Linea 22 S.A.', value: 'Linea 22 S.A.'}];
-			var lineaColectivo23 = [{ text: 'Transportes Rio Grande S.A.C.I.F.', value: 'Transportes Rio Grande S.A.C.I.F.'}];
-			var lineaColectivo24 = [{ text: 'NUDO S.A.', value: 'NUDO S.A.'}];
-			var lineaColectivo25 = [{ text: 'General Tomas Guido S.A.', value: 'General Tomas Guido S.A.'}];
-			var lineaColectivo26 = [{ text: '17 de Agosto S.A.', value: '17 de Agosto S.A.'}];
-			var lineaColectivo28 = [{ text: 'DOTA S.A.', value: 'DOTA S.A.'}];
-			var lineaColectivo29 = [{ text: 'Empresa de Transporte Pedro de Mendoza', value: 'Empresa de Transporte Pedro de Mendoza'}];
-			var lineaColectivo31 = [{ text: 'ROCARAZA S.A.', value: 'ROCARAZA S.A.'}];
-			var lineaColectivo32 = [{ text: 'El Puente S.A.T.', value: 'El Puente S.A.T.'}];
-			var lineaColectivo33 = [{ text: 'Transportes Almirante Brown S.A.', value: 'Transportes Almirante Brown S.A.'}];
-			var lineaColectivo34 = [{ text: 'Juan B. Justo S.A.T.C.I.', value: 'Juan B. Justo S.A.T.C.I.'}];
-			var lineaColectivo36 = [{ text: 'Grupo Plaza - Transporte Automotor Plaza S.A.C.I.', value: 'Grupo Plaza - Transporte Automotor Plaza S.A.C.I.'}];
-			var lineaColectivo37 = [{ text: '4 de Septiembre S.A.T.C.P', value: '4 de Septiembre S.A.T.C.P'}];
-			var lineaColectivo39 = [{ text: 'Transportes Santa Fe S.A.C.I.', value: 'Transportes Santa Fe S.A.C.I.'}];
-			var lineaColectivo41 = [{ text: 'Azul S.A.T.A.', value: 'Azul S.A.T.A.'}];
-			var lineaColectivo42 = [{ text: 'Transportes Colegiales S.A.C.I.', value: 'Transportes Colegiales S.A.C.I.'}];
-			var lineaColectivo44 = [{ text: 'DOTA S.A.', value: 'DOTA S.A.'}];
-			var lineaColectivo45 = [{ text: 'Micro omnibus Cuarenta y Cinco S.A.C.I.F', value: 'Micro omnibus Cuarenta y Cinco S.A.C.I.F'}];
-			var lineaColectivo46 = [{ text: 'Union Transportista de Empresas S.A. - UTE S.A.', value: 'Union Transportista de Empresas S.A. - UTE S.A.'}];
-			var lineaColectivo47 = [{ text: 'Linea de Microomnibus 47 S.A.', value: 'Linea de Microomnibus 47 S.A.'}];
-			var lineaColectivo49 = [{ text: 'Buenos Aires Bus S.A.', value: 'Buenos Aires Bus S.A.'}];
-			var lineaColectivo50 = [{ text: 'NUDO S.A.', value: 'NUDO S.A.'}];
-			var lineaColectivo51 = [{ text: 'Empresa San Vicente S.A.T.', value: 'Empresa San Vicente S.A.T.'}];
-			var lineaColectivo53 = [{ text: 'Linea 213 S.A. de Transportes', value: 'Linea 213 S.A. de Transportes'}];
-			var lineaColectivo55 = [{ text: 'Almafuerte S.A.T.A.C.I.', value: 'Almafuerte S.A.T.A.C.I.'}];
-			var lineaColectivo56 = [{ text: 'Transportes Lope de Vega S.A.C.I.', value: 'Transportes Lope de Vega S.A.C.I.'}];
-			var lineaColectivo57 = [{ text: 'Transportes Atlantica S.A. Comercial', value: 'Transportes Atlantica S.A. Comercial'}];
-			var lineaColectivo59 = [{ text: 'Microomnibus Ciudad de Buenos Aires S.A.T.C.I.', value: 'Microomnibus Ciudad de Buenos Aires S.A.T.C.I.'}];
-			var lineaColectivo60 = [{ text: 'Micro omnibus Norte S.A. (MONSA)', value: 'Micro omnibus Norte S.A. (MONSA)'}];
-			var lineaColectivo61 = [{ text: 'Grupo Plaza - Transporte Automotor Plaza S.A.C.I.', value: 'Grupo Plaza - Transporte Automotor Plaza S.A.C.I.'}];
-			var lineaColectivo62 = [{ text: 'Grupo Plaza - Transporte Automotor Plaza S.A.C.I.', value: 'Grupo Plaza - Transporte Automotor Plaza S.A.C.I.'}];
-			var lineaColectivo63 = [{ text: 'Bernardino Rivadavia S.A.T.A.', value: 'Bernardino Rivadavia S.A.T.A.'}];
-			var lineaColectivo64 = [{ text: 'Vuelta de Rocha S.A.T.A.C.I.', value: 'Vuelta de Rocha S.A.T.A.C.I.'}];
-			var lineaColectivo65 = [{ text: 'La Nueva Metropol S.A.T.A.C.I.', value: 'La Nueva Metropol S.A.T.A.C.I.'}];
-			var lineaColectivo67 = [{ text: 'Transportes del Tejar S.A.', value: 'Transportes del Tejar S.A.'}];
-			var lineaColectivo68 = [{ text: 'Transportes Sesenta y Ocho S.R.L.', value: 'Transportes Sesenta y Ocho S.R.L.'}];
-			var lineaColectivo70 = [{ text: 'Transportes 270 S.A.', value: 'Transportes 270 S.A.'}];
-			var lineaColectivo71 = [{ text: 'Lina 71 S.A.', value: 'Lina 71 S.A.'}];
-			var lineaColectivo74 = [{ text: 'Empresa San Vicente S.A.T.', value: 'Empresa San Vicente S.A.T.'}];
-			var lineaColectivo75 = [{ text: 'El Puente S.A.T.', value: 'El Puente S.A.T.'}];
-			var lineaColectivo76 = [{ text: 'Transportes Lope de Vega S.A.C.I.', value: 'Transportes Lope de Vega S.A.C.I.'}];
-			var lineaColectivo78 = [{ text: 'Los Constituyentes S.A.T.', value: 'Los Constituyentes S.A.T.'}];
-			var lineaColectivo79 = [{ text: 'Empresa San Vicente S.A.T.', value: 'Empresa San Vicente S.A.T.'}];
-			var lineaColectivo80 = [{ text: 'Transportes Nueva Chicago C.I.S.A.', value: 'Transportes Nueva Chicago C.I.S.A.'}];
-			var lineaColectivo84 = [{ text: 'General Tomas Guido S.A.', value: 'General Tomas Guido S.A.'}];
-			var lineaColectivo85 = [{ text: 'Sociedad Anonima Expreso Sudoeste', value: 'Sociedad Anonima Expreso Sudoeste'}];
-			var lineaColectivo86 = [{ text: 'DUVI S.A.', value: 'DUVI S.A.'}];
-			var lineaColectivo87 = [{ text: 'Los Constituyentes S.A.T.', value: 'Los Constituyentes S.A.T.'}];
-			var lineaColectivo88 = [{ text: 'Linea Expreso Liniers S.A.I.C.', value: 'Linea Expreso Liniers S.A.I.C.'}];
-			var lineaColectivo90 = [{ text: 'Micro omnibus Doscientos Ocho S.A. de Transporte Automotor (MODO)', value: 'Micro omnibus Doscientos Ocho S.A. de Transporte Automotor (MODO)'}];
-			var lineaColectivo91 = [{ text: 'Transportes Lope de Vega S.A.C.I.', value: 'Transportes Lope de Vega S.A.C.I.'}];
-			var lineaColectivo92 = [{ text: 'Empresa de Transportes Microomnibus Saenz Pe\u00F1a S.R.L.', value: 'Empresa de Transportes Microomnibus Saenz Peña S.R.L.'}];
-			var lineaColectivo93 = [{ text: 'Transportes 1º de Septiembre S.A.', value: 'Transportes 1º de Septiembre S.A.'}];
-			var lineaColectivo95 = [{ text: 'Empresa Antantida Argentina S.A.T.', value: 'Empresa Antantida Argentina S.A.T.'}];
-			var lineaColectivo96 = [{ text: 'Transporte Ideal San Justo S.A.', value: 'Transporte Ideal San Justo S.A.'}];
-			var lineaColectivo97 = [{ text: 'Bus del Oeste S.A.', value: 'Bus del Oeste S.A.'}];
-			var lineaColectivo98 = [{ text: 'Expreso Quilmes S.A.', value: 'Expreso Quilmes S.A.'}];
-			var lineaColectivo99 = [{ text: 'Transportes 27 de Junio S.A.C.I.F.', value: 'Transportes 27 de Junio S.A.C.I.F.'}];
-			var lineaColectivo100 = [{ text: 'Transportes Automotores Riachuelo S.A. (TARSA)', value: 'Transportes Automotores Riachuelo S.A. (TARSA)'}];
-			var lineaColectivo101 = [{ text: 'DOTA S.A.', value: 'DOTA S.A.'}];
-			var lineaColectivo102 = [{ text: 'Transportes Sargento Cabral Sociedad Colectiva', value: 'Transportes Sargento Cabral Sociedad Colectiva'}];
-			var lineaColectivo103 = [{ text: 'Transportes Quirno Costa S.A.C.I.', value: 'Transportes Quirno Costa S.A.C.I.'}];
-			var lineaColectivo104 = [{ text: 'Grupo Plaza - Transporte Automotor Plaza S.A.C.I.', value: 'Grupo Plaza - Transporte Automotor Plaza S.A.C.I.'}];
-			var lineaColectivo105 = [{ text: 'Empresa de Transportes America S.A.C.I.', value: 'Empresa de Transportes America S.A.C.I.'}];
-			var lineaColectivo106 = [{ text: 'Colectiveros Unidos S.A.I.F. (CUSA)', value: 'Colectiveros Unidos S.A.I.F. (CUSA)'}];
-			var lineaColectivo107 = [{ text: 'NUDO S.A.', value: 'NUDO S.A.'}];
-			var lineaColectivo108 = [{ text: 'Empresa Teniente General Roca S.A.', value: 'Empresa Teniente General Roca S.A.'}];
-			var lineaColectivo109 = [{ text: 'Transportes 9 de Julio S.A.C.', value: 'Transportes 9 de Julio S.A.C.'}];
-			var lineaColectivo110 = [{ text: 'General Pueyrredon S.A.T.C.I', value: 'General Pueyrredon S.A.T.C.I'}];
-			var lineaColectivo111 = [{ text: 'Los Constituyentes S.A.T.', value: 'Los Constituyentes S.A.T.'}];
-			var lineaColectivo112 = [{ text: 'Expreso Lomas S.A.', value: 'Expreso Lomas S.A.'}];
-			var lineaColectivo113 = [{ text: 'Bernardino Rivadavia S.A.T.A.', value: 'Bernardino Rivadavia S.A.T.A.'}];
-			var lineaColectivo114 = [{ text: 'Grupo Plaza - Transporte Automotor Plaza S.A.C.I.', value: 'Grupo Plaza - Transporte Automotor Plaza S.A.C.I.'}];
-			var lineaColectivo115 = [{ text: 'Transportes Automotores Riachuelo S.A. (TARSA)', value: 'Transportes Automotores Riachuelo S.A. (TARSA)'}];
-			var lineaColectivo117 = [{ text: 'Transporte Larrazabal C.I.S.A.', value: 'Transporte Larrazabal C.I.S.A.'}];
-			var lineaColectivo118 = [{ text: 'Microomnibus Barrancas de Belgrano S.A.', value: 'Microomnibus Barrancas de Belgrano S.A.'}];
-			var lineaColectivo123 = [{ text: 'Transportes Linea 123 S.A.C.I.', value: 'Transportes Linea 123 S.A.C.I.'}];
-			var lineaColectivo124 = [{ text: 'Transportes Automotores Callao S.A.', value: 'Transportes Automotores Callao S.A.'}];
-			var lineaColectivo126 = [{ text: 'Cardenas S.A. Empresa de Transportes', value: 'Cardenas S.A. Empresa de Transportes'}];
-			var lineaColectivo127 = [{ text: 'Los Constituyentes S.A.T.', value: 'Los Constituyentes S.A.T.'}];
-			var lineaColectivo128 = [{ text: 'El Puente S.A.T.', value: 'El Puente S.A.T.'}];
-			var lineaColectivo129 = [{ text: 'Grupo Plaza - Transporte Automotor Plaza S.A.C.I.', value: 'Grupo Plaza - Transporte Automotor Plaza S.A.C.I.'}];
-			var lineaColectivo130 = [{ text: 'Transportes Avenida Bernardo Ader S.A. (TABA)', value: 'Transportes Avenida Bernardo Ader S.A. (TABA)'}];
-			var lineaColectivo132 = [{ text: 'Nuevos Rumbos S.A', value: 'Nuevos Rumbos S.A'}];
-			var lineaColectivo133 = [{ text: 'Grupo Plaza - Transporte Automotor Plaza S.A.C.I.', value: 'Grupo Plaza - Transporte Automotor Plaza S.A.C.I.'}];
-			var lineaColectivo134 = [{ text: 'Transportes Automotores Riachuelo S.A. (TARSA)', value: 'Transportes Automotores Riachuelo S.A. (TARSA)'}];
-			var lineaColectivo135 = [{ text: 'Transportes Lope de Vega S.A.C.I.', value: 'Transportes Lope de Vega S.A.C.I.'}];
-			var lineaColectivo136 = [{ text: 'Sargento Cabral S.A. de Transporte', value: 'Sargento Cabral S.A. de Transporte'}];
-			var lineaColectivo140 = [{ text: 'Grupo Plaza - Transporte Automotor Plaza S.A.C.I.', value: 'Grupo Plaza - Transporte Automotor Plaza S.A.C.I.'}];
-			var lineaColectivo141 = [{ text: 'Grupo Plaza - Transporte Automotor Plaza S.A.C.I.', value: 'Grupo Plaza - Transporte Automotor Plaza S.A.C.I.'}];
-			var lineaColectivo143 = [{ text: 'Grupo Plaza - Transporte Automotor Plaza S.A.C.I.', value: 'Grupo Plaza - Transporte Automotor Plaza S.A.C.I.'}];
-			var lineaColectivo146 = [{ text: 'ROCARAZA S.A.', value: 'ROCARAZA S.A.'}];
-			var lineaColectivo148 = [{ text: 'El Nuevo Halcon S.A.', value: 'El Nuevo Halcon S.A.'}];
-			var lineaColectivo150 = [{ text: 'NUDO S.A.', value: 'NUDO S.A.'}];
-			var lineaColectivo151 = [{ text: 'Micro omnibus Doscientos Ocho S.A. de Transporte Automotor (MODO)', value: 'Micro Omnibus Doscientos Ocho S.A. de Transporte Automotor (MODO)'}];
-			var lineaColectivo152 = [{ text: 'Empresa Tandilense S.A.C.I.F.I.Y DE S.', value: 'Empresa Tandilense S.A.C.I.F.I.Y DE S.'}];
-			var lineaColectivo153 = [{ text: 'Microomnibus Saavedra S.A. - Grupo ERSA', value: 'Microomnibus Saavedra S.A. - Grupo ERSA'}];
-			var lineaColectivo154 = [{ text: 'Micro omnibus Cuarenta y Cinco S.A.C.I.F', value: 'Micro Omnibus Cuarenta y Cinco S.A.C.I.F'}];
-			var lineaColectivo159 = [{ text: 'Micro Omnibus Quilmes S.A.C.I.F. (MOQSA)', value: 'Micro Omnibus Quilmes S.A.C.I.F. (MOQSA)'}];
-			var lineaColectivo160 = [{ text: 'Micro omnibus Sur S.A.C.', value: 'Micro Omnibus Sur S.A.C.'}];
-			var lineaColectivo161 = [{ text: 'Transporte Larrazabal C.I.S.A.', value: 'Transporte Larrazabal C.I.S.A.'}];
-			var lineaColectivo163 = [{ text: 'Sargento Cabral S.A. de Transporte', value: 'Sargento Cabral S.A. de Transporte'}];
-			var lineaColectivo165 = [{ text: 'Expreso Lomas S.A.', value: 'Expreso Lomas S.A.'}];
-			var lineaColectivo166 = [{ text: 'Empresa Linea 216 S.A.T.', value: 'Empresa Linea 216 S.A.T.'}];
-			var lineaColectivo168 = [{ text: 'Expreso San Isidro S.A. (ESISA)', value: 'Expreso San Isidro S.A. (ESISA)'}];
-			var lineaColectivo169 = [{ text: 'Transporte Escalada S.A.', value: 'Transporte Escalada S.A.'}];
-			var lineaColectivo172 = [{ text: 'La Caba\u00F1a S.A.', value: 'La Cabaña S.A.'}];
-			var lineaColectivo172 = [{ text: 'La Caba\u00F1a S.A.', value: 'La Cabaña S.A.'}];
-			var lineaColectivo175 = [{ text: 'Transporte Escalada S.A.', value: 'Transporte Escalada S.A.'}];
-			var lineaColectivo176 = [{ text: 'Expreso General Sarmiento S.A.', value: 'Expreso General Sarmiento S.A.'}];
-			var lineaColectivo177 = [{ text: 'Empresa San Vicente S.A.T.', value: 'Empresa San Vicente S.A.T.'}];
-			var lineaColectivo178 = [{ text: 'Compa\u00F1ia de Microomnibus La Colorada S.A.C.I.', value: 'Compañia de Microomnibus La Colorada S.A.C.I.'}];
-			var lineaColectivo179 = [{ text: 'Grupo Linea 179 S.A.', value: 'Grupo Linea 179 S.A.'}];
-			var lineaColectivo180 = [{ text: 'La Vecinal de Matanza S.A.C.I. de Microomnibus', value: 'La Vecinal de Matanza S.A.C.I. de Microomnibus'}];
-			var lineaColectivo181 = [{ text: 'Transporte Automotor de Pasajeros Siglo XXI S.A.', value: 'Transporte Automotor de Pasajeros Siglo XXI S.A.'}];
-			var lineaColectivo182 = [{ text: 'Sargento Cabral S.A. de Transporte', value: 'Sargento Cabral S.A. de Transporte'}];
-			var lineaColectivo184 = [{ text: 'La Central de Vicente Lopez S.A.C.', value: 'La Central de Vicente Lopez S.A.C.'}];
-			var lineaColectivo185 = [{ text: 'Transporte Ideal San Justo S.A.', value: 'Transporte Ideal San Justo S.A.'}];
-			var lineaColectivo188 = [{ text: 'Transporte Larrazabal C.I.S.A.', value: 'Transporte Larrazabal C.I.S.A.'}];
-			var lineaColectivo193 = [{ text: 'DUVI S.A.', value: 'DUVI S.A.'}];
-			var lineaColectivo194 = [{ text: 'La Nueva Metropol S.A.T.A.C.I.', value: 'La Nueva Metropol S.A.T.A.C.I.'}];
-			var lineaColectivo195 = [{ text: 'La Nueva Metropol S.A.T.A.C.I.', value: 'La Nueva Metropol S.A.T.A.C.I.'}];
+			var lineaEmpresa1 = [{ text: 'Transportes San Cayetano S.A.C.', value: 'Transportes San Cayetano S.A.C.'}];
+			var lineaEmpresa2 = [{ text: 'Transportes Veintidos de Septiembre S.A.C.', value: 'Transportes Veintidos de Septiembre S.A.C.'}];
+			var lineaEmpresa4 = [{ text: 'Transportes Sol de Mayo C.I.S.A.', value: 'Transportes Sol de Mayo C.I.S.A.'}];
+			var lineaEmpresa5 = [{ text: 'Transportes Rio Grande S.A.C.I.F.', value: 'Transportes Rio Grande S.A.C.I.F.'}];
+			var lineaEmpresa6 = [{ text: 'NUDO S.A.', value: 'NUDO S.A.'}];
+			var lineaEmpresa7 = [{ text: 'Transportes Automotores 12 de Octubre S.A.C.', value: 'Transportes Automotores 12 de Octubre S.A.C.'}];
+			var lineaEmpresa8 = [{ text: 'Transportes Rio Grande S.A.C.I.F.', value: 'Transportes Rio Grande S.A.C.I.F.'}];
+			var lineaEmpresa9 = [{ text: 'General Tomas Guido S.A.', value: 'General Tomas Guido S.A.'}];
+			var lineaEmpresa10 = [{ text: 'Linea 10 S.A.', value: 'Linea 10 S.A.'}];
+			var lineaEmpresa12 = [{ text: 'Transportes Automotores Callao S.A.', value: 'Transportes Automotores Callao S.A.'}];
+			var lineaEmpresa15 = [{ text: 'Transportes Sur-Nor C.I.S.A.', value: 'Transportes Sur-Nor C.I.S.A.'}];
+			var lineaEmpresa17 = [{ text: 'Linea 17 S.A.', value: 'Linea 17 S.A.'}];
+			var lineaEmpresa19 = [{ text: 'Microomnibus Saavedra S.A. - Grupo ERSA', value: 'Microomnibus Saavedra S.A. - Grupo ERSA'}];
+			var lineaEmpresa20 = [{ text: 'Transporte Larrazabal C.I.S.A.', value: 'Transporte Larrazabal C.I.S.A.'}];
+			var lineaEmpresa21 = [{ text: 'Empresa Teniente General Roca S.A.', value: 'Empresa Teniente General Roca S.A.'}];
+			var lineaEmpresa22 = [{ text: 'Linea 22 S.A.', value: 'Linea 22 S.A.'}];
+			var lineaEmpresa23 = [{ text: 'Transportes Rio Grande S.A.C.I.F.', value: 'Transportes Rio Grande S.A.C.I.F.'}];
+			var lineaEmpresa24 = [{ text: 'NUDO S.A.', value: 'NUDO S.A.'}];
+			var lineaEmpresa25 = [{ text: 'General Tomas Guido S.A.', value: 'General Tomas Guido S.A.'}];
+			var lineaEmpresa26 = [{ text: '17 de Agosto S.A.', value: '17 de Agosto S.A.'}];
+			var lineaEmpresa28 = [{ text: 'DOTA S.A.', value: 'DOTA S.A.'}];
+			var lineaEmpresa29 = [{ text: 'Empresa de Transporte Pedro de Mendoza', value: 'Empresa de Transporte Pedro de Mendoza'}];
+			var lineaEmpresa31 = [{ text: 'ROCARAZA S.A.', value: 'ROCARAZA S.A.'}];
+			var lineaEmpresa32 = [{ text: 'El Puente S.A.T.', value: 'El Puente S.A.T.'}];
+			var lineaEmpresa33 = [{ text: 'Transportes Almirante Brown S.A.', value: 'Transportes Almirante Brown S.A.'}];
+			var lineaEmpresa34 = [{ text: 'Juan B. Justo S.A.T.C.I.', value: 'Juan B. Justo S.A.T.C.I.'}];
+			var lineaEmpresa36 = [{ text: 'Grupo Plaza - Transporte Automotor Plaza S.A.C.I.', value: 'Grupo Plaza - Transporte Automotor Plaza S.A.C.I.'}];
+			var lineaEmpresa37 = [{ text: '4 de Septiembre S.A.T.C.P', value: '4 de Septiembre S.A.T.C.P'}];
+			var lineaEmpresa39 = [{ text: 'Transportes Santa Fe S.A.C.I.', value: 'Transportes Santa Fe S.A.C.I.'}];
+			var lineaEmpresa41 = [{ text: 'Azul S.A.T.A.', value: 'Azul S.A.T.A.'}];
+			var lineaEmpresa42 = [{ text: 'Transportes Colegiales S.A.C.I.', value: 'Transportes Colegiales S.A.C.I.'}];
+			var lineaEmpresa44 = [{ text: 'DOTA S.A.', value: 'DOTA S.A.'}];
+			var lineaEmpresa45 = [{ text: 'Micro omnibus Cuarenta y Cinco S.A.C.I.F', value: 'Micro omnibus Cuarenta y Cinco S.A.C.I.F'}];
+			var lineaEmpresa46 = [{ text: 'Union Transportista de Empresas S.A. - UTE S.A.', value: 'Union Transportista de Empresas S.A. - UTE S.A.'}];
+			var lineaEmpresa47 = [{ text: 'Linea de Microomnibus 47 S.A.', value: 'Linea de Microomnibus 47 S.A.'}];
+			var lineaEmpresa49 = [{ text: 'Buenos Aires Bus S.A.', value: 'Buenos Aires Bus S.A.'}];
+			var lineaEmpresa50 = [{ text: 'NUDO S.A.', value: 'NUDO S.A.'}];
+			var lineaEmpresa51 = [{ text: 'Empresa San Vicente S.A.T.', value: 'Empresa San Vicente S.A.T.'}];
+			var lineaEmpresa53 = [{ text: 'Linea 213 S.A. de Transportes', value: 'Linea 213 S.A. de Transportes'}];
+			var lineaEmpresa55 = [{ text: 'Almafuerte S.A.T.A.C.I.', value: 'Almafuerte S.A.T.A.C.I.'}];
+			var lineaEmpresa56 = [{ text: 'Transportes Lope de Vega S.A.C.I.', value: 'Transportes Lope de Vega S.A.C.I.'}];
+			var lineaEmpresa57 = [{ text: 'Transportes Atlantica S.A. Comercial', value: 'Transportes Atlantica S.A. Comercial'}];
+			var lineaEmpresa59 = [{ text: 'Microomnibus Ciudad de Buenos Aires S.A.T.C.I.', value: 'Microomnibus Ciudad de Buenos Aires S.A.T.C.I.'}];
+			var lineaEmpresa60 = [{ text: 'Micro omnibus Norte S.A. (MONSA)', value: 'Micro omnibus Norte S.A. (MONSA)'}];
+			var lineaEmpresa61 = [{ text: 'Grupo Plaza - Transporte Automotor Plaza S.A.C.I.', value: 'Grupo Plaza - Transporte Automotor Plaza S.A.C.I.'}];
+			var lineaEmpresa62 = [{ text: 'Grupo Plaza - Transporte Automotor Plaza S.A.C.I.', value: 'Grupo Plaza - Transporte Automotor Plaza S.A.C.I.'}];
+			var lineaEmpresa63 = [{ text: 'Bernardino Rivadavia S.A.T.A.', value: 'Bernardino Rivadavia S.A.T.A.'}];
+			var lineaEmpresa64 = [{ text: 'Vuelta de Rocha S.A.T.A.C.I.', value: 'Vuelta de Rocha S.A.T.A.C.I.'}];
+			var lineaEmpresa65 = [{ text: 'La Nueva Metropol S.A.T.A.C.I.', value: 'La Nueva Metropol S.A.T.A.C.I.'}];
+			var lineaEmpresa67 = [{ text: 'Transportes del Tejar S.A.', value: 'Transportes del Tejar S.A.'}];
+			var lineaEmpresa68 = [{ text: 'Transportes Sesenta y Ocho S.R.L.', value: 'Transportes Sesenta y Ocho S.R.L.'}];
+			var lineaEmpresa70 = [{ text: 'Transportes 270 S.A.', value: 'Transportes 270 S.A.'}];
+			var lineaEmpresa71 = [{ text: 'Lina 71 S.A.', value: 'Lina 71 S.A.'}];
+			var lineaEmpresa74 = [{ text: 'Empresa San Vicente S.A.T.', value: 'Empresa San Vicente S.A.T.'}];
+			var lineaEmpresa75 = [{ text: 'El Puente S.A.T.', value: 'El Puente S.A.T.'}];
+			var lineaEmpresa76 = [{ text: 'Transportes Lope de Vega S.A.C.I.', value: 'Transportes Lope de Vega S.A.C.I.'}];
+			var lineaEmpresa78 = [{ text: 'Los Constituyentes S.A.T.', value: 'Los Constituyentes S.A.T.'}];
+			var lineaEmpresa79 = [{ text: 'Empresa San Vicente S.A.T.', value: 'Empresa San Vicente S.A.T.'}];
+			var lineaEmpresa80 = [{ text: 'Transportes Nueva Chicago C.I.S.A.', value: 'Transportes Nueva Chicago C.I.S.A.'}];
+			var lineaEmpresa84 = [{ text: 'General Tomas Guido S.A.', value: 'General Tomas Guido S.A.'}];
+			var lineaEmpresa85 = [{ text: 'Sociedad Anonima Expreso Sudoeste', value: 'Sociedad Anonima Expreso Sudoeste'}];
+			var lineaEmpresa86 = [{ text: 'DUVI S.A.', value: 'DUVI S.A.'}];
+			var lineaEmpresa87 = [{ text: 'Los Constituyentes S.A.T.', value: 'Los Constituyentes S.A.T.'}];
+			var lineaEmpresa88 = [{ text: 'Linea Expreso Liniers S.A.I.C.', value: 'Linea Expreso Liniers S.A.I.C.'}];
+			var lineaEmpresa90 = [{ text: 'Micro omnibus Doscientos Ocho S.A. de Transporte Automotor (MODO)', value: 'Micro omnibus Doscientos Ocho S.A. de Transporte Automotor (MODO)'}];
+			var lineaEmpresa91 = [{ text: 'Transportes Lope de Vega S.A.C.I.', value: 'Transportes Lope de Vega S.A.C.I.'}];
+			var lineaEmpresa92 = [{ text: 'Empresa de Transportes Microomnibus Saenz Pe\u00F1a S.R.L.', value: 'Empresa de Transportes Microomnibus Saenz Peña S.R.L.'}];
+			var lineaEmpresa93 = [{ text: 'Transportes 1º de Septiembre S.A.', value: 'Transportes 1º de Septiembre S.A.'}];
+			var lineaEmpresa95 = [{ text: 'Empresa Antantida Argentina S.A.T.', value: 'Empresa Antantida Argentina S.A.T.'}];
+			var lineaEmpresa96 = [{ text: 'Transporte Ideal San Justo S.A.', value: 'Transporte Ideal San Justo S.A.'}];
+			var lineaEmpresa97 = [{ text: 'Bus del Oeste S.A.', value: 'Bus del Oeste S.A.'}];
+			var lineaEmpresa98 = [{ text: 'Expreso Quilmes S.A.', value: 'Expreso Quilmes S.A.'}];
+			var lineaEmpresa99 = [{ text: 'Transportes 27 de Junio S.A.C.I.F.', value: 'Transportes 27 de Junio S.A.C.I.F.'}];
+			var lineaEmpresa100 = [{ text: 'Transportes Automotores Riachuelo S.A. (TARSA)', value: 'Transportes Automotores Riachuelo S.A. (TARSA)'}];
+			var lineaEmpresa101 = [{ text: 'DOTA S.A.', value: 'DOTA S.A.'}];
+			var lineaEmpresa102 = [{ text: 'Transportes Sargento Cabral Sociedad Colectiva', value: 'Transportes Sargento Cabral Sociedad Colectiva'}];
+			var lineaEmpresa103 = [{ text: 'Transportes Quirno Costa S.A.C.I.', value: 'Transportes Quirno Costa S.A.C.I.'}];
+			var lineaEmpresa104 = [{ text: 'Grupo Plaza - Transporte Automotor Plaza S.A.C.I.', value: 'Grupo Plaza - Transporte Automotor Plaza S.A.C.I.'}];
+			var lineaEmpresa105 = [{ text: 'Empresa de Transportes America S.A.C.I.', value: 'Empresa de Transportes America S.A.C.I.'}];
+			var lineaEmpresa106 = [{ text: 'Colectiveros Unidos S.A.I.F. (CUSA)', value: 'Colectiveros Unidos S.A.I.F. (CUSA)'}];
+			var lineaEmpresa107 = [{ text: 'NUDO S.A.', value: 'NUDO S.A.'}];
+			var lineaEmpresa108 = [{ text: 'Empresa Teniente General Roca S.A.', value: 'Empresa Teniente General Roca S.A.'}];
+			var lineaEmpresa109 = [{ text: 'Transportes 9 de Julio S.A.C.', value: 'Transportes 9 de Julio S.A.C.'}];
+			var lineaEmpresa110 = [{ text: 'General Pueyrredon S.A.T.C.I', value: 'General Pueyrredon S.A.T.C.I'}];
+			var lineaEmpresa111 = [{ text: 'Los Constituyentes S.A.T.', value: 'Los Constituyentes S.A.T.'}];
+			var lineaEmpresa112 = [{ text: 'Expreso Lomas S.A.', value: 'Expreso Lomas S.A.'}];
+			var lineaEmpresa113 = [{ text: 'Bernardino Rivadavia S.A.T.A.', value: 'Bernardino Rivadavia S.A.T.A.'}];
+			var lineaEmpresa114 = [{ text: 'Grupo Plaza - Transporte Automotor Plaza S.A.C.I.', value: 'Grupo Plaza - Transporte Automotor Plaza S.A.C.I.'}];
+			var lineaEmpresa115 = [{ text: 'Transportes Automotores Riachuelo S.A. (TARSA)', value: 'Transportes Automotores Riachuelo S.A. (TARSA)'}];
+			var lineaEmpresa117 = [{ text: 'Transporte Larrazabal C.I.S.A.', value: 'Transporte Larrazabal C.I.S.A.'}];
+			var lineaEmpresa118 = [{ text: 'Microomnibus Barrancas de Belgrano S.A.', value: 'Microomnibus Barrancas de Belgrano S.A.'}];
+			var lineaEmpresa123 = [{ text: 'Transportes Linea 123 S.A.C.I.', value: 'Transportes Linea 123 S.A.C.I.'}];
+			var lineaEmpresa124 = [{ text: 'Transportes Automotores Callao S.A.', value: 'Transportes Automotores Callao S.A.'}];
+			var lineaEmpresa126 = [{ text: 'Cardenas S.A. Empresa de Transportes', value: 'Cardenas S.A. Empresa de Transportes'}];
+			var lineaEmpresa127 = [{ text: 'Los Constituyentes S.A.T.', value: 'Los Constituyentes S.A.T.'}];
+			var lineaEmpresa128 = [{ text: 'El Puente S.A.T.', value: 'El Puente S.A.T.'}];
+			var lineaEmpresa129 = [{ text: 'Grupo Plaza - Transporte Automotor Plaza S.A.C.I.', value: 'Grupo Plaza - Transporte Automotor Plaza S.A.C.I.'}];
+			var lineaEmpresa130 = [{ text: 'Transportes Avenida Bernardo Ader S.A. (TABA)', value: 'Transportes Avenida Bernardo Ader S.A. (TABA)'}];
+			var lineaEmpresa132 = [{ text: 'Nuevos Rumbos S.A', value: 'Nuevos Rumbos S.A'}];
+			var lineaEmpresa133 = [{ text: 'Grupo Plaza - Transporte Automotor Plaza S.A.C.I.', value: 'Grupo Plaza - Transporte Automotor Plaza S.A.C.I.'}];
+			var lineaEmpresa134 = [{ text: 'Transportes Automotores Riachuelo S.A. (TARSA)', value: 'Transportes Automotores Riachuelo S.A. (TARSA)'}];
+			var lineaEmpresa135 = [{ text: 'Transportes Lope de Vega S.A.C.I.', value: 'Transportes Lope de Vega S.A.C.I.'}];
+			var lineaEmpresa136 = [{ text: 'Sargento Cabral S.A. de Transporte', value: 'Sargento Cabral S.A. de Transporte'}];
+			var lineaEmpresa140 = [{ text: 'Grupo Plaza - Transporte Automotor Plaza S.A.C.I.', value: 'Grupo Plaza - Transporte Automotor Plaza S.A.C.I.'}];
+			var lineaEmpresa141 = [{ text: 'Grupo Plaza - Transporte Automotor Plaza S.A.C.I.', value: 'Grupo Plaza - Transporte Automotor Plaza S.A.C.I.'}];
+			var lineaEmpresa143 = [{ text: 'Grupo Plaza - Transporte Automotor Plaza S.A.C.I.', value: 'Grupo Plaza - Transporte Automotor Plaza S.A.C.I.'}];
+			var lineaEmpresa146 = [{ text: 'ROCARAZA S.A.', value: 'ROCARAZA S.A.'}];
+			var lineaEmpresa148 = [{ text: 'El Nuevo Halcon S.A.', value: 'El Nuevo Halcon S.A.'}];
+			var lineaEmpresa150 = [{ text: 'NUDO S.A.', value: 'NUDO S.A.'}];
+			var lineaEmpresa151 = [{ text: 'Micro omnibus Doscientos Ocho S.A. de Transporte Automotor (MODO)', value: 'Micro Omnibus Doscientos Ocho S.A. de Transporte Automotor (MODO)'}];
+			var lineaEmpresa152 = [{ text: 'Empresa Tandilense S.A.C.I.F.I.Y DE S.', value: 'Empresa Tandilense S.A.C.I.F.I.Y DE S.'}];
+			var lineaEmpresa153 = [{ text: 'Microomnibus Saavedra S.A. - Grupo ERSA', value: 'Microomnibus Saavedra S.A. - Grupo ERSA'}];
+			var lineaEmpresa154 = [{ text: 'Micro omnibus Cuarenta y Cinco S.A.C.I.F', value: 'Micro Omnibus Cuarenta y Cinco S.A.C.I.F'}];
+			var lineaEmpresa159 = [{ text: 'Micro Omnibus Quilmes S.A.C.I.F. (MOQSA)', value: 'Micro Omnibus Quilmes S.A.C.I.F. (MOQSA)'}];
+			var lineaEmpresa160 = [{ text: 'Micro omnibus Sur S.A.C.', value: 'Micro Omnibus Sur S.A.C.'}];
+			var lineaEmpresa161 = [{ text: 'Transporte Larrazabal C.I.S.A.', value: 'Transporte Larrazabal C.I.S.A.'}];
+			var lineaEmpresa163 = [{ text: 'Sargento Cabral S.A. de Transporte', value: 'Sargento Cabral S.A. de Transporte'}];
+			var lineaEmpresa165 = [{ text: 'Expreso Lomas S.A.', value: 'Expreso Lomas S.A.'}];
+			var lineaEmpresa166 = [{ text: 'Empresa Linea 216 S.A.T.', value: 'Empresa Linea 216 S.A.T.'}];
+			var lineaEmpresa168 = [{ text: 'Expreso San Isidro S.A. (ESISA)', value: 'Expreso San Isidro S.A. (ESISA)'}];
+			var lineaEmpresa169 = [{ text: 'Transporte Escalada S.A.', value: 'Transporte Escalada S.A.'}];
+			var lineaEmpresa172 = [{ text: 'La Caba\u00F1a S.A.', value: 'La Cabaña S.A.'}];
+			var lineaEmpresa172 = [{ text: 'La Caba\u00F1a S.A.', value: 'La Cabaña S.A.'}];
+			var lineaEmpresa175 = [{ text: 'Transporte Escalada S.A.', value: 'Transporte Escalada S.A.'}];
+			var lineaEmpresa176 = [{ text: 'Expreso General Sarmiento S.A.', value: 'Expreso General Sarmiento S.A.'}];
+			var lineaEmpresa177 = [{ text: 'Empresa San Vicente S.A.T.', value: 'Empresa San Vicente S.A.T.'}];
+			var lineaEmpresa178 = [{ text: 'Compa\u00F1ia de Microomnibus La Colorada S.A.C.I.', value: 'Compañia de Microomnibus La Colorada S.A.C.I.'}];
+			var lineaEmpresa179 = [{ text: 'Grupo Linea 179 S.A.', value: 'Grupo Linea 179 S.A.'}];
+			var lineaEmpresa180 = [{ text: 'La Vecinal de Matanza S.A.C.I. de Microomnibus', value: 'La Vecinal de Matanza S.A.C.I. de Microomnibus'}];
+			var lineaEmpresa181 = [{ text: 'Transporte Automotor de Pasajeros Siglo XXI S.A.', value: 'Transporte Automotor de Pasajeros Siglo XXI S.A.'}];
+			var lineaEmpresa182 = [{ text: 'Sargento Cabral S.A. de Transporte', value: 'Sargento Cabral S.A. de Transporte'}];
+			var lineaEmpresa184 = [{ text: 'La Central de Vicente Lopez S.A.C.', value: 'La Central de Vicente Lopez S.A.C.'}];
+			var lineaEmpresa185 = [{ text: 'Transporte Ideal San Justo S.A.', value: 'Transporte Ideal San Justo S.A.'}];
+			var lineaEmpresa188 = [{ text: 'Transporte Larrazabal C.I.S.A.', value: 'Transporte Larrazabal C.I.S.A.'}];
+			var lineaEmpresa193 = [{ text: 'DUVI S.A.', value: 'DUVI S.A.'}];
+			var lineaEmpresa194 = [{ text: 'La Nueva Metropol S.A.T.A.C.I.', value: 'La Nueva Metropol S.A.T.A.C.I.'}];
+			var lineaEmpresa195 = [{ text: 'La Nueva Metropol S.A.T.A.C.I.', value: 'La Nueva Metropol S.A.T.A.C.I.'}];
 			
 		//	var lineaColectivo = [{ text: '', value: ''}];
 			if(form.tipo[7].selected){
-				//Ocultando y mostrando los LABEL correspondientes a colectivo
+				//Ocultando y mostrando los LABEL e INPUT correspondientes a colectivo
 				document.getElementById('marca').style.display="none";
 				document.getElementById('linea').style.display="inline";
 				document.getElementById('modelo').style.display="none";
-				document.getElementById('empresa').style.display="inline";
+				document.getElementById('interno').style.display="inline";
+				document.getElementById('iInterno').style.display="inline";
 				//Ocultando y mostrando los SELECT correspondientes a colectivo
 				form.marcaSinSeleccion.style.display = "none";
 				form.modeloP.style.display = "none";
 				form.modeloM.style.display = "none";
-				form.lineaColectivo.style.display = "inline";
-				form.empresaColectivo.style.display = "inline";
-				////Cambiando el valor de las marcas de otras categorías a 0 ("Seleccionar")
+				form.lineaEmpresa.style.display = "inline";
+				//Cambiando el valor de las marcas de otras categorías a 0 ("Seleccionar")
 				$('#marcaParticular option:eq(0)').prop('selected', true);
 				$('#marcaMoto option:eq(0)').prop('selected', true);
-				if(form.lineaColectivo[1].selected){
-					$.each(lineaColectivo1, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}				
-				if(form.lineaColectivo[2].selected){
-					$.each(lineaColectivo2, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}	
-				if(form.lineaColectivo[3].selected){
-					$.each(lineaColectivo4, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}	
-				if(form.lineaColectivo[4].selected){
-					$.each(lineaColectivo5, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}	
-				if(form.lineaColectivo[5].selected){
-					$.each(lineaColectivo6, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}	
-				if(form.lineaColectivo[6].selected){
-					$.each(lineaColectivo7, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[7].selected){
-					$.each(lineaColectivo8, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[8].selected){
-					$.each(lineaColectivo9, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[9].selected){
-					$.each(lineaColectivo10, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[10].selected){
-					$.each(lineaColectivo12, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[11].selected){
-					$.each(lineaColectivo15, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[12].selected){
-					$.each(lineaColectivo17, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[13].selected){
-					$.each(lineaColectivo19, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[14].selected){
-					$.each(lineaColectivo20, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[15].selected){
-					$.each(lineaColectivo21, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[16].selected){
-					$.each(lineaColectivo22, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[17].selected){
-					$.each(lineaColectivo23, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[18].selected){
-					$.each(lineaColectivo24, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[19].selected){
-					$.each(lineaColectivo25, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[20].selected){
-					$.each(lineaColectivo26, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[21].selected){
-					$.each(lineaColectivo28, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[22].selected){
-					$.each(lineaColectivo29, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[23].selected){
-					$.each(lineaColectivo31, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[24].selected){
-					$.each(lineaColectivo32, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[25].selected){
-					$.each(lineaColectivo33, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[26].selected){
-					$.each(lineaColectivo34, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[27].selected){
-					$.each(lineaColectivo36, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[28].selected){
-					$.each(lineaColectivo37, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[29].selected){
-					$.each(lineaColectivo39, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[30].selected){
-					$.each(lineaColectivo41, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[31].selected){
-					$.each(lineaColectivo42, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[32].selected){
-					$.each(lineaColectivo44, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[33].selected){
-					$.each(lineaColectivo45, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[34].selected){
-					$.each(lineaColectivo46, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[35].selected){
-					$.each(lineaColectivo47, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[36].selected){
-					$.each(lineaColectivo49, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[37].selected){
-					$.each(lineaColectivo50, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[38].selected){
-					$.each(lineaColectivo51, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[39].selected){
-					$.each(lineaColectivo53, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[40].selected){
-					$.each(lineaColectivo55, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[41].selected){
-					$.each(lineaColectivo56, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[42].selected){
-					$.each(lineaColectivo57, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[43].selected){
-					$.each(lineaColectivo59, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[44].selected){
-					$.each(lineaColectivo60, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[45].selected){
-					$.each(lineaColectivo61, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[46].selected){
-					$.each(lineaColectivo62, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[47].selected){
-					$.each(lineaColectivo63, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[48].selected){
-					$.each(lineaColectivo64, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[49].selected){
-					$.each(lineaColectivo65, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[50].selected){
-					$.each(lineaColectivo67, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[51].selected){
-					$.each(lineaColectivo68, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[52].selected){
-					$.each(lineaColectivo70, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[53].selected){
-					$.each(lineaColectivo71, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}if(form.lineaColectivo[54].selected){
-					$.each(lineaColectivo74, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[55].selected){
-					$.each(lineaColectivo75, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[56].selected){
-					$.each(lineaColectivo76, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[57].selected){
-					$.each(lineaColectivo78, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[58].selected){
-					$.each(lineaColectivo79, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[59].selected){
-					$.each(lineaColectivo80, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[60].selected){
-					$.each(lineaColectivo84, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[61].selected){
-					$.each(lineaColectivo85, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[62].selected){
-					$.each(lineaColectivo86, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[63].selected){
-					$.each(lineaColectivo87, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[64].selected){
-					$.each(lineaColectivo88, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[65].selected){
-					$.each(lineaColectivo90, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[66].selected){
-					$.each(lineaColectivo91, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[67].selected){
-					$.each(lineaColectivo92, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[68].selected){
-					$.each(lineaColectivo93, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[69].selected){
-					$.each(lineaColectivo95, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[70].selected){
-					$.each(lineaColectivo96, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[71].selected){
-					$.each(lineaColectivo97, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[72].selected){
-					$.each(lineaColectivo98, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[73].selected){
-					$.each(lineaColectivo99, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[74].selected){
-					$.each(lineaColectivo100, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[75].selected){
-					$.each(lineaColectivo101, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[76].selected){
-					$.each(lineaColectivo102, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[77].selected){
-					$.each(lineaColectivo103, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[78].selected){
-					$.each(lineaColectivo104, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[79].selected){
-					$.each(lineaColectivo105, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[80].selected){
-					$.each(lineaColectivo106, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[81].selected){
-					$.each(lineaColectivo107, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[82].selected){
-					$.each(lineaColectivo108, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[83].selected){
-					$.each(lineaColectivo109, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[84].selected){
-					$.each(lineaColectivo110, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[85].selected){
-					$.each(lineaColectivo111, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[86].selected){
-					$.each(lineaColectivo112, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[87].selected){
-					$.each(lineaColectivo113, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[88].selected){
-					$.each(lineaColectivo114, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}if(form.lineaColectivo[89].selected){
-					$.each(lineaColectivo115, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[90].selected){
-					$.each(lineaColectivo117, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[91].selected){
-					$.each(lineaColectivo118, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[92].selected){
-					$.each(lineaColectivo123, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[93].selected){
-					$.each(lineaColectivo124, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[94].selected){
-					$.each(lineaColectivo126, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[95].selected){
-					$.each(lineaColectivo127, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[96].selected){
-					$.each(lineaColectivo128, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[97].selected){
-					$.each(lineaColectivo129, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[98].selected){
-					$.each(lineaColectivo130, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[99].selected){
-					$.each(lineaColectivo132, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[100].selected){
-					$.each(lineaColectivo133, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[101].selected){
-					$.each(lineaColectivo134, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[102].selected){
-					$.each(lineaColectivo135, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[103].selected){
-					$.each(lineaColectivo136, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[104].selected){
-					$.each(lineaColectivo140, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[105].selected){
-					$.each(lineaColectivo141, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[106].selected){
-					$.each(lineaColectivo143, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[107].selected){
-					$.each(lineaColectivo146, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[108].selected){
-					$.each(lineaColectivo148, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[109].selected){
-					$.each(lineaColectivo150, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[110].selected){
-					$.each(lineaColectivo151, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[111].selected){
-					$.each(lineaColectivo152, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[112].selected){
-					$.each(lineaColectivo153, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[113].selected){
-					$.each(lineaColectivo154, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[114].selected){
-					$.each(lineaColectivo159, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[115].selected){
-					$.each(lineaColectivo160, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[116].selected){
-					$.each(lineaColectivo161, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[117].selected){
-					$.each(lineaColectivo163, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[118].selected){
-					$.each(lineaColectivo165, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[119].selected){
-					$.each(lineaColectivo166, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}if(form.lineaColectivo[120].selected){
-					$.each(lineaColectivo168, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[121].selected){
-					$.each(lineaColectivo169, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[122].selected){
-					$.each(lineaColectivo172, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}if(form.lineaColectivo[123].selected){
-					$.each(lineaColectivo174, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[124].selected){
-					$.each(lineaColectivo175, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[125].selected){
-					$.each(lineaColectivo176, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[126].selected){
-					$.each(lineaColectivo177, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[127].selected){
-					$.each(lineaColectivo178, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[128].selected){
-					$.each(lineaColectivo179, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[129].selected){
-					$.each(lineaColectivo180, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[130].selected){
-					$.each(lineaColectivo181, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[131].selected){
-					$.each(lineaColectivo182, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[132].selected){
-					$.each(lineaColectivo184, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[133].selected){
-					$.each(lineaColectivo185, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[134].selected){
-					$.each(lineaColectivo188, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[135].selected){
-					$.each(lineaColectivo193, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[136].selected){
-					$.each(lineaColectivo194, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
-				if(form.lineaColectivo[137].selected){
-					$.each(lineaColectivo195, function(i, el) 
-							{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
-				}
+				//Cambiando valor del interno para validar en el formulario y controlador
+				document.getElementById('iInterno').value = "";
+				//$.each(lineaColectivo1, function(i, el) 
+						//{    $('#empresaColectivo').append( new Option(el.text,el.value) );});
 			}	
-				
+			
+			if(form.tipo[3].selected || form.tipo[4].selected || form.tipo[5].selected || form.tipo[6].selected || form.tipo[9].selected || form.tipo[10].selected){
+				//Limpiando y mostrando los SELECT correspondientes a éstas opciones
+				form.marcaSinSeleccion.style.display = "none";
+				form.modeloP.style.display = "none";
+				form.modeloM.style.display = "none";
+				//form.empresaColectivo.style.display = "none";
+				document.getElementById('iMarca').style.display="inline";
+				document.getElementById('iModelo').style.display="inline";
+				//Cambiando el valor de las marcas de otras categorías a 0 ("Seleccionar")
+				$('#marcaParticular option:eq(0)').prop('selected', true);
+				$('#marcaMoto option:eq(0)').prop('selected', true);
+				$('#lineaColectivo option:eq(0)').prop('selected', true);
+				///////////////////////////////////////////////////////////////////////
+				if(form.tipo[10].selected){
+					document.getElementById('iTipo').style.display="inline";
+				}
+			}
 // ******************************************************************************************************************************************
 // ******************************************************************************************************************************************
 		
@@ -1275,14 +766,5 @@
 			//$('select').children('option:not(:first)').remove(); eliminar todas menos la primera
 		
 	}
-// ******************************************************************************************************************************************
-
-	     function desactivarInput(){  
-	    	 document.getElementById("dominio").value = "";
-	          if(document.getElementById("chequeable").checked == true){  
-	              document.getElementById("dominio").disabled = true;
-	          }else{
-	            document.getElementById("dominio").disabled = false;
-	          }  
-	     }  		
+// ****************************************************************************************************************************************** 		
 		
