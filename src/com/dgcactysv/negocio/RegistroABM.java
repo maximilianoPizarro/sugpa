@@ -68,10 +68,10 @@ public class RegistroABM {
 	}
 	
 	
-	public void agregar(GregorianCalendar fechaIng, String horaIng,String descripcion, String dominio,
-			String marca, String modelo, String motivo, String calle, String numero, String entreCalles, String actaDeComprobacion,
-			String actaContravencional, String boletaDeCitacion, String agenteLabrante, String infractor,
-			String agenteDePlaya, String gruaChofer, String inventario, String nChasisNmotor) throws Exception{ 
+	public void agregar(String playaIng, GregorianCalendar fechaIng, String horaIng, String tipo, String tipoDominio, String dominio,
+			String marca, String modelo, String color, String motivo, String nChasis_nMotor, String actaContravencional, String actaComprobacion,
+			String actaZ, String agenteLabrante, String nombreInfractor, String tipoDoc, String nDoc, String choferDNI, String calle,
+			String numeroCalle, String entreCalle1, String entreCalle2, String referenciaLugar, String observaciones, String agentePlaya) throws Exception{ 
 		Registro r = new Registro();
 		boolean encontro = false;
 		int i = 0;
@@ -88,7 +88,10 @@ public class RegistroABM {
 		if(!encontro)
 		{
 		
-		r = new Registro(Integer.valueOf(traerMaximoId()+1).toString(),fechaIng,horaIng,descripcion,dominio,marca,modelo,motivo,calle,numero,entreCalles,actaDeComprobacion,actaContravencional,boletaDeCitacion,agenteLabrante,infractor,agenteDePlaya,gruaChofer,inventario,nChasisNmotor,null,null,null,null,null,null,null);
+		r = new Registro(Integer.valueOf(traerMaximoId()+1).toString(), playaIng, fechaIng, horaIng, tipo, tipoDominio, dominio, marca, modelo, color,
+				motivo, nChasis_nMotor, actaContravencional, actaComprobacion, actaZ, agenteLabrante, nombreInfractor,
+				tipoDoc, nDoc, choferDNI, calle, numeroCalle, entreCalle1, entreCalle2, referenciaLugar, observaciones, agentePlaya,
+				null, null, null, null, null, null, null, null);
 		daoA.agregar(r);
 		//INSERT INTO vehiculos VALUES ('2566','2017-05-11 00:00:00','11:30:00','AUTO','FBI276','CHEVROLET','CORSA','DOC','AV.PASEO COLON Y AV MARTIN GARCIA','C00837526','S/D','S/D','RODRIGUEZ ALEJANDRA','CALLEGARI DIEGO','CARRILLO','SICA','SI',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 
@@ -120,7 +123,3 @@ public class RegistroABM {
 		}
 	
 	}
-
-
-
-	

@@ -5,26 +5,36 @@
 <class name="com.dgcactysv.modelo.Registro" table="vehiculos">
 <id column="REGISTRO" name="registro">
 </id>
+<!-- <property column="PLAYA_ING" name="playaIng" type="string"/> -->
+<property column="PLAYA_ING" name="playaIng" type="string"/>
 <property column="FECHA_ING" name="fechaIng" type="calendar"/>
 <property column="HORA_ING" name="horaIng" type="string"/>
-<property column="DESCRIPCION" name="descripcion" type="string"/>
+<property column="TIPO" name="tipo" type="string"/>
+<property column="TIPO_DOMINIO" name="tipoDominio" type="string"/>
 <property column="DOMINIO" name="dominio" type="string"/>
 <property column="MARCA" name="marca" type="string"/>
 <property column="MODELO" name="modelo" type="string"/>
+<property column="COLOR" name="color" type="string"/>
 <property column="MOTIVO" name="motivo" type="string"/>
+<property column="NCHASIS_NMOTOR" name="nChasis_nMotor" type="string"/>
+<property column="ACTA_CONTRAVENCIONAL" name="actaContravencional" type="string"/>
+<property column="ACTA_DE_COMPROBACION" name="actaDeComprobacion" type="string"/>
+<property column="ACTA_Z" name="actaZ" type="string"/>
+<property column="AGENTE_LABRANTE" name="agenteLabrante" type="string"/>
+<property column="NOMBRE_INFRACTOR" name="nombreInfractor" type="string"/>
+<property column="TIPODOC" name="tipoDoc" type="string"/>
+<property column="NDOC" name="nDoc" type="string"/>
+<property column="CHOFER_DNI" name="choferDNI" type="string"/>
 <property column="CALLE" name="calle" type="string"/>
 <property column="NUMERO" name="numero" type="string"/>
-<property column="ENTRECALLES" name="entreCalles" type="string"/>
-<property column="ACTA_DE_COMPROBACION" name="actaDeComprobacion" type="string"/>
-<property column="ACTA_CONTRAVENCIONAL" name="actaContravencional" type="string"/>
-<property column="BOLETA_DE_CITACION" name="boletaDeCitacion" type="string"/>
-<property column="AGENTE_LABRANTE" name="agenteLabrante" type="string"/>
-<property column="INFRACTOR" name="infractor" type="string"/>
+<property column="ENTRECALLE1" name="entreCalle1" type="string"/>
+<property column="ENTRECALLE2" name="entreCalle2" type="string"/>
+<property column="REFERENCIA_LUGAR" name="referenciaLugar" type="string"/>
+<property column="OBSERVACIONES" name="observaciones" type="string"/>
 <property column="AGENTE_DE_PLAYA" name="agenteDePlaya" type="string"/>
-<property column="GRUA_CHOFER" name="gruaChofer" type="string"/>
 <property column="INVENTARIO" name="inventario" type="string"/>
-<property column="N_CHASIS_N_MOTOR" name="nChasisNmotor" type="string"/>
 <property column="FECHA_EGR" name="fechaEgr" type="calendar"/>
+<property column="HORA_EGR" name="horaEgr" type="calendar"/>
 <property column="PERSONA_Q_RETIRO" name="personaQretiro" type="string"/>
 <property column="ENTREGA_AGENTE" name="entregaAgente" type="string"/>
 <property column="NOTAS" name="notas" type="string"/>
@@ -32,5 +42,3 @@
 <property column="TRASLADO_A_COMPACTACION" name="trasladoAcompactacion" type="string"/>
 </class>
 </hibernate-mapping>
-
-

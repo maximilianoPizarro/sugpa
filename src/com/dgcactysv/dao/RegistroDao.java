@@ -118,7 +118,7 @@ public class RegistroDao {
 		int conta;
 		try {
 			iniciaOperacion();
-			Query query= session.createQuery( "select count(*) from Registro where fecha_egr is null AND descripcion=:AUTO").setParameter("AUTO", "AUTO");
+			Query query= session.createQuery( "select count(*) from Registro where fecha_egr is null AND tipo=:AUTO").setParameter("AUTO", "AUTO");
 			conta=((Number) query.uniqueResult()).intValue();
 		} finally {
 			session.close();
@@ -130,7 +130,7 @@ public class RegistroDao {
 		int conta;
 		try {
 			iniciaOperacion();
-			Query query= session.createQuery( "select count(*) from Registro where fecha_egr is null AND descripcion=:MOTO").setParameter("MOTO", "MOTO");
+			Query query= session.createQuery( "select count(*) from Registro where fecha_egr is null AND tipo=:MOTO").setParameter("MOTO", "MOTO");
 			conta=((Number) query.uniqueResult()).intValue();
 		} finally {
 			session.close();
