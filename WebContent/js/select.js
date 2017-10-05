@@ -57,13 +57,18 @@
 		var mVolvo = [{ text: '850', value: '850'}, { text: '940', value: '940'}, { text: 'C30', value: 'C30'}, { text: 'S40', value: 'S40'}, { text: 'S60', value: 'S60'}, { text: 'S80', value: 'S80'}, { text: 'V50', value: 'V50'}, { text: 'V70', value: 'V70'}, { text: 'XC', value: 'XC'}, { text: 'XC90', value: 'XC90'}, { text: 'Otro Modelo', value: 'Otro'}];
 		var mOtraMarca = [{ text: 'Otro Modelo', value: 'Otro'}];
 			
-		//var mCadillac = [{ text: '', value: ''}, { text: 'Otro Modelo', value: 'Otro'}];
-			
+		//var mCadillac = [{ text: '', value: ''}, { text: 'Otro Modelo', value: 'Otro'}];	
 		
 		//INICIO DE FUNCION
 		var valorParticular = document.getElementById('marcaParticular').value;
 		//Inicializando T0DO por defecto
-		document.getElementById('linea').style.display="none";
+			//Para el domininio
+		document.getElementById('tipoDom').style.display="inline";
+		document.getElementById('dom').style.display="inline";
+		document.getElementById('dominio').style.display="inline";
+		form.tipoDominio.style.display="inline";
+		////////////////////////////////////////////////////////
+		document.getElementById('linea').style.display="none"; //Label de linea y empresa
 		document.getElementById('interno').style.display="none"; 
 		document.getElementById('iInterno').value = "SIN INTERNO"; //Seteando valor del interno por defecto
 		document.getElementById('iInterno').style.display="none";
@@ -77,6 +82,7 @@
 		$("#modeloM option:not(:first)").remove();
 		document.getElementById('iTipo').style.display="none";
 		document.getElementById('iTipo').value = "";
+		document.getElementById('dominio').value = "";   //Valor del dominio por defecto
 		document.getElementById('iMarca').style.display="none";
 		document.getElementById('iMarca').value = "";
 		document.getElementById('iModelo').style.display="none";
@@ -719,6 +725,9 @@
 		//	var lineaColectivo = [{ text: '', value: ''}];
 			if(form.tipo[7].selected){
 				//Ocultando y mostrando los LABEL e INPUT correspondientes a colectivo
+				document.getElementById('tipoDom').style.display="none";
+				document.getElementById('dom').style.display="none";
+				document.getElementById('dominio').style.display="none";
 				document.getElementById('marca').style.display="none";
 				document.getElementById('linea').style.display="inline";
 				document.getElementById('modelo').style.display="none";
@@ -728,11 +737,13 @@
 				form.marcaSinSeleccion.style.display = "none";
 				form.modeloP.style.display = "none";
 				form.modeloM.style.display = "none";
+				form.tipoDominio.style.display = "none";
 				form.lineaEmpresa.style.display = "inline";
 				//Cambiando el valor de las marcas de otras categorías a 0 ("Seleccionar")
 				$('#marcaParticular option:eq(0)').prop('selected', true);
 				$('#marcaMoto option:eq(0)').prop('selected', true);
 				//Cambiando valor del interno para validar en el formulario y controlador
+				document.getElementById('dominio').value = "SIN PATENTE";
 				document.getElementById('iInterno').value = "";
 				//$.each(lineaColectivo1, function(i, el) 
 						//{    $('#empresaColectivo').append( new Option(el.text,el.value) );});

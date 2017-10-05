@@ -1,4 +1,4 @@
-<%@page language="java" contentType="text/html; charset=utf-8" pageEncoding="ISO-8859-1"%>
+﻿<%@page language="java" contentType="text/html; charset=utf-8" pageEncoding="ISO-8859-1"%>
 <%@include file="header.jsp" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -117,13 +117,6 @@
 										<label id="dom" for="dom">Dominio: </label>
 										<p class="boton-margen-inferior">
 										<input class="form-control input-lg" required name="dominio" id="dominio" type="text" style="text-transform:uppercase" autocomplete="off"/></p>
-										
-										<script>
-										$('#chequeable').change(function() {
-   										 $('dominio').attr('disabled',!this.checked)
-										});
-										</script>
-										
 										
 										<label id="marca" for="marca">Marca:</label>
 										<p class="boton-margen-inferior">
@@ -613,7 +606,7 @@
 											 <option value="DNI">DNI</option>
 											 <option value="LE">LE</option>
 											 <option value="LC">LC</option>
-											 <option value="EXTRANJERO">EXTRANJERO</option>
+											 <option value="EX">EX</option>
 										</select></p>   
 										<input type="number" class="form-control input-lg"  required name="nDocumento" id="nDocumento" type="text" placeholder="N&uacute;mero de documento"/></p>
 										
