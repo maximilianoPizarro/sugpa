@@ -1,4 +1,4 @@
-﻿<%@page language="java" contentType="text/html; charset=utf-8" pageEncoding="ISO-8859-1"%>
+﻿<%@page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
 <%@include file="header.jsp" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -30,7 +30,45 @@
 		  }						    
 	</script>
 
-
+	<script>
+	$(function(){
+		$('#choferDNI').keydown(function(event){
+			if(event.keyCode<48 || event.keyCode>57){
+				return false;
+			}
+		});
+		$('#nDocumento').keydown(function(event){
+			if(event.keyCode<48 || event.keyCode>57){
+				return false;
+			}
+		});
+		$('#actaCont').keydown(function(event){
+			if(event.keyCode<48 || event.keyCode>57){
+				return false;
+			}
+		});
+		$('#actaComp').keydown(function(event){
+			if(event.keyCode<48 || event.keyCode>57){
+				return false;
+			}
+		});
+		$('#actaZ').keydown(function(event){
+			if(event.keyCode<48 || event.keyCode>57){
+				return false;
+			}
+		});
+		$('#numeroCalle').keydown(function(event){
+			if(event.keyCode<48 || event.keyCode>57){
+				return false;
+			}
+		});
+		$('#agenteLabrante').keydown(function(event){
+			if(event.keyCode<48 || event.keyCode>57){
+				return false;
+			}
+		});
+	});
+	</script>
 
 <body>
 
@@ -79,12 +117,12 @@
       								 
       								 	<label for="motivo">Playa de ingreso:</label>
 						  				<p class="boton-margen-inferior">
-									    <select class="form-control input-lg" id="playaIngreso" required name="playaIngreso">
+									    <select class="form-control input-lg" id="playaIngreso" required name="playaIngreso" onchange="clonarSelect(this.form)">
 									    <option value="" selected="">Seleccionar</option>
 									     <option value="PLAYA SARMIENTO">PLAYA SARMIENTO</option>
 									     <option value="PLAYA RIO CUARTO">PLAYA RIO CUARTO</option>
 									    </select></p>
-									    
+
 						  				<label for="motivo">Tipo:</label>
 						  				<p class="boton-margen-inferior">
 									    <select class="form-control input-lg" id="tipo" required name="tipo" onchange="habilitar(this.form)">
@@ -565,8 +603,8 @@
 												<option value="6242">6242 - No realizar Grabado de AUTOPARTES</option>
 												<option value="6243">6243 - Incumplir Grabado AUTOPARTES (Gestor/ Mandat/Concesión /Intermediario)</option>
 												<option value="6780">6780 - Prohibición circular según DÍA/HORA/CARACTERÍSTICA vehíc.</option>
-											</select></p>
-
+											</select></p> 
+										
 										<label for="chofer">N&uacute;mero de chasis:</label>
 										<p class="boton-margen-inferior">
 										<input class="form-control input-lg"  required name="chasis" type="text" autocomplete="off"/></p>
@@ -584,19 +622,19 @@
       								       	
 									    <label for="acta">Acta contravencional:</label>
 									    <p class="boton-margen-inferior">
-										<input class="form-control input-lg"  required name="actaCont" placeholder="Si no hay ingresar punto (.)" type="text" autocomplete="off"/></p>
+										<input class="form-control input-lg"  required name="actaCont" id="actaCont" placeholder="Si no hay ingresar punto (.)" type="text" autocomplete="off"/></p>
 										
 									    <label for="actac">Acta de comprobacion:</label>
 									    <p class="boton-margen-inferior">
-										<input class="form-control input-lg"  required name="actaComp" placeholder="Si no hay ingresar punto (.)" type="text" autocomplete="off"/></p>
+										<input class="form-control input-lg"  required name="actaComp" id="actaComp" placeholder="Si no hay ingresar punto (.)" type="text" autocomplete="off"/></p>
 											
 									    <label for="boleta">Acta Z:</label>
 									    <p class="boton-margen-inferior">
-										<input class="form-control input-lg"  required name="actaZ" placeholder="Si no hay ingresar punto (.)" type="text" autocomplete="off"/></p>
+										<input class="form-control input-lg"  required name="actaZ" id="actaZ" placeholder="Si no hay ingresar punto (.)" type="text" autocomplete="off"/></p>
 										
 										<label for="agente">Agente Labrante: </label>
 										<p class="boton-margen-inferior">
-										<input class="form-control input-lg"  required name="agenteLabrante" type="text" placeholder="Nro. DNI" autocomplete="off"/></p>
+										<input class="form-control input-lg"  required name="agenteLabrante" id="agenteLabrante" type="text" placeholder="Nro. DNI" autocomplete="off"/></p>
 										
 										<label for="infractor">Infractor/Contraventor:</label>
 										<p class="boton-margen-inferior">
@@ -608,7 +646,7 @@
 											 <option value="LC">LC</option>
 											 <option value="EX">EX</option>
 										</select></p>   
-										<input type="number" class="form-control input-lg"  required name="nDocumento" id="nDocumento" type="text" placeholder="N&uacute;mero de documento"/></p>
+										<input type="text" class="form-control input-lg"  required name="nDocumento" id="nDocumento" type="text" placeholder="N&uacute;mero de documento"/></p>
 										
 										<label for="chofer">Chofer de grua:</label>
 										<p class="boton-margen-inferior">
@@ -627,12 +665,15 @@
       								 <label for="chofer">Levantado en:</label>
 										<p class="boton-margen-inferior">
 										<input class="form-control input-lg"  required name="calle" type="text" placeholder="Calle" aria-labelledby='chofer'/></p>
- 										<input type="number" class="form-control input-lg"  required name="numeroCalle" type="text" placeholder="N&uacute;mero" aria-labelledby='chofer'/></p>
+ 										<input class="form-control input-lg"  required name="numeroCalle" id="numeroCalle" type="text" placeholder="N&uacute;mero" aria-labelledby='chofer'/></p>
 										<input class="form-control input-lg"  required name="entreCalle1" type="text" placeholder="Entre calle 1" aria-labelledby='chofer'/></p>
 										<input class="form-control input-lg"  required name="entreCalle2" type="text" placeholder="Entre calle 2" aria-labelledby='chofer'/></p>
 										<input class="form-control input-lg"  required name="referenciaLugar" type="text" placeholder="Referencia del lugar" aria-labelledby='chofer'/></p>
 									</fieldset>
       								 	  
+      								<label id= "nInventario" for="nInventario">N&uacute;mero de inventario:</label>
+      									<p class="boton-margen-inferior">
+										<input class="form-control input-lg"  required name="numInventario" id="numInventario" type="text" autocomplete="off"/></p>
 						      
 									<div class="form-group">
 									      <label for="inventario">Copia Inventario: </label>
