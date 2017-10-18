@@ -9,7 +9,10 @@
 
 </head>
 <body>
-	
+
+<script src="js/jquery-1.12.4.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/validarDatosEgreso.js"></script>
 
 <!-- NAVEGACIÓN PRINCIPAL -->
     <nav class="navbar navbar-default" role="navigation">
@@ -68,37 +71,76 @@
 												<label for="dni">Modelo:</label> 
 												<p class="boton-margen-inferior">
 												<%=vehiculo.getModelo()%></p>
+												
+												<label for="motivo">Motivo/s:</label> 
+												<p class="boton-margen-inferior">
+												<%=vehiculo.getMotivo()%></p>
 									
 								    </div>
 								    </div>
 								    
 								  <br>	
-								  
 								   
 								          <div class="panel panel-primary">
 		     								 <div class="panel-heading">Datos de la persona</div>
 		      								 <div class="panel-body">
-										      	
-												
+																								
+												<div id="divTipo" class="form-group">
 												<label for="tipo">Tipo:</label>
 												<p class="boton-margen-inferior">
-												<select class="form-control input-lg" id="tipo"  name="tipo">
-													<option value="-1" selected="">Selecciona</option>
-													<option value="titular">TITULAR</option>
-													<option value="ca">CONDUCTOR AUTORIZADO</option>
+												<select class="form-control input-lg" id="tipo"  name="tipo" onchange='validarDatosEgreso(this.form, "<%=vehiculo.getMotivo()%>");'>
+													<option value="-1" selected="">Seleccionar</option>
+													<option value="titular">TITULAR/CONDUCTOR AUTORIZADO</option>
 													<option value="apoderado">APODERADO</option>													
 													<option value="policia">FUERZA DE SEGURIDAD</option>
 												</select></p>
+												</div>
+															
+												<div id="divPActaDeEntrega" class="form-group">
+										      	<label for="actaDeEntrega">¿Presenta Acta de entrega? SI</label>
+										      	<input class="boton-margen-inferior" type="radio" name="actaDeEntrega" id="actaDeEntrega" value="SI" onclick='validarDatosEgreso(this.form, "<%=vehiculo.getMotivo()%>");'>
+										      	<label for="actaDeEntrega">NO</label>
+										      	<input class="boton-margen-inferior" type="radio" name="actaDeEntrega" id="actaDeEntrega" value="NO" onclick='validarDatosEgreso(this.form, "<%=vehiculo.getMotivo()%>");'>
+										      	</div>
 												
+												<div id="divPLicencia" class="form-group" style="display: none">
+										      	<label for="presentaLicencia">¿Presenta Licencia? SI</label>
+										      	<input class="boton-margen-inferior" type="radio" name="presentaLicencia" id="presentaLicencia" value="SI" onclick='validarDatosEgreso(this.form, "<%=vehiculo.getMotivo()%>");'>
+										      	<label for="presentaLicencia">NO</label>
+										      	<input class="boton-margen-inferior" type="radio" name="presentaLicencia" id="presentaLicencia" value="NO" onclick='validarDatosEgreso(this.form, "<%=vehiculo.getMotivo()%>");'>
+										      	</div>
+												
+												<div id="divPActaZ" class="form-group" style="display: none">
+										      	<label for="presentaActaZ">¿Presenta Acta Z? SI</label>
+										      	<input class="boton-margen-inferior" type="radio" name="presentaActaZ" id="presentaActaZ" value="SI" onclick='validarDatosEgreso(this.form, "<%=vehiculo.getMotivo()%>");'>
+										      	<label for="presentaLicencia">NO</label>
+										      	<input class="boton-margen-inferior" type="radio" name="presentaActaZ" id="presentaActaZ" value="NO" onclick='validarDatosEgreso(this.form, "<%=vehiculo.getMotivo()%>");'>
+										      	</div>
+												
+												<p>
+										      	<label for="tipo">Retira Acarreado (SI/NO):</label>
+										      	<input class="boton-margen-inferior" type="checkbox" name="acarreado" value="acarreado">
+										      	</p>
+
 												<label for="apellido">Apellido:</label> 
 												<p class="boton-margen-inferior">
-												<input class="form-control input-lg" required name="apellido" type="text" /></p>
+												<input class="form-control input-lg" id="apellido" required name="apellido" type="text" /></p>
 												
 												<label for="nombre">Nombre:</label>
 												<p class="boton-margen-inferior">
 												<input class="form-control input-lg" required name="nombre" type="text" /></p>
 												
-												<label for="dni">DNI:</label> 
+												<label for="tipo">Tipo de documento:</label>
+												<p class="boton-margen-inferior">
+												<select class="form-control input-lg" id="tipoDoc"  name="tipoDoc">
+													<option value="-1" selected="">Seleccionar</option>
+													<option value="DNI">DNI</option>
+													<option value="LE">LE</option>
+													<option value="LC">LC</option>													
+													<option value="EX">EX</option>
+												</select></p>
+												
+												<label for="dni">Numero de documento:</label> 
 												<p class="boton-margen-inferior">
 												<input class="form-control input-lg" required name="dni" type="text" /></p>
 									
@@ -110,37 +152,73 @@
 								          <div class="panel panel-primary">
 		     								 <div class="panel-heading">Documentacion presentada</div>
 		      								 <div class="panel-body">
-									            <div class="form-group">
+		      								 
+		      								 	<div id="divActaEntrega" class="form-group" style="display: none">
+									              <label for="actaEntrega">Copia Acta de Entrega: </label>
+									              <input id="actaEntrega" type="file" name="actaEntrega">
+									              <p class="help-block">Hasta 2Mb en formato <strong>pdf</strong></p>
+									            </div> 
+		      								
+									            <div id="divDNI" class="form-group">
 									              <label for="dniDoc">Copia DNI: </label>
 									              <input id="dniDoc" type="file" name="dniDoc">
 									              <p class="help-block">Hasta 2Mb en formato <strong>pdf</strong></p>
 									            </div> 
 
-									            <div class="form-group">
+									            <div id="divLicencia" class="form-group" style="display: none">
 									              <label for="licencia">Copia Licencia: </label>
 									              <input id="licencia" type="file" name="licencia">
 									              <p class="help-block">Hasta 2Mb en formato <strong>pdf</strong></p>
-									            </div> 
+									            </div>
 
-									            <div class="form-group">
-									              <label for="cedula">Copia Cedula: </label>
+												<div id="divActaZ" class="form-group" style="display: none">
+													<label for="actaZ">Copia Acta Z: </label>
+													<input id="actaZ" type="file" name="actaZ">
+													<p class="help-block"> Hasta 2Mb en formato <strong>pdf</strong></p>
+												</div>
+												
+												<div id="divCedulaVerde" class="form-group" style="display: none">
+									              <label for="cedulaVerde">Copia Cedula Verde: </label>
+									              <input id="cedulaVerde" type="file" name="cedulaVerde">
+									              <p class="help-block">Hasta 2Mb en formato <strong>pdf</strong></p>
+									            </div>
+									            
+									            <div id="divCedula" class="form-group" style="display: none">
+									              <label for="cedula">Copia Cedula o Titulo: </label>
 									              <input id="cedula" type="file" name="cedula">
 									              <p class="help-block">Hasta 2Mb en formato <strong>pdf</strong></p>
 									            </div> 
-		
-									            <div class="form-group">
+									            
+									            <div id="divSeguro" class="form-group" style="display: none">
 									              <label for="seguro">Copia Seguro: </label>
 									              <input id="seguro" type="file" name="seguro">
 									              <p class="help-block">Hasta 2Mb en formato <strong>pdf</strong></p>
 									            </div> 
 		
-									            <div class="form-group">
-									              <label for="comunicado">Copia DGAI: </label>
-									              <input id="comunicado" type="file" name="comunicado">
+									            <div id="divVTV" class="form-group" style="display: none">
+									              <label for="vtv">Copia VTV: </label>
+									              <input id="vtv" type="file" name="vtv">
+									              <p class="help-block">Hasta 2Mb en formato <strong>pdf</strong></p>
+									            </div>
+												
+									            <div id="divDGAI" class="form-group" style="display: none">
+									              <label for="DGAI">Copia DGAI: </label>
+									              <input id="DGAI" type="file" name="DGAI">
 									              <p class="help-block">Hasta 2Mb en formato <strong>pdf</strong></p>
 									            </div> 
 
-														
+												<div id="divPoder" class="form-group" style="display: none">
+									              <label for="poder">Copia Poder Firmado: </label>
+									              <input id="poder" type="file" name="poder">
+									              <p class="help-block">Hasta 2Mb en formato <strong>pdf</strong></p>
+									            </div>
+									            
+									            <div id="divOficio" class="form-group" style="display: none">
+									              <label for="oficio">Copia Oficio Judicial: </label>
+									              <input id="oficio" type="file" name="oficio">
+									              <p class="help-block">Hasta 2Mb en formato <strong>pdf</strong></p>
+									            </div>
+
 								    </div>
 								    </div>
 								    </div>
