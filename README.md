@@ -11,7 +11,7 @@ Integrantes del equipo y Roles Asignados:
 • Federico Juan Pablo: Desarrollador y tester.
 • Fiorentino Kevin: Diseñador de base de datos y desarrollador.
 
-###Screens
+### Screens
 <br>
 <p align="center">
   <img src="https://raw.githubusercontent.com/maximilianoPizarro/sugpa/master/screensMaqueta/1 - Iniciar sesión.jpg" width="800" title="hover text">
