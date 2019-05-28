@@ -14,7 +14,7 @@ Integrantes del equipo y Roles Asignados:
 Screens prototipo
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/maximilianoPizarro/sugpa/master/screensMaqueta/1 - Iniciar sesión.jpg" width="350" title="hover text">
+  <img src="https://raw.githubusercontent.com/maximilianoPizarro/sugpa/master/screensMaqueta/1 - Iniciar sesión.jpg" width="500" title="hover text">
 </p>  
 
 ![alt text](https://raw.githubusercontent.com/maximilianoPizarro/sugpa/master/screensMaqueta/1 - Iniciar sesión.jpg)
