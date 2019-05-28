@@ -6,14 +6,10 @@ Prototipado del Artefacto Web que soporte la gestión de las playas de acarreo d
 de la Dirección General del Cuerpo de Agentes de Control del Tránsito y Seguridad Vial.
 
 Integrantes del equipo y Roles Asignados:
-&nbsp;
-• Pizarro Maximiliano: Líder de proyecto y analista funcional.
-&nbsp;
-• Defelippe Joan Manuel: Arquitecto/diseñador y desarrolador.
-&nbsp;
-• Federico Juan Pablo: Desarrollador y tester.
-&nbsp;
-• Fiorentino Kevin: Diseñador de base de datos y desarrollador.
+- Pizarro Maximiliano: Líder de proyecto y analista funcional.
+- Defelippe Joan Manuel: Arquitecto/diseñador y desarrolador.
+- Federico Juan Pablo: Desarrollador y tester.
+- Fiorentino Kevin: Diseñador de base de datos y desarrollador.
 &nbsp;
 
 ### Screens
