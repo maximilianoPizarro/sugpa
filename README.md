@@ -2,7 +2,7 @@
 
 *Trabajo Final Proyecto de Software 2017 Licenciatura en Sistemas. UNLa.*
 
-Prototipado del Artefacto Web que soporte la gestión de las playas de acarreo de vehículos 
+Prototipado del Artefacto Web para dar soporte a la gestión de las playas de acarreo de vehículos 
 de la Dirección General del Cuerpo de Agentes de Control del Tránsito y Seguridad Vial.
 
 Integrantes del equipo y Roles Asignados:
