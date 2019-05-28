@@ -26,7 +26,7 @@ Integrantes del equipo y Roles Asignados:
   <img src="https://raw.githubusercontent.com/maximilianoPizarro/sugpa/master/screensMaqueta/10 - Buscar vehículo.png" width="800" title="hover text">
 </p>  
 &nbsp;
-• Ingreso de vehículos
+• Carga de vehículos
 &nbsp;
 <p align="center">
   <img src="https://raw.githubusercontent.com/maximilianoPizarro/sugpa/master/screensMaqueta/11 - Ingresar vehículo.jpg" width="800" title="hover text">
