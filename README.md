@@ -11,16 +11,20 @@ Integrantes del equipo y Roles Asignados:
 • Federico Juan Pablo: Desarrollador y tester.
 • Fiorentino Kevin: Diseñador de base de datos y desarrollador.
 
-Screens prototipo
+Screens
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/maximilianoPizarro/sugpa/master/screensMaqueta/1 - Iniciar sesión.jpg" width="500" title="hover text">
+  <img src="https://raw.githubusercontent.com/maximilianoPizarro/sugpa/master/screensMaqueta/1 - Iniciar sesión.jpg" width="600" title="hover text">
 </p>  
 
-![alt text](https://raw.githubusercontent.com/maximilianoPizarro/sugpa/master/screensMaqueta/1 - Iniciar sesión.jpg)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/maximilianoPizarro/sugpa/master/screensMaqueta/10 - Buscar vehículo.png" width="600" title="hover text">
+</p>  
+<p align="center">
+  <img src="https://raw.githubusercontent.com/maximilianoPizarro/sugpa/master/screensMaqueta/11 - Ingresar vehículo.jpg" width="600" title="hover text">
+</p>  
 
-![alt text](https://raw.githubusercontent.com/maximilianoPizarro/sugpa/master/screensMaqueta/10 - Buscar vehículo.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/maximilianoPizarro/sugpa/master/screensMaqueta/3 - Bienvenido direccion 1.jpg" width="600" title="hover text">
+</p>  
 
-![alt text](https://raw.githubusercontent.com/maximilianoPizarro/sugpa/master/screensMaqueta/11 - Ingresar vehículo.jpg)
-
-![alt text](https://raw.githubusercontent.com/maximilianoPizarro/sugpa/master/screensMaqueta/11 - Ingresar vehículo.jpg)
