@@ -12,19 +12,27 @@ Integrantes del equipo y Roles Asignados:
 • Fiorentino Kevin: Diseñador de base de datos y desarrollador.
 
 ### Screens
-<br>
+&nbsp;
+• Login
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/maximilianoPizarro/sugpa/master/screensMaqueta/1 - Iniciar sesión.jpg" width="800" title="hover text">
 </p>  
-<br>
+&nbsp;
+• Busqueda de vehículos
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/maximilianoPizarro/sugpa/master/screensMaqueta/10 - Buscar vehículo.png" width="800" title="hover text">
 </p>  
-<br>
+&nbsp;
+• Ingreso de vehículos
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/maximilianoPizarro/sugpa/master/screensMaqueta/11 - Ingresar vehículo.jpg" width="800" title="hover text">
 </p>  
-<br>
+&nbsp;
+• Analitica 
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/maximilianoPizarro/sugpa/master/screensMaqueta/3 - Bienvenido direccion 1.jpg" width="800" title="hover text">
 </p>  
