@@ -1,0 +1,17 @@
+version: '2'
+services:
+    sugpa-web:
+        build: .
+        image: sugpa-web
+        environment:
+            - HOST=sugpa-mysql
+            - DB=sugpa
+            - USER=agente
+            - PASSWORD=agente
+            - DBPORT=3306
+        ports:
+            - "8080:8080"        
+    sugpa-mysql:
+     extends:
+        file: mysql.yml
+        service: sugpa-mysql

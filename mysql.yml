@@ -1,0 +1,12 @@
+version: '2'
+services:
+  sugpa-mysql:
+    image: mysql:8.0.20
+    environment:
+      - MYSQL_DATABASE=sugpa
+      - MYSQL_USER=agente
+      - MYSQL_PASSWORD=agente
+      - MYSQL_ROOT_PASSWORD=agente
+    ports:
+      - 3306:3306
+    command: --default-authentication-plugin=mysql_native_password
