@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>playadeacarreo</display-name>
+  <display-name>EmailSendingWebApp</display-name>
+  	<!-- SMTP settings -->
+	<context-param>
+		<param-name>host</param-name>
+		<param-value>smtp.gmail.com</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>port</param-name>
+		<param-value>587</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>user</param-name>
+		<param-value>agentedeplaya</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>pass</param-name>
+		<param-value>sugpadgcactysv</param-value>
+	</context-param>
+  
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>/index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>ControladorInicio</servlet-name>
+    <servlet-class>com.dgcactysv.controladores.ControladorInicio</servlet-class>
+  </servlet>
+    <servlet>
+    <servlet-name>ControladorSalir</servlet-name>
+    <servlet-class>com.dgcactysv.controladores.ControladorSalir</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ControladorIngresarVehiculo</servlet-name>
+    <servlet-class>com.dgcactysv.controladores.ControladorIngresarVehiculo</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ControladorLogin</servlet-name>
+    <servlet-class>com.dgcactysv.controladores.ControladorLogin</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ControladorBuscar</servlet-name>
+    <servlet-class>com.dgcactysv.controladores.ControladorBuscar</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ControladorCargar</servlet-name>
+    <servlet-class>com.dgcactysv.controladores.ControladorCargar</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ControladorListar</servlet-name>
+    <servlet-class>com.dgcactysv.controladores.ControladorListar</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ControladorListar2</servlet-name>
+    <servlet-class>com.dgcactysv.controladores.ControladorListar2</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ControladorEgreso</servlet-name>
+    <servlet-class>com.dgcactysv.controladores.ControladorEgreso</servlet-class>
+  </servlet>
+  <servlet>
+      <servlet-name>ControladorMostrar</servlet-name>
+    	<servlet-class>com.dgcactysv.controladores.ControladorMostrar</servlet-class>
+  </servlet>
+  
+    <servlet>
+      <servlet-name>ControladorEstadistica</servlet-name>
+    	<servlet-class>com.dgcactysv.controladores.ControladorEstadistica</servlet-class>
+  </servlet>
+    <servlet>
+      <servlet-name>ControladorEditarRegistro</servlet-name>
+    	<servlet-class>com.dgcactysv.controladores.ControladorEditarRegistro</servlet-class>
+  </servlet>
+  <servlet>
+      <servlet-name>ControladorEditado</servlet-name>
+    	<servlet-class>com.dgcactysv.controladores.ControladorEditado</servlet-class>
+  </servlet>
+
+  <servlet>
+      <servlet-name>ControladorEgresado</servlet-name>
+    	<servlet-class>com.dgcactysv.controladores.ControladorEgresado</servlet-class>
+  </servlet>
+
+
+
+
+ <servlet-mapping>	 
+    <servlet-name>ControladorLogin</servlet-name>
+    <url-pattern>/bienvenido</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ControladorBuscar</servlet-name>
+    <url-pattern>/buscar</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ControladorInicio</servlet-name>
+    <url-pattern>/inicioo</url-pattern>
+  </servlet-mapping>
+    <servlet-mapping>
+    <servlet-name>ControladorSalir</servlet-name>
+    <url-pattern>/inicio</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ControladorIngresarVehiculo</servlet-name>
+    <url-pattern>/ingresarVehiculo</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ControladorCargar</servlet-name>
+    <url-pattern>/cargar</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ControladorEgreso</servlet-name>
+    <url-pattern>/egreso</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ControladorListar</servlet-name>
+    <url-pattern>/listarVehiculos</url-pattern>
+  </servlet-mapping>
+    <servlet-mapping>
+    <servlet-name>ControladorListar2</servlet-name>
+    <url-pattern>/listarVehiculosPlaya</url-pattern>
+  </servlet-mapping>
+    <servlet-mapping>
+    <servlet-name>ControladorMostrar</servlet-name>
+    <url-pattern>/mostrarVehiculo</url-pattern>
+  </servlet-mapping>
+    <servlet-mapping>
+    <servlet-name>ControladorEstadistica</servlet-name>
+    <url-pattern>/verEstadisticas</url-pattern>
+  </servlet-mapping>
+      <servlet-mapping>
+    <servlet-name>ControladorEditarRegistro</servlet-name>
+    <url-pattern>/editarRegistro</url-pattern>
+  </servlet-mapping>
+        <servlet-mapping>
+    <servlet-name>ControladorEditado</servlet-name>
+    <url-pattern>/editado</url-pattern>
+  </servlet-mapping>
+
+        <servlet-mapping>
+    <servlet-name>ControladorEgresado</servlet-name>
+    <url-pattern>/egresado</url-pattern>
+  </servlet-mapping>
+
+  
+	<welcome-file-list>
+		<welcome-file>EmailForm.jsp</welcome-file>
+	</welcome-file-list>
+	
+
+  
+</web-app>
