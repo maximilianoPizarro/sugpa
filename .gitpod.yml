@@ -11,7 +11,7 @@ ports:
     - name: SUGPA-GCBA
       port: 8080
       onOpen: open-browser
-      visibility: public    
+      visibility: public
     - name: MYSQL-DB
       port: 3306
       visibility: private

@@ -18,7 +18,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="inicioo" title="Sistema U�nico de Gesti�n de Playas de Acarreo">SUGPA</a>
+            <a class="navbar-brand" href="inicioo" title="Sistema Unico de Gestin de Playas de Acarreo">SUGPA</a>
           </div>
 
         </div>
@@ -33,7 +33,7 @@
       <section>
       
         <div class="container">
-          <h2 class="h1 text-left">Iniciar Sesi�n</h2>
+          <h2 class="h1 text-left">Iniciar Sesion</h2>
           <br>
             <div class="form-group">
               <label for="usuario">Usuario</label>
@@ -41,7 +41,7 @@
                 <div class="col-xs-6"><input class="form-control input-lg"  autocomplete="off" type="text" placeholder="Usuario" id="usuario" name="usuario" required="" autofocus></div>
               </div>
               <br> 
-              <label for="usuario">Contrase�a</label>
+              <label for="usuario">Clave</label>
               <div class="row">
                 <div class="col-xs-6"><input class="form-control input-lg"  autocomplete="off" type="password" placeholder="Contrase�a" id="Contrase�a" required=""></div>
               </div>
