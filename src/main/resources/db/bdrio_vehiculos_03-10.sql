@@ -4,22 +4,9 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
 -- -----------------------------------------------------
--- Schema mydb
--- -----------------------------------------------------
--- -----------------------------------------------------
--- Schema bdrio
--- -----------------------------------------------------
-
--- -----------------------------------------------------
--- Schema bdrio
--- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `bdrio` DEFAULT CHARACTER SET utf8 ;
-USE `bdrio` ;
-
--- -----------------------------------------------------
 -- Table `bdrio`.`vehiculos`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `bdrio`.`vehiculos` (
+CREATE TABLE `vehiculos` (
   `REGISTRO` VARCHAR(4) NOT NULL,
   `PLAYA_ING` VARCHAR(40) NULL DEFAULT NULL,
   `FECHA_ING` DATETIME NULL DEFAULT NULL,

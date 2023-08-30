@@ -1,4 +1,6 @@
 package com.dgcactysv.dao;
+import java.io.File;
+
 import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -13,7 +15,11 @@ public class HibernateUtil{
 		try{
 			if (sessionFactory == null) {
 				
+<<<<<<< HEAD
 			Configuration configuration = new Configuration().configure("/hibernate.cfg.xml");
+=======
+			Configuration configuration = new Configuration().configure(new File("/workspace/sugpa/src/main/java/com/dgcactysv/hibernate.cfg.xml"));
+>>>>>>> b14b32f (pom.xml)
 			ServiceRegistryBuilder registry = new ServiceRegistryBuilder();
 			registry.applySettings(configuration.getProperties());
 			ServiceRegistry serviceRegistry = registry.buildServiceRegistry();
