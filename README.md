@@ -40,4 +40,3 @@ Integrantes del equipo y Roles Asignados:
 &nbsp;
 
 
-docker exec -it 2ec9b1456dec mysql --user=root --password=agente --host=127.0.0.1 --database=sugpa -e "source /workspace/sugpa/src/main/resources/db/bdrio_vehiculos 25-09.sql" --force
