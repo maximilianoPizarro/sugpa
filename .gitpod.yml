@@ -5,7 +5,7 @@
 # Learn more from ready-to-use templates: https://www.gitpod.io/docs/introduction/getting-started/quickstart
 
 tasks:
-  - init: mvn clean install --batch-mode -DskipTests -P openshift
+  - init: mvn clean install --batch-mode -DskipTests
     command: docker compose up
 ports:
     - name: SUGPA-GCBA
