@@ -9,4 +9,6 @@ services:
       - MYSQL_ROOT_PASSWORD=agente
     ports:
       - 3306:3306
+    volumes:
+      - "./src/main/resources/db/bdrio_vehiculos 25-09.sql:/docker-entrypoint-initdb.d/bdrio_vehiculos 25-09.sql"      
     command: --default-authentication-plugin=mysql_native_password
