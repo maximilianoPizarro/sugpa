@@ -1,4 +1,4 @@
-version: '2'
+version: '3.7'
 services:
     sugpa-web:
         build: .
@@ -10,8 +10,15 @@ services:
             - PASSWORD=agente
             - DBPORT=3306
         ports:
-            - "8080:8080"        
+            - "8080:8080"
+        depends_on:
+            - sugpa-mysql
+        networks:
+            - monolito       
     sugpa-mysql:
      extends:
         file: mysql.yml
         service: sugpa-mysql
+
+networks:
+  monolito: {}
