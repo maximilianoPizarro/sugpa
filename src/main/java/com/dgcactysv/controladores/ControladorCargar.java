@@ -28,7 +28,7 @@ public class ControladorCargar extends HttpServlet {
 		HttpSession session = request.getSession();
 		request.setAttribute("usuario", (String) session.getAttribute("usuario"));
 		
-		request.getRequestDispatcher("/jsp/ingresarVehiculo.jsp").forward(request, response);	
+		request.getRequestDispatcher("/ingresarVehiculo.jsp").forward(request, response);	
 
 	}
 }

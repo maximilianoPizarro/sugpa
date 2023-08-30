@@ -30,7 +30,7 @@ public class ControladorSalir extends HttpServlet {
 		request.setAttribute("usuario", "");
 	
 		
-		request.getRequestDispatcher("/jsp/index.jsp").forward(request, response);
+		request.getRequestDispatcher("/index.jsp").forward(request, response);
 	}
 
 

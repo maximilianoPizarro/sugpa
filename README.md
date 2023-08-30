@@ -1,5 +1,11 @@
 ### Sistema Único de Gestión de Playas de Acarreo 
 
+<img src="https://img.shields.io/badge/docker-0db7ed?style=for-the-badge&logo=docker&logoColor=white" alt="Docker">
+<img src="https://img.shields.io/badge/shell_script-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white" alt="shell">
+</p>
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/maximilianoPizarro/sugpa)
+
 *Trabajo Final Proyecto de Software 2017 Licenciatura en Sistemas. UNLa.*
 
 Prototipado del Artefacto Web para dar soporte a la gestión de las playas de acarreo de vehículos 

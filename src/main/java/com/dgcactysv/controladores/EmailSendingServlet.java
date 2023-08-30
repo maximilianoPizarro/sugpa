@@ -56,7 +56,7 @@ public class EmailSendingServlet extends HttpServlet {
 			resultMessage = "Ocurrio un error: " + ex.getMessage();
 		} finally {
 			request.setAttribute("Message", resultMessage);
-			getServletContext().getRequestDispatcher("/jsp/Result.jsp").forward(
+			getServletContext().getRequestDispatcher("/Result.jsp").forward(
 					request, response);
 		}
 	}

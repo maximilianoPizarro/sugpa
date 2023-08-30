@@ -32,7 +32,7 @@ public class ControladorBuscar extends HttpServlet {
 		HttpSession session= (HttpSession) request.getSession();
 		request.setAttribute("usuario", (String) session.getAttribute("usuario"));
 		
-		request.getRequestDispatcher("/jsp/buscarVehiculo.jsp").forward(request, response);	
+		request.getRequestDispatcher("/buscarVehiculo.jsp").forward(request, response);	
 	
 
 	}

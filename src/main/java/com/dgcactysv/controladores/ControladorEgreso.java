@@ -39,12 +39,12 @@ public class ControladorEgreso extends HttpServlet {
 			request.setAttribute("vehiculo",vehiculo);
 			session.setAttribute("vehiculo",vehiculo);
 		} catch (Exception e) {
-			request.getRequestDispatcher("/jsp/errorCarga.jsp").forward(request, response);	
+			request.getRequestDispatcher("/errorCarga.jsp").forward(request, response);	
 		}
 		
 	
 		
-		request.getRequestDispatcher("/jsp/egresarVehiculo.jsp").forward(request, response);	
+		request.getRequestDispatcher("/egresarVehiculo.jsp").forward(request, response);	
 
 	}
 }

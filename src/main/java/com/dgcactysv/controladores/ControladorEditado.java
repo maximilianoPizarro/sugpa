@@ -56,11 +56,11 @@ public class ControladorEditado extends HttpServlet {
 			request.setAttribute("contabilizacionAutos", adm.ContablilizacionAutos());
 			request.setAttribute("contabilizacionMotos", adm.ContablilizacionMotos());
 
-			request.getRequestDispatcher("/jsp/bienvenidoAgente.jsp").forward(request, response);	
+			request.getRequestDispatcher("/bienvenidoAgente.jsp").forward(request, response);	
 
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			request.getRequestDispatcher("/jsp/errorEdicion.jsp").forward(request, response);	
+			request.getRequestDispatcher("/errorEdicion.jsp").forward(request, response);	
 
 		}
 		

@@ -90,10 +90,10 @@ public class ControladorIngresarVehiculo extends HttpServlet {
 			request.setAttribute("contabilizacionAutos", adm.ContablilizacionAutos());
 			request.setAttribute("contabilizacionMotos", adm.ContablilizacionMotos());
 
-			request.getRequestDispatcher("/jsp/bienvenidoAgente.jsp").forward(request, response);	
+			request.getRequestDispatcher("/bienvenidoAgente.jsp").forward(request, response);	
 
 		} catch (Exception e2) {
-				request.getRequestDispatcher("/jsp/errorCarga.jsp").forward(request, response);
+				request.getRequestDispatcher("/errorCarga.jsp").forward(request, response);
 			}
 		
 		}

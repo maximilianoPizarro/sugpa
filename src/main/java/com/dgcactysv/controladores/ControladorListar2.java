@@ -29,7 +29,7 @@ public class ControladorListar2 extends HttpServlet {
 		HttpSession session = request.getSession();
 		request.setAttribute("usuario", (String) session.getAttribute("usuario"));
 		
-		request.getRequestDispatcher("/jsp/listarVehiculosP.jsp").forward(request, response);	
+		request.getRequestDispatcher("/listarVehiculosP.jsp").forward(request, response);	
 	
 
 	}

@@ -44,24 +44,24 @@ public class ControladorInicio extends HttpServlet {
 		
 		try {
 		if(usuario.compareTo("Pizarro Maximiliano")==0){
-			request.getRequestDispatcher("/jsp/bienvenidoAgente.jsp").forward(request, response);	
+			request.getRequestDispatcher("/bienvenidoAgente.jsp").forward(request, response);	
 		}else
 			if(usuario.compareTo("Decurgez Mateo")==0){
-				request.getRequestDispatcher("/jsp/bienvenidoLegalesAbandonados.jsp").forward(request, response);
+				request.getRequestDispatcher("/bienvenidoLegalesAbandonados.jsp").forward(request, response);
 			}else
 				if(usuario.compareTo("Pietrafesa Sergio")==0){
-					request.getRequestDispatcher("/jsp/bienvenidoGerencia.jsp").forward(request, response);
+					request.getRequestDispatcher("/bienvenidoGerencia.jsp").forward(request, response);
 				}else
 					if(usuario.compareTo("Miraglia Walter")==0){
-						request.getRequestDispatcher("/jsp/bienvenidoLegales.jsp").forward(request, response);
+						request.getRequestDispatcher("/bienvenidoLegales.jsp").forward(request, response);
 					}
-			else{request.getRequestDispatcher("/jsp/errorlogin.jsp").forward(request, response);}	
+			else{request.getRequestDispatcher("/errorlogin.jsp").forward(request, response);}	
 		}catch (Exception e) {
-			request.getRequestDispatcher("/jsp/errorlogin.jsp").forward(request, response);
+			request.getRequestDispatcher("/errorlogin.jsp").forward(request, response);
 			
 		}	
 		
-		request.getRequestDispatcher("/jsp/index.jsp").forward(request, response);
+		request.getRequestDispatcher("/index.jsp").forward(request, response);
 	}
 
 

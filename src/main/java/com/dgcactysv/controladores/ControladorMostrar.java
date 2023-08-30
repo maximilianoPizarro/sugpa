@@ -49,10 +49,10 @@ public class ControladorMostrar extends HttpServlet {
 			vehiculo=r.traerRegistro(dominio);
 	        request.setAttribute("vehiculo", vehiculo);
 			session.setAttribute("vehiculo", vehiculo);
-			request.getRequestDispatcher("/jsp/mostrarVehiculo.jsp").forward(request, response);	
+			request.getRequestDispatcher("/mostrarVehiculo.jsp").forward(request, response);	
 
 		} catch (Exception e1) {
-			request.getRequestDispatcher("/jsp/errorBusqueda.jsp").forward(request, response);
+			request.getRequestDispatcher("/errorBusqueda.jsp").forward(request, response);
 		}
 		
 		

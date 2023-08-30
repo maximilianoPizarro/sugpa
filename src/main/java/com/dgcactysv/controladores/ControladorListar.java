@@ -40,7 +40,7 @@ public class ControladorListar extends HttpServlet {
 		
 		request.setAttribute("lstRegistros", vehiculos);
 		
-		request.getRequestDispatcher("/jsp/listarVehiculos.jsp").forward(request, response);	
+		request.getRequestDispatcher("/listarVehiculos.jsp").forward(request, response);	
 	
 
 	}
