@@ -13,7 +13,7 @@ public class HibernateUtil{
 		try{
 			if (sessionFactory == null) {
 				
-			Configuration configuration = new Configuration().configure("/workspace/sugpa/src/main/java/com/dgcactysv/hibernate.cfg.xml");
+			Configuration configuration = new Configuration().configure("/hibernate.cfg.xml");
 			ServiceRegistryBuilder registry = new ServiceRegistryBuilder();
 			registry.applySettings(configuration.getProperties());
 			ServiceRegistry serviceRegistry = registry.buildServiceRegistry();
