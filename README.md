@@ -6,6 +6,10 @@
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/maximilianoPizarro/sugpa)
 
+[![Open in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.svg)](https://ssh.cloud.google.com/cloudshell/editor?cloudshell_git_repo=https://github.com/maximilianoPizarro/sugpa&cloudshell_tutorial=README.md&cloudshell_workspace=/)
+
+[![Try in PWD](https://raw.githubusercontent.com/play-with-docker/stacks/master/assets/images/button.png)](https://labs.play-with-docker.com/?stack=https://raw.githubusercontent.com/maximilianoPizarro/sugpa/master/docker-compose.yml)
+
 *Trabajo Final Proyecto de Software 2017 Licenciatura en Sistemas. UNLa.*
 
 Prototipado del Artefacto Web para dar soporte a la gestión de las playas de acarreo de vehículos 
